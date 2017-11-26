@@ -109,9 +109,9 @@ template engine, add ``django_slugify_processor.template_tags``:
    TEMPLATES = [{
        'BACKEND': 'django.template.backends.django.DjangoTemplates',
        'OPTIONS': {
-           'libraries': {
-               'django_slugify_processor': 'django_slugify_processor.template_tags',
-           },
+           'builtins': [
+               'django_slugify_processor.template_tags',
+           ],
        },
    }]
 
