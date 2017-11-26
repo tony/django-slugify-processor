@@ -98,7 +98,7 @@ Since ``slugify`` is a default template tag, we make this available as
 For individual templates use ``{% load django_slugify_processor %}``.
 
 To make this available in all templates, in the ``OPTIONS`` of your
-template engine, add ``django_slugify_processor.template_tags``::
+template engine, add ``django_slugify_processor.template_tags``:
 
 .. code-block:: python
 
@@ -113,7 +113,7 @@ template engine, add ``django_slugify_processor.template_tags``::
 
 From within the template file:
 
-.. code-block:: html
+.. code-block:: django
 
    {{"C++"|smart_slugify}}
 
