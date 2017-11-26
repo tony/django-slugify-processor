@@ -26,6 +26,10 @@ such as:
 The problem
 ===========
 
+This project is based on an article from `devel.tech <https://devel.tech>`__
+covering `django's import strings
+<https://devel.tech/tips/n/djms3tTe/demystifying-djangos-import-strings/>`__.
+
 Corner cases exist with slugification. For instance:
 
 ================  =============================  =============
