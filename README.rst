@@ -219,7 +219,7 @@ tests           .. code-block:: bash
     :alt: Code Coverage
     :target: https://codecov.io/gh/develtech/django-slugify-processor
 
-.. |license| image:: https://img.shields.io/github/license/develtech/django_slugify_processor.svg
+.. |license| image:: https://img.shields.io/github/license/develtech/django-slugify-processor.svg
     :alt: License 
 
 .. |docs| image:: https://readthedocs.org/projects/django-slugify-processor/badge/?version=latest
