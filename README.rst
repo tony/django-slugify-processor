@@ -45,8 +45,36 @@ To make matters worse, if using a specialized model field like
 behavior may be to name the slugs for C++ and C# to "c-1", "c-2" after "c" is
 taken.
 
-Taken further, each website and niche has its own edge cases for slugs. So
-we need a solution that can scale.
+Here's another case, acronyms / shorthands:
+
+==================  =============================  ===================
+Term                ``django.utils.text.slugify``  What you (may) want
+==================  =============================  ===================
+New York City       new-york-city                  nyc
+Y Combinator        y-combinator                   yc 
+Portland            portland                       pdx
+Texas               texas                          tx
+$                   '' (empty)                     usd, aud, etc?
+US$                 US                             usd
+A$                  a                              aud
+bitcoin             bitcoin                        btc
+United States       united-states                  usa
+League of Legends   league-of-legends              league
+Apple® iPod Touch   apple-ipod-touch               ipod-touch
+==================  =============================  ===================
+
+Each website and niche has its own edge cases for slugs. So we need a solution
+that can scale, where you can craft your own functions.
+
+How django-slugify-processor helps
+==================================
+
+This builds on top of `django.utils.text.slugify`_ to handle your django
+project's edgecases. By default, django-slugify-processor will be a pass
+through to django's default behavior. Adding slugification functions via
+your Django project's settings file allows you to adjust.
+
+.. _django.utils.text.slugify: https://docs.djangoproject.com/en/1.11/ref/utils/#django.utils.text.slugify
 
 Installation
 ============
