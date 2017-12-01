@@ -28,4 +28,4 @@ watch_test:
 	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) test; else $(MAKE) test entr_warn; fi
 
 yapf:
-	yapf --exclude='*settings*' --parallel --in-place -r .
+	yapf --exclude='*settings*' --exclude='*tox*' --parallel --in-place -r .
