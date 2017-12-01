@@ -1,4 +1,5 @@
 WATCH_FILES= find . -type f -not -path '*/\.*' | grep -i '.*[.]py$$' 2> /dev/null
+PY_FILES= find . -type f -not -path '*/\.*' -and -not -path '*/settings\/*' -and -not -path '*/migrations\/*' | grep -i '.*[.]py$$'
 
 
 entr_warn:
@@ -29,3 +30,8 @@ watch_test:
 
 yapf:
 	yapf --exclude='*settings*' --exclude='*tox*' --parallel --in-place -r .
+
+isort:
+	isort `${PY_FILES}`
+
+

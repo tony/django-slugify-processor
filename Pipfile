@@ -21,6 +21,7 @@ tox = "*"
 yapf = "*"
 "autopep8" = "*"
 "flake8-quotes" = "*"
+isort = "*"
 
 
 [requires]
