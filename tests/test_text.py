@@ -14,7 +14,5 @@ def slugify_programming(value):
 
 
 def test_slugify_slugify_processors(settings):
-    settings.SLUGIFY_PROCESSORS = [
-        'tests.test_text.slugify_programming'
-    ]
+    settings.SLUGIFY_PROCESSORS = ['tests.test_text.slugify_programming']
     assert slugify('c++') == 'cpp'
