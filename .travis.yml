@@ -1,3 +1,6 @@
+# based off django-extension's .travis.yml (MIT licensed)
+# https://github.com/django-extensions/django-extensions/blob/e79689f/.travis.yml
+
 language: python
 
 sudo: false
