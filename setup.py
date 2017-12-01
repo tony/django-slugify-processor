@@ -34,7 +34,7 @@ class PyTest(TestCommand):
         sys.exit(errno)
 
 
-setup
+setup(
     name=about['__title__'],
     version=about['__version__'],
     url='http://github.com/develtech/django-slugify-processor/',
