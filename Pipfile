@@ -1,23 +1,19 @@
 [[source]]
+
 url = "https://pypi.python.org/simple"
 verify_ssl = true
 name = "pypi"
 
+
 [packages]
-
-
-
-
-
-
-
 
 
 
 [dev-packages]
 
 alagitpull = "==0.0.13"
+django = "*"
 pytest = "==3.3.0"
 releases = "==1.4.0"
 sphinx = "*"
-"pytest-django" = "==3.1.2"
+pytest-django = "==3.1.2"
