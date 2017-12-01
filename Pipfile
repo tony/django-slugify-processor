@@ -21,3 +21,8 @@ tox = "*"
 yapf = "*"
 "autopep8" = "*"
 "flake8-quotes" = "*"
+
+
+[requires]
+
+python_version = "3.6"
