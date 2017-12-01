@@ -22,5 +22,5 @@ SOFTWARE.
 
 Credits:
 
-- travis.yml and tox.ini based off django-extension's (MIT-licensed)
+- travis.yml and tox.ini based off DRF's (BSD 2-clause licensed)
 - yapf configuration based off RTD / devel.tech's (MIT-licensed)
