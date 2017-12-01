@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
-from django_slugify_processor.text import slugify
 from django.utils.text import slugify as django_slugify
+
+from django_slugify_processor.text import slugify
 
 
 def test_slugify_fallback_to_default():
