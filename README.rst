@@ -54,7 +54,7 @@ New York City       new-york-city                  nyc
 Y Combinator        y-combinator                   yc 
 Portland            portland                       pdx
 Texas               texas                          tx
-$                   '' (empty)                     usd, aud, etc?
+\$                  '' (empty)                     usd, aud, etc?
 US$                 us                             usd
 A$                  a                              aud
 bitcoin             bitcoin                        btc
