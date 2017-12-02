@@ -198,6 +198,12 @@ Tested with 1.9.3 (2017-11-26):
           slugify=slugify
       )
 
+Credits
+=======
+
+- travis.yml and tox.ini based off DRF's (BSD 2-clause licensed)
+- yapf configuration based off RTD / devel.tech's (MIT-licensed)
+
 Project details
 ===============
 
