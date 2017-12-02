@@ -145,7 +145,7 @@ In your template:
 
 .. code-block:: django
 
-   {% load django_slugify_processor %}
+   {% load slugify_processor %}
    {{"C++"|slugify}}
 
 via built-in
@@ -160,7 +160,7 @@ template engine, add ``django_slugify_processor.template_tags``:
        'BACKEND': 'django.template.backends.django.DjangoTemplates',
        'OPTIONS': {
            'builtins': [
-               'django_slugify_processor.filters',
+               'django_slugify_processor.templatetags.slugify_processor',
            ],
        },
    }]

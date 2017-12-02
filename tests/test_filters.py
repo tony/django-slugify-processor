@@ -7,19 +7,28 @@ def test_slugify_engine_override(settings):
     settings.TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
-            'DIRS': [
-            ],
             'APP_DIRS': True,
             'OPTIONS': {
                 'builtins': [
-                    'django_slugify_processor.filters'
+                    'django_slugify_processor.templatetags.slugify_processor'
                 ],
-                'context_processors': [
-                    'django.template.context_processors.request',
-                ]
             },
         },
     ]
 
     template = Template("{{'c++'|slugify}}")
+    assert template.render(Context({})) == 'cpp'
+
+
+def test_slugify_via_load_tag(settings):
+    settings.SLUGIFY_PROCESSORS = ['tests.test_text.slugify_programming']
+    settings.INSTALLED_APPS = ['django_slugify_processor']
+    settings.TEMPLATES = [
+        {
+            'BACKEND': 'django.template.backends.django.DjangoTemplates',
+            'APP_DIRS': True,
+        },
+    ]
+
+    template = Template('{% load slugify_processor %}{{"c++"|slugify}}')
     assert template.render(Context({})) == 'cpp'
