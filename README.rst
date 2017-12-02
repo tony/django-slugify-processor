@@ -124,10 +124,32 @@ Import ``slugify`` from ``django_slugify_processor.text``:
 Template code
 -------------
 
-Since ``slugify`` is a default template tag, we make this available as
-``smart_slugify``. Future versions may allow this to be customized.
+django-slugify-processor is designed to override the built-in``slugify``
+filter.
 
-For individual templates use ``{% load django_slugify_processor %}``.
+via load
+""""""""
+
+You can load by default via ``{% load django_slugify_processor %}``
+in your template.
+
+In your settings ``INSTALLED_APPS``:
+
+.. code-block:: python
+
+   INSTALLED_APPS = [
+       'django_slugify_processor'
+   ]
+
+In your template:
+
+.. code-block:: django
+
+   {% load django_slugify_processor %}
+   {{"C++"|slugify}}
+
+via built-in
+""""""""""""
 
 To make this available in all templates, in the ``OPTIONS`` of your
 template engine, add ``django_slugify_processor.template_tags``:
@@ -138,7 +160,7 @@ template engine, add ``django_slugify_processor.template_tags``:
        'BACKEND': 'django.template.backends.django.DjangoTemplates',
        'OPTIONS': {
            'builtins': [
-               'django_slugify_processor.template_tags',
+               'django_slugify_processor.filters',
            ],
        },
    }]
@@ -147,7 +169,7 @@ From within the template file:
 
 .. code-block:: django
 
-   {{"C++"|smart_slugify}}
+   {{"C++"|slugify}}
 
 Output should be: cpp
 
