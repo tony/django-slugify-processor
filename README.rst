@@ -194,12 +194,12 @@ Tested with 1.9.7 (2017-11-26):
    from django_extensions.db.fields import AutoSlugField
    from django_slugify_processors.text import slugify
 
-   class MyModel(models.Model)
-      title = models.CharField(max_length=255)
-      slug = AutoSlugField(
-          populate_from='title',
-          slugify_function=slugify
-      )
+   class MyModel(models.Model):
+       title = models.CharField(max_length=255)
+       slug = AutoSlugField(
+           populate_from='title',
+           slugify_function=slugify
+       )
 
 django-autoslug
 """""""""""""""
@@ -213,12 +213,12 @@ Tested with 1.9.3 (2017-11-26):
    from autoslug import AutoSlugField
    from django_slugify_processors.text import slugify
 
-   class MyModel(models.Model)
-      title = models.CharField(max_length=255)
-      slug = AutoSlugField(
-          populate_from='title',
-          slugify=slugify
-      )
+   class MyModel(models.Model):
+       title = models.CharField(max_length=255)
+       slug = AutoSlugField(
+           populate_from='title',
+           slugify=slugify
+       )
 
 Credits
 =======
