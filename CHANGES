@@ -2,6 +2,10 @@
 Changelog
 =========
 
+- :release:`0.8.3 <2017-12-02>`
+- :support:`-` Add test_app, and tests for django-extensions and
+  django-autoslug
+
 - :release:`0.8.2 <2017-12-02>`
 - :support:`-` Try to tweak README / fix on PyPI
 
