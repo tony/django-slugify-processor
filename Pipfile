@@ -22,7 +22,8 @@ yapf = "*"
 "autopep8" = "*"
 "flake8-quotes" = "*"
 isort = "*"
-"qwry4gvS" = {path = ".", editable = true}
+"qwry4gvs" = {path = ".", editable = true}
+django-extensions = "==1.9.7"
 
 
 [requires]

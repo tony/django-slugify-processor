@@ -3,7 +3,7 @@ from django.template import Context, Template
 
 
 def test_slugify_via_builtin_override(settings):
-    settings.SLUGIFY_PROCESSORS = ['examples.coding.slugify_programming']
+    settings.SLUGIFY_PROCESSORS = ['test_app.coding.slugify_programming']
     settings.TEMPLATES = [
         {
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -21,7 +21,7 @@ def test_slugify_via_builtin_override(settings):
 
 
 def test_slugify_via_load_templatetags(settings):
-    settings.SLUGIFY_PROCESSORS = ['examples.coding.slugify_programming']
+    settings.SLUGIFY_PROCESSORS = ['test_app.coding.slugify_programming']
     settings.INSTALLED_APPS = ['django_slugify_processor']
     settings.TEMPLATES = [
         {

@@ -10,5 +10,5 @@ def test_slugify_fallback_to_default():
 
 
 def test_slugify_slugify_processors(settings):
-    settings.SLUGIFY_PROCESSORS = ['examples.coding.slugify_programming']
+    settings.SLUGIFY_PROCESSORS = ['test_app.coding.slugify_programming']
     assert slugify('c++') == 'cpp'
