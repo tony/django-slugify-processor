@@ -2,6 +2,9 @@
 Changelog
 =========
 
+- :release:`0.8.2 <2017-12-02>`
+- :support:`-` Try to tweak README / fix on PyPI
+
 - :release:`0.8.1 <2017-12-01>`
 - :support:`-` README updates
 - :support:`-` Support for overriding builtin slugify in templates
