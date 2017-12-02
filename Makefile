@@ -23,7 +23,7 @@ watch_flake8:
 	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) flake8; else $(MAKE) flake8 entr_warn; fi
 
 test:
-	py.test --reuse-db --nomigrations $(test)
+	py.test $(test)
 
 watch_test:
 	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) test; else $(MAKE) test entr_warn; fi
@@ -33,5 +33,3 @@ yapf:
 
 isort:
 	isort `${PY_FILES}`
-
-
