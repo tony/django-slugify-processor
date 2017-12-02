@@ -244,14 +244,14 @@ Open Hub        https://www.openhub.net/p/django_slugify_processor
 License         MIT
 git repo        .. code-block:: bash
 
-                    $ git clone https://github.com/develtech/django_slugify_processor.git
+                    $ git clone https://github.com/develtech/django-slugify-processor.git
 install stable  .. code-block:: bash
 
-                    $ pip install --user django_slugify_processor
+                    $ pip install django-slugify-processor
 install dev     .. code-block:: bash
 
-                    $ git clone https://github.com/develtech/django_slugify_processor.git
-                    $ cd ./django_slugify_processor
+                    $ git clone https://github.com/develtech/django-slugify-processor.git
+                    $ cd ./django-slugify-processor
                     $ pipenv install --dev --skip-lock
                     $ pipenv shell
 
