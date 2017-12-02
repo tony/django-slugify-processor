@@ -28,13 +28,13 @@ matrix:
       - env: DJANGO=master
 
 install:
-    - pip install tox tox-travis coveralls
+    - pip install tox tox-travis codecov
 
 script:
     - tox
 
 after_success:
-    - coveralls
+    - codecov
 
 notifications:
     email: false
