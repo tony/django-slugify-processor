@@ -81,7 +81,7 @@ Installation
 
 .. code-block:: sh
 
-   $ pip install django_slugify_processor
+   $ pip install django-slugify-processor
 
 Configure
 =========
