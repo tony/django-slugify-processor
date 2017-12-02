@@ -35,7 +35,7 @@ Corner cases exist with slugification. For instance:
 ================  =============================  =============
 Term              ``django.utils.text.slugify``  What you want
 ================  =============================  =============
-C                 c (correct)                    c
+C                 c (correct)                    n/a
 C++               c                              cpp
 C#                c                              c-sharp
 ================  =============================  =============
@@ -55,7 +55,7 @@ Y Combinator        y-combinator                   yc
 Portland            portland                       pdx
 Texas               texas                          tx
 $                   '' (empty)                     usd, aud, etc?
-US$                 US                             usd
+US$                 us                             usd
 A$                  a                              aud
 bitcoin             bitcoin                        btc
 United States       united-states                  usa
