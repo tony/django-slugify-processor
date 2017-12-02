@@ -254,10 +254,7 @@ install dev     .. code-block:: bash
                     $ cd ./django_slugify_processor
                     $ pipenv install --dev --skip-lock
                     $ pipenv shell
-                    $ pip install -e .
 
-                See the `developing and testing`_ page in the docs for
-                more.
 tests           .. code-block:: bash
 
                     $ make test
