@@ -22,6 +22,7 @@ yapf = "*"
 "autopep8" = "*"
 "flake8-quotes" = "*"
 isort = "*"
+"qwry4gvS" = {path = ".", editable = true}
 
 
 [requires]
