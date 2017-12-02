@@ -28,10 +28,10 @@ matrix:
       - env: DJANGO=master
 
 install:
-    - pip install tox tox-travis codecov
+    - pip install tox tox-travis codecov pytest-cov
 
 script:
-    - tox
+    - tox -- --cov # positional args to pass into tox.ini
 
 after_success:
     - codecov

@@ -1,5 +1,7 @@
 [run]
+source=django_slugify_processor
 omit =
+    .*
     tests/*
     */_*
 
