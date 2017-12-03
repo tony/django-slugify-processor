@@ -2,6 +2,10 @@
 Changelog
 =========
 
+- :release:`0.8.4 <2017-12-03>`
+- :support:`-` Get docs online
+- :support:`-` Clean up API docs in code
+
 - :release:`0.8.3 <2017-12-02>`
 - :support:`-` Add test_app, and tests for django-extensions and
   django-autoslug
