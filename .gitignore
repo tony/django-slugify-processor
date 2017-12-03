@@ -102,3 +102,6 @@ ENV/
 
 # pipfile
 Pipfile.lock
+
+# sphinx
+doc/_build
