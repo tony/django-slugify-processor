@@ -1,4 +1,4 @@
-django_slugify_processor: pipeline for handling slugification edgecases
+pipeline for handling slugification edgecases
 
 |pypi| |docs| |build-status| |coverage| |license|
 
@@ -232,7 +232,7 @@ Project details
 ==============  ============================================================================
 python support  2.7, >= 3.3, pypy, pypy3
 django support  1.11
-Source          https://github.com/develtech/django_slugify_processor
+Source          https://github.com/develtech/django-slugify-processor
 Docs            https://django-slugify-processor.devel.tech
 API             https://django-slugify-processor.devel.tech/en/latest/api.html
 Changelog       https://django-slugify-processor.devel.tech/en/latest/history.html
