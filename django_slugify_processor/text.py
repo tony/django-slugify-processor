@@ -17,6 +17,8 @@ def slugify(value, allow_unicode=False):
 
     Examples of slugify processors, assume *project/app/slugify_processors.py*:
 
+    .. code-block:: python
+
         def slugify_programming_languages(value):
             value = value.lower()
 
@@ -41,6 +43,8 @@ def slugify(value, allow_unicode=False):
             return value
 
     Settings:
+
+    .. code-block:: python
 
         SLUGIFY_PROCESSORS = [
             'project.app.slugify_programming_languages',
