@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
 import os
+import sys
+
 import alagitpull
 
 # Get the project root dir, which is the parent dir of this
 cwd = os.getcwd()
 project_root = os.path.dirname(cwd)
+
+# for autodoc to detect module
+sys.path.insert(0, project_root)
 
 # package data
 about = {}
