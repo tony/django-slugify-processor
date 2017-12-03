@@ -229,13 +229,13 @@ Credits
 Project details
 ===============
 
-==============  ==========================================================
+==============  ============================================================================
 python support  2.7, >= 3.3, pypy, pypy3
 django support  1.11
 Source          https://github.com/develtech/django_slugify_processor
-Docs            http://django-slugify-processor.git-pull.com
-API             http://django-slugify-processor.git-pull.com/en/latest/api.html
-Changelog       http://django-slugify-processor.git-pull.com/en/latest/history.html
+Docs            https://django-slugify-processor.devel.tech
+API             https://django-slugify-processor.devel.tech/en/latest/api.html
+Changelog       https://django-slugify-processor.devel.tech/en/latest/history.html
 Issues          https://github.com/develtech/django-slugify-processor/issues
 Travis          http://travis-ci.org/develtech/django-slugify-processor
 Test Coverage   https://codecov.io/gh/develtech/django-slugify-processor
@@ -244,21 +244,21 @@ Open Hub        https://www.openhub.net/p/django_slugify_processor
 License         MIT
 git repo        .. code-block:: bash
 
-                    $ git clone https://github.com/develtech/django-slugify-processor.git
+                   $ git clone https://github.com/develtech/django-slugify-processor.git
 install stable  .. code-block:: bash
 
-                    $ pip install django-slugify-processor
+                   $ pip install django-slugify-processor
 install dev     .. code-block:: bash
 
-                    $ git clone https://github.com/develtech/django-slugify-processor.git
-                    $ cd ./django-slugify-processor
-                    $ pipenv install --dev --skip-lock
-                    $ pipenv shell
+                   $ git clone https://github.com/develtech/django-slugify-processor.git
+                   $ cd ./django-slugify-processor
+                   $ pipenv install --dev --skip-lock
+                   $ pipenv shell
 
 tests           .. code-block:: bash
 
-                    $ make test
-==============  ==========================================================
+                   $ make test
+==============  ============================================================================
 
 .. |pypi| image:: https://img.shields.io/pypi/v/django-slugify-processor.svg
     :alt: Python Package
