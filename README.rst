@@ -240,7 +240,7 @@ Issues          https://github.com/develtech/django-slugify-processor/issues
 Travis          http://travis-ci.org/develtech/django-slugify-processor
 Test Coverage   https://codecov.io/gh/develtech/django-slugify-processor
 pypi            https://pypi.python.org/pypi/django-slugify-processor
-Open Hub        https://www.openhub.net/p/django_slugify_processor
+Open Hub        https://www.openhub.net/p/django-slugify-processor
 License         MIT
 git repo        .. code-block:: bash
 
