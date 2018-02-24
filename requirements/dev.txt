@@ -1,6 +1,6 @@
 isort==4.3.4
 flake8==3.5.0
-flake8-quotes==0.13.1
+flake8-quotes==0.14.0
 vulture==0.26
 tox==2.9.1
 yapf==0.20.2
