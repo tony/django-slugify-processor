@@ -16,12 +16,7 @@ about = {}
 with open("../django_slugify_processor/__about__.py") as fp:
     exec(fp.read(), about)
 
-extensions = [
-    'sphinx.ext.autodoc',
-    'sphinx.ext.intersphinx',
-    'releases',
-    'alagitpull',
-]
+extensions = ['sphinx.ext.autodoc', 'sphinx.ext.intersphinx', 'releases', 'alagitpull']
 
 releases_unstable_prehistory = True
 releases_document_name = "history"
@@ -66,31 +61,41 @@ html_theme_options = {
     'project_name': about['__title__'],
 }
 
-alagitpull_internal_hosts = [
-    'django-slugify-processor.devel.tech',
-    '0.0.0.0',
-]
+alagitpull_internal_hosts = ['django-slugify-processor.devel.tech', '0.0.0.0']
 alagitpull_external_hosts_new_window = True
 
 htmlhelp_basename = '%sdoc' % about['__title__']
 
 latex_documents = [
-    ('index', '{0}.tex'.format(about['__package_name__']),
-     '{0} Documentation'.format(about['__title__']),
-     about['__author__'], 'manual'),
+    (
+        'index',
+        '{0}.tex'.format(about['__package_name__']),
+        '{0} Documentation'.format(about['__title__']),
+        about['__author__'],
+        'manual',
+    )
 ]
 
 man_pages = [
-    ('index', about['__package_name__'],
-     '{0} Documentation'.format(about['__title__']),
-     about['__author__'], 1),
+    (
+        'index',
+        about['__package_name__'],
+        '{0} Documentation'.format(about['__title__']),
+        about['__author__'],
+        1,
+    )
 ]
 
 texinfo_documents = [
-    ('index', '{0}'.format(about['__package_name__']),
-     '{0} Documentation'.format(about['__title__']),
-     about['__author__'], about['__package_name__'],
-     about['__description__'], 'Miscellaneous'),
+    (
+        'index',
+        '{0}'.format(about['__package_name__']),
+        '{0} Documentation'.format(about['__title__']),
+        about['__author__'],
+        about['__package_name__'],
+        about['__description__'],
+        'Miscellaneous',
+    )
 ]
 
 intersphinx_mapping = {
