@@ -28,8 +28,8 @@ test:
 watch_test:
 	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) test; else $(MAKE) test entr_warn; fi
 
-yapf:
-	yapf --exclude='*settings*' --exclude='*tox*' --parallel --in-place -r .
+black:
+	black `${PY_FILES}` --skip-string-normalization
 
 isort:
 	isort `${PY_FILES}`
