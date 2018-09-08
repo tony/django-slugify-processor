@@ -38,8 +38,8 @@ class PyTest(TestCommand):
 setup(
     name=about['__title__'],
     version=about['__version__'],
-    url='http://github.com/develtech/django-slugify-processor/',
-    download_url='https://pypi.python.org/pypi/django-slugify-processor',
+    url=about['__github__'],
+    download_url=about['__pypi__'],
     license=about['__license__'],
     author=about['__author__'],
     author_email=about['__email__'],
