@@ -1,4 +1,4 @@
 pytest==4.1.1
 pytest-django==3.4.5
-django-extensions==2.1.4
+django-extensions==2.1.5
 tox==3.7.0
