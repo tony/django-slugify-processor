@@ -1,5 +1,6 @@
 -r ./base.txt
 docutils==0.14
 sphinx>=2.0.0
+sphinx_issues
 alagitpull>=0.0.22
 django>=1.11

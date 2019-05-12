@@ -17,6 +17,7 @@ pytest-django = "*"
 django-extensions = "<=2.2.0"
 django-slugify-processor = {path = ".",editable = true}
 black = "==19.3b0"
+sphinx-issues = "*"
 
 [packages]
 
