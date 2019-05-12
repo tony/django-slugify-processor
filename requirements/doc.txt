@@ -2,5 +2,4 @@
 docutils==0.14
 sphinx==2.0.0
 alagitpull==0.0.22
-releases==1.6.1
 django>=1.11
