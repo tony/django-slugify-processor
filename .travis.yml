@@ -1,6 +1,8 @@
 language: python
 cache: pip
 
+if: (type = push AND branch IN (master)) OR (type = pull_request)
+
 python:
     - "2.7"
     - "3.4"
