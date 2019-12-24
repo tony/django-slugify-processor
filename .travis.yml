@@ -1,36 +1,27 @@
 language: python
 cache: pip
-
-if: (type = push AND branch IN (master)) OR (type = pull_request)
-
-python:
-    - 3.6
-
 sudo: false
-
+if: (type = push AND branch IN (master)) OR (type = pull_request)
+python:
+  - 3.6
 env:
-    - DJANGO=2.2
-    - DJANGO=3.0
-    - DJANGO=master
-
+  - DJANGO_VERSION=2.2
+  - DJANGO_VERSION=3.0
+  - DJANGO_VERSION=master
 matrix:
-    fast_finish: true
-    include:
-      - { python: "3.6", env: DJANGO=master }
-      - { python: "3.6", env: DJANGO=3.0 }
-      - { python: "3.6", env: DJANGO=2.2 }
-
-    allow_failures:
-      - env: DJANGO=master
-
+  fast_finish: true
+  include:
+    - { python: "3.6", env: DJANGO_VERSION=master }
+    - { python: "3.6", env: DJANGO_VERSION=3.0 }
+    - { python: "3.6", env: DJANGO_VERSION=2.2 }
+  allow_failures:
+    - env: DJANGO=master
 install:
-    - pip install tox tox-travis codecov pytest-cov
-
-script:
-    - tox -- --cov  # positional args to pass into tox.ini
-
+  - pip install -e .
+  - pip install -r requirements/test.txt
+  - if [[ $DJANGO_VERSION == 'master' ]]; then pip install https://github.com/django/django/archive/master.tar.gz; else pip install django~=$DJANGO_VERSION; fi;
+script: py.test --cov=django_slugify_processor
 after_success:
-    - codecov
-
+  - bash <(curl -s https://codecov.io/bash)
 notifications:
-    email: false
+  email: false
