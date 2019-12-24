@@ -2,3 +2,5 @@ pytest<6
 pytest-django<4
 django-extensions<3
 tox<4
+pytest-cov
+coverage
