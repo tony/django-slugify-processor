@@ -17,10 +17,10 @@ matrix:
   allow_failures:
     - env: DJANGO=master
 install:
-  - pip install tox tox-travis codecov pytest-cov
-script:
-  - tox -- --cov  # positional args to pass into tox.ini
+  - pip install -e .
+  - pip install -r requirements/test.txt
+script: py.test --cov=django_slugify_processor
 after_success:
-  - codecov
+  - bash <(curl -s https://codecov.io/bash)
 notifications:
   email: false
