@@ -19,7 +19,7 @@ matrix:
 install:
   - pip install -e .
   - pip install -r requirements/test.txt
-  - pip install DJANGO~=$DJANGO_VERSION
+  - if [[ $DJANGO_VERSION == 'master' ]]; then pip install https://github.com/django/django/archive/master.tar.gz; else pip install django~=$DJANGO_VERSION; fi;
 script: py.test --cov=django_slugify_processor
 after_success:
   - bash <(curl -s https://codecov.io/bash)
