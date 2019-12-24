@@ -100,9 +100,6 @@ ENV/
 # mypy
 .mypy_cache/
 
-# pipfile
-Pipfile.lock
-
 # sphinx
 doc/_build
 
