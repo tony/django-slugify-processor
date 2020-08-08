@@ -19,14 +19,10 @@ with open("../django_slugify_processor/__about__.py") as fp:
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
+    'sphinx.ext.napoleon',
     'alagitpull',
-    'sphinx_issues'
+    'sphinx_issues',
 ]
-
-releases_unstable_prehistory = True
-releases_document_name = ["history"]
-releases_issue_uri = "https://github.com/develtech/django-slugify-processor/issues/%s"
-releases_release_uri = "https://github.com/develtech/django-slugify-processor/tree/v%s"
 
 issues_github_path = about['__github__']
 
@@ -48,6 +44,7 @@ pygments_style = 'sphinx'
 
 html_theme_path = [alagitpull.get_path()]
 html_static_path = ['_static']
+html_extra_path = ['manifest.json']
 html_theme = 'alagitpull'
 html_sidebars = {
     '**': [
@@ -60,15 +57,26 @@ html_sidebars = {
 }
 
 html_theme_options = {
+    'logo': "img/icons/logo.svg",
     'github_user': 'develtech',
     'github_repo': 'django-slugify-processor',
     'github_type': 'star',
     'github_banner': True,
     'projects': alagitpull.projects,
     'project_name': about['__title__'],
+    'project_title': about['__title__'],
+    'project_description': about['__description__'],
+    'project_url': about['__docs__'],
+    'show_meta_manifest_tag': True,
+    'show_meta_og_tags': True,
+    'show_meta_app_icon_tags': True,
 }
 
-alagitpull_internal_hosts = ['django-slugify-processor.devel.tech', '0.0.0.0']
+alagitpull_internal_hosts = [
+    'django-slugify-processor.devel.tech',
+    'django-slugify-processor.git-pull.com',
+    '0.0.0.0',
+]
 alagitpull_external_hosts_new_window = True
 
 htmlhelp_basename = '%sdoc' % about['__title__']
@@ -106,7 +114,7 @@ texinfo_documents = [
 ]
 
 intersphinx_mapping = {
-    'py': ('https://docs.python.org/2', None),
+    'py': ('https://docs.python.org', None),
     'django': (
         'https://docs.djangoproject.com/en/1.11/',
         'https://docs.djangoproject.com/en/1.11/_objects/',

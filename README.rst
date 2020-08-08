@@ -1,6 +1,6 @@
 pipeline for handling slugification edgecases
 
-|pypi| |docs| |build-status| |coverage| |license|
+|pypi| |build-status| |docs| |coverage| |license|
 
 What are slugs?
 ===============
@@ -223,21 +223,20 @@ Tested with 1.9.3 (2017-11-26):
 Credits
 =======
 
-- travis.yml and tox.ini based off DRF's (BSD 2-clause licensed)
+- tox.ini based off DRF's (BSD 2-clause licensed)
 - yapf configuration based off RTD / devel.tech's (MIT-licensed)
 
 Project details
 ===============
 
 ==============  ============================================================================
-python support  >= 3.6, pypy3
-django support  3.0, 2.2
+python support  2.7, >= 3.6, pypy3
+django support  3.0, >2, 1.11
 Source          https://github.com/develtech/django-slugify-processor
-Docs            https://django-slugify-processor.devel.tech
-API             https://django-slugify-processor.devel.tech/en/latest/api.html
-Changelog       https://django-slugify-processor.devel.tech/en/latest/history.html
+Docs            https://django-slugify-processor.git-pull.com
+API             https://django-slugify-processor.git-pull.com/api.html
+Changelog       https://django-slugify-processor.git-pull.com/history.html
 Issues          https://github.com/develtech/django-slugify-processor/issues
-Travis          http://travis-ci.org/develtech/django-slugify-processor
 Test Coverage   https://codecov.io/gh/develtech/django-slugify-processor
 pypi            https://pypi.python.org/pypi/django-slugify-processor
 Open Hub        https://www.openhub.net/p/django-slugify-processor
@@ -264,9 +263,13 @@ tests           .. code-block:: bash
     :alt: Python Package
     :target: http://badge.fury.io/py/django-slugify-processor
 
-.. |build-status| image:: https://img.shields.io/travis/develtech/django-slugify-processor.svg
+.. |docs| image:: https://github.com/develtech/django-slugify-processor/workflows/docs/badge.svg
+   :alt: Docs
+   :target: https://github.com/develtech/django-slugify-processor/actions?query=workflow%3Adocs
+
+.. |build-status| image:: https://github.com/develtech/django-slugify-processor/workflows/tests/badge.svg
    :alt: Build Status
-   :target: https://travis-ci.org/develtech/django-slugify-processor
+   :target: https://github.com/develtech/django-slugify-processor/actions?query=workflow%3Atests
 
 .. |coverage| image:: https://codecov.io/gh/develtech/django-slugify-processor/branch/master/graph/badge.svg
     :alt: Code Coverage
@@ -274,8 +277,3 @@ tests           .. code-block:: bash
 
 .. |license| image:: https://img.shields.io/github/license/develtech/django-slugify-processor.svg
     :alt: License 
-
-.. |docs| image:: https://readthedocs.org/projects/django-slugify-processor/badge/?version=latest
-    :alt: Documentation Status
-    :scale: 100%
-    :target: https://readthedocs.org/projects/django-slugify-processor/

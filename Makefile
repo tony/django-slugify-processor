@@ -1,5 +1,6 @@
 WATCH_FILES= find . -type f -not -path '*/\.*' | grep -i '.*[.]py$$' 2> /dev/null
 PY_FILES= find . -type f -not -path '*/\.*' -and -not -path '*/settings\/*' -and -not -path '*/migrations\/*' | grep -i '.*[.]py$$'
+SHELL := /bin/bash
 
 
 entr_warn:
@@ -11,32 +12,25 @@ entr_warn:
 	@echo "----------------------------------------------------------"
 
 build_docs:
-	cd doc && $(MAKE) html
+	pushd docs; $(MAKE) html; popd
 
 watch_docs:
-	cd doc && $(MAKE) watch_docs
+	pushd docs; $(MAKE) watch_docs; popd
 
 flake8:
-	flake8 django_slugify_processors tests
+	poetry run flake8 django_slugify_processors tests
 
 watch_flake8:
 	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) flake8; else $(MAKE) flake8 entr_warn; fi
 
 test:
-	py.test $(test)
+	poetry run py.test $(test)
 
 watch_test:
 	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) test; else $(MAKE) test entr_warn; fi
 
 black:
-	black `${PY_FILES}` --skip-string-normalization
+	poetry run black `${PY_FILES}` --skip-string-normalization
 
 isort:
-	isort `${PY_FILES}`
-
-sync_pipfile:
-	pipenv install --skip-lock --dev -r requirements/doc.txt && \
-	pipenv install --skip-lock --dev -r requirements/dev.txt && \
-	pipenv install --skip-lock --dev -r requirements/test.txt && \
-	pipenv install --skip-lock --dev -e . && \
-	pipenv install --skip-lock -r requirements/base.txt 
+	poetry run isort `${PY_FILES}`

@@ -2,28 +2,37 @@
 Changelog
 =========
 
-0.8.4 <2017-12-03>
-------------------
+current
+-------
+- Move travis -> gh actions
+- Move pipenv -> poetry
+- Move RTD -> self-hosted docs
+- Relax package constraints
+- Add package constraints for cases where python version / django
+  effects things
+
+django-slugify-processor 0.8.4 (2017-12-03)
+-------------------------------------------
 - Get docs online
 - Clean up API docs in code
 
-0.8.3 <2017-12-02>
-------------------
+django-slugify-processor 0.8.3 (2017-12-02)
+-------------------------------------------
 - Add test_app, and tests for django-extensions and
   django-autoslug
 
-0.8.2 <2017-12-02>
-------------------
+django-slugify-processor 0.8.2 (2017-12-02)
+-------------------------------------------
 - Try to tweak README / fix on PyPI
 
-0.8.1 <2017-12-01>
-------------------
+django-slugify-processor 0.8.1 (2017-12-01)
+-------------------------------------------
 - README updates
 - Support for overriding builtin slugify in templates
 - Move template filter to *templatetags/slugify_processor.py*
 
-0.8.0 <2017-11-26>
-------------------
+django-slugify-processor 0.8.0 (2017-11-26)
+-------------------------------------------
 - Initial commit
 
 .. # vim: set filetype=rst:
