@@ -1,18 +1,14 @@
 # Makefile for Sphinx documentation
 #
+SHELL := /bin/bash
 PYVERSION=$(shell python -c "import sys;v=sys.version_info[0];sys.stdout.write(str(v))")
 HTTP_PORT     = 8030
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = sphinx-build
+SPHINXBUILD   = poetry run sphinx-build
 PAPER         =
 BUILDDIR      = _build
-
-# User-friendly check for sphinx-build
-ifeq ($(shell which $(SPHINXBUILD) >/dev/null 2>&1; echo $$?), 1)
-$(error The '$(SPHINXBUILD)' command was not found. Make sure you have Sphinx installed, then set the SPHINXBUILD environment variable to point to the full path of the '$(SPHINXBUILD)' executable. Alternatively you can add the directory with the executable to your PATH. If you don't have Sphinx installed, grab it from http://sphinx-doc.org/)
-endif
 
 # Internal variables.
 PAPEROPT_a4     = -D latex_paper_size=a4
@@ -182,7 +178,7 @@ checkbuild:
 	rm -rf $(BUILDDIR)
 	$(SPHINXBUILD) -n -q ./ $(BUILDDIR)
 
-WATCH_FILES= find .. -type f -not -path '*/\.*' | grep -i '.*[.]rst\|CHANGES\|TODO\|.*conf\.py' 2> /dev/null
+WATCH_FILES= find .. -type f -not -path '*/\.*' | grep -i '.*[.]rst\$\|.*[.]py\$\|CHANGES\|TODO\|.*conf\.py' 2> /dev/null
 
 watch:
 	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) html; else $(MAKE) html; fi
@@ -190,13 +186,16 @@ watch:
 serve:
 	@echo '================================================================='
 	@echo
-	@echo 'docs server running at http://0.0.0.0:${HTTP_PORT}/_build/html'
+	@echo 'docs server running at http://localhost:${HTTP_PORT}'
 	@echo
 	@echo '================================================================='
 	@if test ${PYVERSION} -eq 2; then $(MAKE) serve_py2; else make serve_py3; fi
 
 serve_py2:
-	python -m SimpleHTTPServer ${HTTP_PORT}
+	pushd _build/html; python2 -m SimpleHTTPServer ${HTTP_PORT}; popd
 
 serve_py3:
-	python -m http.server ${HTTP_PORT}
+	python -m http.server ${HTTP_PORT} --directory _build/html
+
+dev:
+	$(MAKE) -j watch serve
