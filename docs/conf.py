@@ -20,7 +20,7 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.intersphinx',
     'alagitpull',
-    'sphinx_issues'
+    'sphinx_issues',
 ]
 
 releases_unstable_prehistory = True
@@ -68,7 +68,11 @@ html_theme_options = {
     'project_name': about['__title__'],
 }
 
-alagitpull_internal_hosts = ['django-slugify-processor.devel.tech', '0.0.0.0']
+alagitpull_internal_hosts = [
+    'django-slugify-processor.devel.tech',
+    'django-slugify-processor.git-pull.com',
+    '0.0.0.0',
+]
 alagitpull_external_hosts_new_window = True
 
 htmlhelp_basename = '%sdoc' % about['__title__']
