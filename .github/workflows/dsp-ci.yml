@@ -13,6 +13,10 @@ jobs:
         include:
           - python-version: '2.7'
             django-version: '1.11'
+            # No need to specify django-extensons for 2.7, pyproject / constraints does it
+          - python-version: '3.x'
+            django-version: '1.11'
+            django-extensions: '<2.2.6'
     steps:
     - uses: actions/checkout@v1
     - name: Configure git
@@ -68,6 +72,10 @@ jobs:
       run: |
         poetry install -E "docs test coverage lint format deploy"
         poetry run pip install DJANGO~=${{ matrix.django-version }}
+
+    - name: Install django-extensions @ version, if exists
+      if: ${{ matrix.django-extensions != '' }}
+      run: poetry run pip install 'django-extensions${{ matrix.django-extensions }}'
 
     - name: Lint with flake8
       run: poetry run flake8
