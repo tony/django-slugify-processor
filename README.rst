@@ -223,21 +223,20 @@ Tested with 1.9.3 (2017-11-26):
 Credits
 =======
 
-- travis.yml and tox.ini based off DRF's (BSD 2-clause licensed)
+- tox.ini based off DRF's (BSD 2-clause licensed)
 - yapf configuration based off RTD / devel.tech's (MIT-licensed)
 
 Project details
 ===============
 
 ==============  ============================================================================
-python support  >= 3.6, pypy3
-django support  3.0, 2.2
+python support  2.7, >= 3.6, pypy3
+django support  3.0, >2, 1.11
 Source          https://github.com/develtech/django-slugify-processor
 Docs            https://django-slugify-processor.git-pull.com
-API             https://django-slugify-processor.git-pull.com/en/latest/api.html
-Changelog       https://django-slugify-processor.git-pull.com/en/latest/history.html
+API             https://django-slugify-processor.git-pull.com/api.html
+Changelog       https://django-slugify-processor.git-pull.com/history.html
 Issues          https://github.com/develtech/django-slugify-processor/issues
-Travis          http://travis-ci.org/develtech/django-slugify-processor
 Test Coverage   https://codecov.io/gh/develtech/django-slugify-processor
 pypi            https://pypi.python.org/pypi/django-slugify-processor
 Open Hub        https://www.openhub.net/p/django-slugify-processor
