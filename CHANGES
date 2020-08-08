@@ -2,8 +2,9 @@
 Changelog
 =========
 
-current
--------
+django-slugify-processor 0.9.0 (2020-08-08)
+-------------------------------------------
+- Move doc URL from to git-pull.com
 - Move travis -> gh actions
 - Move pipenv -> poetry
 - Move RTD -> self-hosted docs
