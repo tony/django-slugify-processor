@@ -1,6 +1,6 @@
 pipeline for handling slugification edgecases
 
-|pypi| |build-status| |coverage| |license|
+|pypi| |build-status| |docs| |coverage| |license|
 
 What are slugs?
 ===============
@@ -264,9 +264,13 @@ tests           .. code-block:: bash
     :alt: Python Package
     :target: http://badge.fury.io/py/django-slugify-processor
 
-.. |build-status| image:: https://img.shields.io/travis/develtech/django-slugify-processor.svg
+.. |docs| image:: https://github.com/develtech/django-slugify-processor/workflows/docs/badge.svg
    :alt: Build Status
-   :target: https://travis-ci.org/develtech/django-slugify-processor
+   :target: https://github.com/develtech/django-slugify-processor/actions?query=workflow%3A%22docs22
+
+.. |build-status| image:: https://github.com/develtech/django-slugify-processor/workflows/django-slugify-processor%20CI/badge.svg
+   :alt: Build Status
+   :target: https://github.com/develtech/django-slugify-processor/actions?query=workflow%3A%22django-slugify-processor+CI%22
 
 .. |coverage| image:: https://codecov.io/gh/develtech/django-slugify-processor/branch/master/graph/badge.svg
     :alt: Code Coverage
