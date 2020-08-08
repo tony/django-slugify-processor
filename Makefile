@@ -12,10 +12,10 @@ entr_warn:
 	@echo "----------------------------------------------------------"
 
 build_docs:
-	pushd doc; $(MAKE) html; popd
+	pushd docs; $(MAKE) html; popd
 
 watch_docs:
-	pushd doc; $(MAKE) watch_docs; popd
+	pushd docs; $(MAKE) watch_docs; popd
 
 flake8:
 	poetry run flake8 django_slugify_processors tests
