@@ -1,10 +1,10 @@
-session_name: django-slugify-processors
+session_name: django-slugify-processor
 start_directory: ./ # load session relative to config location (project root).
-before_script: pipenv install --dev --skip-lock
-shell_command_before: 
-  - '[ -d `pipenv --venv` ] && source `pipenv --venv`/bin/activate && reset'
+before_script: ./.tmuxp-before-script.sh
+shell_command_before:
+- '[ -f .venv/bin/activate ] && source .venv/bin/activate && reset'
 windows:
-- window_name: slugify-processors
+- window_name: django-slugify-processor
   focus: True
   layout: main-horizontal
   options:
@@ -17,7 +17,7 @@ windows:
   layout: main-horizontal
   options:
     main-pane-height: 35
-  start_directory: doc/
+  start_directory: docs/
   panes:
   - focus: true
   - pane
