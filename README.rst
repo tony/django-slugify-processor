@@ -233,9 +233,9 @@ Project details
 python support  >= 3.6, pypy3
 django support  3.0, 2.2
 Source          https://github.com/develtech/django-slugify-processor
-Docs            https://django-slugify-processor.devel.tech
-API             https://django-slugify-processor.devel.tech/en/latest/api.html
-Changelog       https://django-slugify-processor.devel.tech/en/latest/history.html
+Docs            https://django-slugify-processor.git-pull.com
+API             https://django-slugify-processor.git-pull.com/en/latest/api.html
+Changelog       https://django-slugify-processor.git-pull.com/en/latest/history.html
 Issues          https://github.com/develtech/django-slugify-processor/issues
 Travis          http://travis-ci.org/develtech/django-slugify-processor
 Test Coverage   https://codecov.io/gh/develtech/django-slugify-processor
