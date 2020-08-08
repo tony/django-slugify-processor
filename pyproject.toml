@@ -24,6 +24,10 @@ Repository = "https://github.com/develtech/django-slugify-processor"
 
 [tool.poetry.dependencies]
 python = "2.7 || ^3.5"
+django-extensions = [
+  {version="<2.2.6", python="<3", optional = true},
+  {version="*", python=">=3", optional = true}
+]
 Django = ">=1.11"
 
 [tool.poetry.dev-dependencies]
@@ -43,6 +47,10 @@ pytest = [
 pathlib2 = {version="<2.3.5", python="<3"}  # Untangle pytest peer-dependency
 pytest-rerunfailures = "*"
 pytest-django = "*"
+django-extensions = [
+  {version="<2.2.6", python="<3"},
+  {version="*", python=">=3"}
+]
 
 ### Coverage ###
 codecov = "*"
@@ -67,7 +75,7 @@ twine = "*"
 
 [tool.poetry.extras]
 docs = ["sphinx", "sphinx-issues", "alagitpull"]
-test = ["pytest", "pathlib2", "pytest-rerunfailures", "pytest-django"]
+test = ["pytest", "pathlib2", "pytest-rerunfailures", "pytest-django", "django-extensions"]
 coverage = ["codecov", "coverage", "pytest-cov"]
 format = ["black", "isort"]
 lint = ["flake8"]
