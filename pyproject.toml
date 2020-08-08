@@ -1,0 +1,88 @@
+[tool.poetry]
+name = "django-slugify-processor"
+version = "0.8.4"
+description = "pipeline for slugification edgecases in django"
+
+license = "MIT"
+
+authors = [
+    "Tony Narlock <tony@git-pull.com>"
+]
+
+readme = 'README.rst'
+packages = [
+    { include = "django_slugify_processor" }
+]
+keywords = ["django", "slug", "text"]
+
+homepage = "https://django-slugify-processor.git-pull.com"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/develtech/django-slugify-processor/issues"
+Documentation = "https://django-slugify-processor.git-pull.com"
+Repository = "https://github.com/develtech/django-slugify-processor"
+
+[tool.poetry.dependencies]
+python = "2.7 || ^3.5"
+Django = ">=1.11"
+
+[tool.poetry.dev-dependencies]
+### Docs ###
+sphinx = [
+  {version="<2", python="<3"},
+  {version="*", python=">=3"}
+]
+alagitpull = {version = "^0.1.0"}
+sphinx-issues = {version = "^1.2.0"}
+
+### Testing ###
+pytest = [
+  {version="<4.7.0", python="<3"},
+  {version="*", python=">=3"}
+]
+pathlib2 = {version="<2.3.5", python="<3"}  # Untangle pytest peer-dependency
+pytest-rerunfailures = "*"
+pytest-mock = [
+  {version="<3.0.0", python="<3"},
+  {version="*", python=">=3"}
+]
+factory-boy = "^2.12.0"
+pytest-factoryboy = "^2.0.3"
+pytest-django = "^3.7.0"
+dj-inmemorystorage = "^2.0.0"
+responses = "^0.10.9"
+
+### Coverage ###
+codecov = "*"
+coverage = "*"
+pytest-cov = [
+  {version="<2.10.0", python="<3"},
+  {version="*", python=">=3"}
+]
+
+### Format ###
+black = {version="==19.10b0", python="^3.6"}
+isort = [
+  {version="<5", python="<3.6"},
+  {version="*", python=">=3.6"}
+]
+
+### Lint ###
+flake8 = "*"
+
+### Deploy ###
+twine = "*"
+
+[tool.poetry.extras]
+docs = ["sphinx", "sphinx-issues", "alagitpull"]
+test = ["pytest", "pathlib2", "pytest-rerunfailures", "pytest-mock", "factory-boy", "pytest-factoryboy", "pytest-django", "dj-inmemorystorage", "responses"]
+coverage = ["codecov", "coverage", "pytest-cov"]
+format = ["black", "isort"]
+lint = ["flake8"]
+deploy = ["deploy"]
+favicon = ["tldextract", "tqdm"]
+intersphinx = ["tqdm"]
+
+[tool.black]
+skip-string-normalization = true
+include = '\.pyi?$'
