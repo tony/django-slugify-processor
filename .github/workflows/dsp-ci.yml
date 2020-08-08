@@ -1,4 +1,4 @@
-name: django-slugify-processor CI
+name: tests
 
 on: [push]
 

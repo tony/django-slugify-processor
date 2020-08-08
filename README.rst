@@ -265,12 +265,12 @@ tests           .. code-block:: bash
     :target: http://badge.fury.io/py/django-slugify-processor
 
 .. |docs| image:: https://github.com/develtech/django-slugify-processor/workflows/docs/badge.svg
-   :alt: Build Status
-   :target: https://github.com/develtech/django-slugify-processor/actions?query=workflow%3A%22docs22
+   :alt: Docs
+   :target: https://github.com/develtech/django-slugify-processor/actions?query=workflow%3Adocs
 
-.. |build-status| image:: https://github.com/develtech/django-slugify-processor/workflows/django-slugify-processor%20CI/badge.svg
+.. |build-status| image:: https://github.com/develtech/django-slugify-processor/workflows/tests/badge.svg
    :alt: Build Status
-   :target: https://github.com/develtech/django-slugify-processor/actions?query=workflow%3A%22django-slugify-processor+CI%22
+   :target: https://github.com/develtech/django-slugify-processor/actions?query=workflow%3Atests
 
 .. |coverage| image:: https://codecov.io/gh/develtech/django-slugify-processor/branch/master/graph/badge.svg
     :alt: Code Coverage
