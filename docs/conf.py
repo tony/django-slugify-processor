@@ -23,11 +23,6 @@ extensions = [
     'sphinx_issues',
 ]
 
-releases_unstable_prehistory = True
-releases_document_name = ["history"]
-releases_issue_uri = "https://github.com/develtech/django-slugify-processor/issues/%s"
-releases_release_uri = "https://github.com/develtech/django-slugify-processor/tree/v%s"
-
 issues_github_path = about['__github__']
 
 templates_path = ['_templates']
