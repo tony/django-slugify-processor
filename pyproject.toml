@@ -89,16 +89,12 @@ isort = [
 ### Lint ###
 flake8 = "*"
 
-### Deploy ###
-twine = "*"
-
 [tool.poetry.extras]
 docs = ["sphinx", "sphinx-issues", "alagitpull"]
 test = ["pytest", "pathlib2", "pytest-rerunfailures", "pytest-django", "django-extensions"]
 coverage = ["codecov", "coverage", "pytest-cov"]
 format = ["black", "isort"]
 lint = ["flake8"]
-deploy = ["deploy"]
 
 [tool.black]
 skip-string-normalization = true
