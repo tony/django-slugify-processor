@@ -230,8 +230,8 @@ Project details
 ===============
 
 ==============  ============================================================================
-python support  2.7, >= 3.6, pypy3
-django support  3.0, >2, 1.11
+python support  >= 3.6, pypy3
+django support  2.2, > 3.1,
 Source          https://github.com/develtech/django-slugify-processor
 Docs            https://django-slugify-processor.git-pull.com
 API             https://django-slugify-processor.git-pull.com/api.html

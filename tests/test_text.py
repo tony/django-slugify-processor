@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from django.utils.text import slugify as django_slugify
 
 from django_slugify_processor.text import slugify

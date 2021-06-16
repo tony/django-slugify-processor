@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
-
 from django.db import models
 
 import django_extensions.db.fields
+
 from django_slugify_processor.text import slugify
 
 
