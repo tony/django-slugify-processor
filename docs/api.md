@@ -11,8 +11,6 @@
 ## Template tag
 
 ```{eval-rst}
-.. autofunction:: 
+.. autofunction::
     django_slugify_processor.templatetags.slugify_processor.slugify
 ```
-
-

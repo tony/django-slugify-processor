@@ -33,7 +33,7 @@
 
 - README updates
 - Support for overriding builtin slugify in templates
-- Move template filter to *templatetags/slugify_processor.py*
+- Move template filter to _templatetags/slugify_processor.py_
 
 ## django-slugify-processor 0.8.0 (2017-11-26)
 

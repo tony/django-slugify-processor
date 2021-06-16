@@ -1,6 +1,7 @@
 # django-slugify-processor
 
 ```{include} ../README.md
+
 ```
 
 Contents:
@@ -12,5 +13,3 @@ api
 history
 
 ```
-
-

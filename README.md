@@ -217,27 +217,29 @@ class MyModel(models.Model):
 
 # Project details
 
-- python support  >= 3.6, pypy3
-- django support  2.2, > 3.1,
-- Source          https://github.com/develtech/django-slugify-processor
-- Docs            https://django-slugify-processor.git-pull.com
-- API             https://django-slugify-processor.git-pull.com/api.html
-- Changelog       https://django-slugify-processor.git-pull.com/history.html
-- Issues          https://github.com/develtech/django-slugify-processor/issues
-- Test Coverage   https://codecov.io/gh/develtech/django-slugify-processor
-- pypi            https://pypi.python.org/pypi/django-slugify-processor
-- Open Hub        https://www.openhub.net/p/django-slugify-processor
-- License         MIT
+- python support >= 3.6, pypy3
+- django support 2.2, > 3.1,
+- Source https://github.com/develtech/django-slugify-processor
+- Docs https://django-slugify-processor.git-pull.com
+- API https://django-slugify-processor.git-pull.com/api.html
+- Changelog https://django-slugify-processor.git-pull.com/history.html
+- Issues https://github.com/develtech/django-slugify-processor/issues
+- Test Coverage https://codecov.io/gh/develtech/django-slugify-processor
+- pypi https://pypi.python.org/pypi/django-slugify-processor
+- Open Hub https://www.openhub.net/p/django-slugify-processor
+- License MIT
 - git repo
 
   ```bash
   $ git clone https://github.com/develtech/django-slugify-processor.git
   ```
+
 - install stable
 
   ```bash
   $ pip install django-slugify-processor
   ```
+
 - install dev
 
   ```bash
@@ -246,6 +248,7 @@ class MyModel(models.Model):
   $ pipenv install --dev --skip-lock
   $ pipenv shell
   ```
+
 - tests
 
   ```bash
