@@ -1,5 +1,9 @@
 # Changelog
 
+## django-slugify-processor 0.11.0 (2021-06-16)
+
+- #329: Move to markdown
+
 ## django-slugify-processor 0.10.0 (2021-06-16)
 
 - Drop python 2.7, 3.5 and unsupported django versions
