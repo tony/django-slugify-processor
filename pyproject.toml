@@ -7,8 +7,9 @@ classifiers = [
   'Development Status :: 5 - Production/Stable',
   'Environment :: Web Environment',
   'Framework :: Django',
-  'Framework :: Django :: 1.11',
-  'Framework :: Django :: 2.0',
+  'Framework :: Django :: 2.2',
+  'Framework :: Django :: 3.1',
+  'Framework :: Django :: 3.2',
   'Intended Audience :: Developers',
   'License :: OSI Approved :: MIT License',
   'Operating System :: OS Independent',
@@ -17,6 +18,7 @@ classifiers = [
   'Programming Language :: Python :: 3.6',
   'Programming Language :: Python :: 3.7',
   'Programming Language :: Python :: 3.8',
+  'Programming Language :: Python :: 3.9',
   'Programming Language :: Python :: Implementation :: CPython',
   'Programming Language :: Python :: Implementation :: PyPy',
   'Topic :: Utilities'
@@ -42,56 +44,37 @@ Documentation = "https://django-slugify-processor.git-pull.com"
 Repository = "https://github.com/develtech/django-slugify-processor"
 
 [tool.poetry.dependencies]
-python = "2.7 || ^3.5"
-django-extensions = [
-  {version="<2.2.6", python="<3", optional = true},
-  {version="*", python=">=3", optional = true}
-]
-Django = ">=1.11"
+python = "^3.6"
+django-extensions = {version="*", optional = true}
+Django = ">=2.2"
 
 [tool.poetry.dev-dependencies]
 ### Docs ###
-sphinx = [
-  {version="<2", python="<3"},
-  {version="*", python=">=3"}
-]
-alagitpull = {version = "^0.1.0"}
-sphinx-issues = {version = "^1.2.0"}
+sphinx = "*"
+alagitpull = "^0.1.0"
+sphinx-issues = "^1.2.0"
 
 ### Testing ###
-pytest = [
-  {version="<4.7.0", python="<3"},
-  {version="*", python=">=3"}
-]
-pathlib2 = {version="<2.3.5", python="<3"}  # Untangle pytest peer-dependency
+pytest = "*"
 pytest-rerunfailures = "*"
 pytest-django = "*"
-django-extensions = [
-  {version="<2.2.6", python="<3"},
-  {version="*", python=">=3"}
-]
+django-extensions = "*"
 
 ### Coverage ###
 codecov = "*"
 coverage = "*"
-pytest-cov = [
-  {version="<2.10.0", python="<3"},
-  {version="*", python=">=3"}
-]
+pytest-cov = "*"
 
 ### Format ###
-black = {version="==19.10b0", python="^3.6"}
-isort = [
-  {version="<5", python="<3.6"},
-  {version="*", python=">=3.6"}
-]
+black = {version="==21.6b0", python="^3.6.2"}
+isort = "*"
 
 ### Lint ###
 flake8 = "*"
 
 [tool.poetry.extras]
 docs = ["sphinx", "sphinx-issues", "alagitpull"]
-test = ["pytest", "pathlib2", "pytest-rerunfailures", "pytest-django", "django-extensions"]
+test = ["pytest", "pytest-rerunfailures", "pytest-django", "django-extensions"]
 coverage = ["codecov", "coverage", "pytest-cov"]
 format = ["black", "isort"]
 lint = ["flake8"]
