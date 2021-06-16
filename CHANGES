@@ -1,14 +1,12 @@
-=========
-Changelog
-=========
+# Changelog
 
-django-slugify-processor 0.10.0 (2021-06-16)
---------------------------------------------
+## django-slugify-processor 0.10.0 (2021-06-16)
+
 - Drop python 2.7, 3.5 and unsupported django versions
-- Remove unneeded ``utf-8`` versions
+- Remove unneeded `utf-8` versions
 
-django-slugify-processor 0.9.0 (2020-08-08)
--------------------------------------------
+## django-slugify-processor 0.9.0 (2020-08-08)
+
 - Move doc URL from to git-pull.com
 - Move travis -> gh actions
 - Move pipenv -> poetry
@@ -17,28 +15,30 @@ django-slugify-processor 0.9.0 (2020-08-08)
 - Add package constraints for cases where python version / django
   effects things
 
-django-slugify-processor 0.8.4 (2017-12-03)
--------------------------------------------
+## django-slugify-processor 0.8.4 (2017-12-03)
+
 - Get docs online
 - Clean up API docs in code
 
-django-slugify-processor 0.8.3 (2017-12-02)
--------------------------------------------
+## django-slugify-processor 0.8.3 (2017-12-02)
+
 - Add test_app, and tests for django-extensions and
   django-autoslug
 
-django-slugify-processor 0.8.2 (2017-12-02)
--------------------------------------------
+## django-slugify-processor 0.8.2 (2017-12-02)
+
 - Try to tweak README / fix on PyPI
 
-django-slugify-processor 0.8.1 (2017-12-01)
--------------------------------------------
+## django-slugify-processor 0.8.1 (2017-12-01)
+
 - README updates
 - Support for overriding builtin slugify in templates
 - Move template filter to *templatetags/slugify_processor.py*
 
-django-slugify-processor 0.8.0 (2017-11-26)
--------------------------------------------
+## django-slugify-processor 0.8.0 (2017-11-26)
+
 - Initial commit
 
-.. # vim: set filetype=rst:
+<!---
+# vim: set filetype=markdown:
+-->
