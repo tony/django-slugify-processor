@@ -1,16 +1,16 @@
-.. _api:
+(api)=
 
-=============
-API Reference
-=============
+# API Reference
 
-Slugify function
-----------------
+## Slugify function
 
+```{eval-rst}
 .. autofunction:: django_slugify_processor.text.slugify
+```
 
-Template tag
-------------
+## Template tag
 
+```{eval-rst}
 .. autofunction::
     django_slugify_processor.templatetags.slugify_processor.slugify
+```

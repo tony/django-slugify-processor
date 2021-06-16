@@ -17,17 +17,19 @@ with open("../django_slugify_processor/__about__.py") as fp:
 
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx_autodoc_typehints',
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon',
     'alagitpull',
     'sphinx_issues',
+    'myst_parser',
 ]
 
 issues_github_path = about['__github__'].replace('https://github.com/', '')
 
 templates_path = ['_templates']
 
-source_suffix = '.rst'
+source_suffix = {'.rst': 'restructuredtext', '.md': 'markdown'}
 
 master_doc = 'index'
 
@@ -115,7 +117,7 @@ texinfo_documents = [
 intersphinx_mapping = {
     'py': ('https://docs.python.org', None),
     'django': (
-        'https://docs.djangoproject.com/en/1.11/',
-        'https://docs.djangoproject.com/en/1.11/_objects/',
+        'https://docs.djangoproject.com/en/2.2/',
+        'https://docs.djangoproject.com/en/2.2/_objects/',
     ),
 }

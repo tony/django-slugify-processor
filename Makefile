@@ -34,3 +34,6 @@ black:
 
 isort:
 	poetry run isort `${PY_FILES}`
+
+format_markdown:
+	prettier --parser=markdown -w *.md docs/*.md docs/**/*.md CHANGES
