@@ -30,7 +30,7 @@ authors = [
     "Tony Narlock <tony@git-pull.com>"
 ]
 
-readme = 'README.rst'
+readme = 'README.md'
 packages = [
     { include = "django_slugify_processor" }
 ]
