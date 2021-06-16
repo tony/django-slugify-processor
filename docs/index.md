@@ -1,8 +1,6 @@
 # django-slugify-processor
 
-```{eval-rst}
-.. include:: ../README.rst
-   :start-line: 3
+```{include} ../README.md
 ```
 
 Contents:
