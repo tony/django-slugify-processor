@@ -15,6 +15,11 @@
   - Relock poetry.lock at 1.1 (w/ 1.1.7's fix)
 - Add `.pre-commit-config.yaml` (#350)
 - Remove unused `requirements.txt`-related files
+- `.tool-versions`, `.python-version`
+
+  In an effort to work across multiple versions with `pyenv` and `asdf` with
+  `asdf-python`, set multiple of the latest patched releases for python if
+  they're supported.
 
 ## django-slugify-processor 0.11.0 (2021-06-16)
 
