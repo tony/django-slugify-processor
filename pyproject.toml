@@ -65,7 +65,8 @@ pytest-rerunfailures = "*"
 pytest-django = "*"
 tox = {version = "^3.24.5", extras = ["test"]}
 django-extensions = "*"
-poetry = {version = "^1.1.12"}
+# Used by https://github.com/enpaul/tox-poetry-installer
+poetry = "^1.1.12"
 
 ### Coverage ###
 codecov = "*"

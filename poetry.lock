@@ -1140,7 +1140,7 @@ test = ["django-extensions"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "46d731546470b23c51e658f0b20adf2cb56255a461d6f224eaa87ce9596cb8b6"
+content-hash = "901435277a04ad409ffab64954cc1a2136dd7fa074e5e36f62e276ee8fed7a3d"
 
 [metadata.files]
 alabaster = [
