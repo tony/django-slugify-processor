@@ -5,11 +5,13 @@
 - _Add your latest changes from PRs here_
 
 ### Compatibility
+
 - Python 3.6 support dropped (#350)
 - Python 3.10 support added (#350)
 - Include tests/ in packages
 
 ### Development
+
 - Poetry: Update poetry to 1.1
   - CI: Use poetry 1.1.12 and `install-poetry.py` installer (#333 + #350)
   - Relock poetry.lock at 1.1 (w/ 1.1.7's fix)
@@ -20,6 +22,11 @@
   In an effort to work across multiple versions with `pyenv` and `asdf` with
   `asdf-python`, set multiple of the latest patched releases for python if
   they're supported.
+
+- `tox` reorganization (#352)
+  - Add `tox` as a test dependency
+  - Add [enpaul/tox-poetry-installer](https://github.com/enpaul/tox-poetry-installer) to work with our project dependencies
+  - Update tox.ini to use django's new `main` branch, python 3.8 minimum for django's main branch
 
 ## django-slugify-processor 0.11.0 (2021-06-16)
 
