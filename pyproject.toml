@@ -60,6 +60,8 @@ myst_parser = "^0.16.1"
 pytest = "*"
 pytest-rerunfailures = "*"
 pytest-django = "*"
+tox = {version = "^3.24.5", extras = ["test"]}
+tox-py = {version = "^1.1.0", extras = ["test"]}
 django-extensions = "*"
 
 ### Coverage ###
