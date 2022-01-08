@@ -42,6 +42,7 @@ homepage = "https://django-slugify-processor.git-pull.com"
 "Bug Tracker" = "https://github.com/develtech/django-slugify-processor/issues"
 Documentation = "https://django-slugify-processor.git-pull.com"
 Repository = "https://github.com/develtech/django-slugify-processor"
+Changes = "https://github.com/develtech/django-slugify-processor/blob/master/CHANGES"
 
 [tool.poetry.dependencies]
 python = "^3.7"
