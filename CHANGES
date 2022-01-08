@@ -3,9 +3,16 @@
 ## Current
 
 - _Add your latest changes from PRs here_
-- #333: Update poetry to 1.1
-  - CI: Use poetry 1.1.7 and `install-poetry.py` installer
+
+### Compatibility
+- Python 3.6 support dropped (#350)
+- Python 3.10 support added (#350)
+
+### Development
+- Poetry: Update poetry to 1.1
+  - CI: Use poetry 1.1.12 and `install-poetry.py` installer (#333 + #350)
   - Relock poetry.lock at 1.1 (w/ 1.1.7's fix)
+- Add `.pre-commit-config.yaml` (#350)
 
 ## django-slugify-processor 0.11.0 (2021-06-16)
 
