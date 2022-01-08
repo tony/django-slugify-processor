@@ -67,6 +67,7 @@ tox = {version = "^3.24.5", extras = ["test"]}
 django-extensions = "*"
 # Used by https://github.com/enpaul/tox-poetry-installer
 poetry = "^1.1.12"
+tox-poetry-installer = {extras = ["poetry"], version = "^0.8.3"}
 
 ### Coverage ###
 codecov = "*"
@@ -79,11 +80,10 @@ isort = "*"
 
 ### Lint ###
 flake8 = "*"
-tox-poetry-installer = {extras = ["test"], version = "^0.8.3"}
 
 [tool.poetry.extras]
 docs = ["sphinx", "myst-parser", "alagitpull", "sphinx-autodoc-typehints"]
-test = ["pytest", "pytest-rerunfailures", "pytest-django", "django-extensions"]
+test = ["pytest", "pytest-rerunfailures", "pytest-django", "django-extensions", "tox-poetry-installer"]
 poetry = ["poetry"]
 coverage = ["codecov", "coverage", "pytest-cov"]
 format = ["black", "isort"]

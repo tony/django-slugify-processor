@@ -1055,6 +1055,7 @@ optional = false
 python-versions = ">=3.6.1,<4.0.0"
 
 [package.dependencies]
+poetry = {version = ">=1.0.0,<2.0.0", optional = true, markers = "extra == \"poetry\""}
 poetry-core = ">=1.0.0,<2.0.0"
 tox = ">=3.8.0,<4.0.0"
 
@@ -1140,7 +1141,7 @@ test = ["django-extensions"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "901435277a04ad409ffab64954cc1a2136dd7fa074e5e36f62e276ee8fed7a3d"
+content-hash = "b6509c5f84ae785370193f7a8019cfc457f83b462a4119d3d0f3171039356b50"
 
 [metadata.files]
 alabaster = [
