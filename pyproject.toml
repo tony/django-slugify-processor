@@ -15,10 +15,10 @@ classifiers = [
   'Operating System :: OS Independent',
   'Programming Language :: Python',
   'Programming Language :: Python :: 3',
-  'Programming Language :: Python :: 3.6',
   'Programming Language :: Python :: 3.7',
   'Programming Language :: Python :: 3.8',
   'Programming Language :: Python :: 3.9',
+  'Programming Language :: Python :: 3.10',
   'Programming Language :: Python :: Implementation :: CPython',
   'Programming Language :: Python :: Implementation :: PyPy',
   'Topic :: Utilities'
@@ -42,9 +42,10 @@ homepage = "https://django-slugify-processor.git-pull.com"
 "Bug Tracker" = "https://github.com/develtech/django-slugify-processor/issues"
 Documentation = "https://django-slugify-processor.git-pull.com"
 Repository = "https://github.com/develtech/django-slugify-processor"
+Changes = "https://github.com/develtech/django-slugify-processor/blob/master/CHANGES"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.7"
 django-extensions = {version="*", optional = true}
 Django = ">=2.2"
 
@@ -52,9 +53,8 @@ Django = ">=2.2"
 ### Docs ###
 sphinx = "*"
 alagitpull = "^0.1.0"
-sphinx-issues = "^1.2.0"
-sphinx-autodoc-typehints = "^1.12.0"
-myst_parser = "^0.15.0"
+sphinx-autodoc-typehints = "~1.14.1"
+myst_parser = "^0.16.1"
 
 ### Testing ###
 pytest = "*"
@@ -68,14 +68,14 @@ coverage = "*"
 pytest-cov = "*"
 
 ### Format ###
-black = {version="==21.9b0", python="^3.6.2"}
+black = "==21.12b0"
 isort = "*"
 
 ### Lint ###
 flake8 = "*"
 
 [tool.poetry.extras]
-docs = ["sphinx", "myst_parser", "sphinx-issues", "alagitpull", "sphinx-autodoc-typehints"]
+docs = ["sphinx", "myst_parser", "alagitpull", "sphinx-autodoc-typehints"]
 test = ["pytest", "pytest-rerunfailures", "pytest-django", "django-extensions"]
 coverage = ["codecov", "coverage", "pytest-cov"]
 format = ["black", "isort"]
@@ -84,3 +84,7 @@ lint = ["flake8"]
 [tool.black]
 skip-string-normalization = true
 include = '\.pyi?$'
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
