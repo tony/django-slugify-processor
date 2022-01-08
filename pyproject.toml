@@ -15,7 +15,6 @@ classifiers = [
   'Operating System :: OS Independent',
   'Programming Language :: Python',
   'Programming Language :: Python :: 3',
-  'Programming Language :: Python :: 3.6',
   'Programming Language :: Python :: 3.7',
   'Programming Language :: Python :: 3.8',
   'Programming Language :: Python :: 3.9',
@@ -44,7 +43,7 @@ Documentation = "https://django-slugify-processor.git-pull.com"
 Repository = "https://github.com/develtech/django-slugify-processor"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.7"
 django-extensions = {version="*", optional = true}
 Django = ">=2.2"
 
@@ -68,7 +67,7 @@ coverage = "*"
 pytest-cov = "*"
 
 ### Format ###
-black = {version="==21.9b0", python="^3.6.2"}
+black = {version="==21.9b0"}
 isort = "*"
 
 ### Lint ###
