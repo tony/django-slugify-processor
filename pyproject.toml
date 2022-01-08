@@ -84,3 +84,7 @@ lint = ["flake8"]
 [tool.black]
 skip-string-normalization = true
 include = '\.pyi?$'
+
+[build-system]
+requires = ["poetry_core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
