@@ -4,10 +4,13 @@
 
 - _Add your latest changes from PRs here_
 
+## django-slugify-processor 1.0.0 (2022-01-08)
+
 ### Compatibility
 
 - Python 3.6 support dropped (#350)
 - Python 3.10 support added (#350)
+- Django 4.0 support
 - Include tests/ in packages
 
 ### Development
