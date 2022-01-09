@@ -1135,13 +1135,12 @@ coverage = []
 docs = []
 format = []
 lint = []
-poetry = []
 test = ["django-extensions"]
 
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "b6509c5f84ae785370193f7a8019cfc457f83b462a4119d3d0f3171039356b50"
+content-hash = "b4ff66db90eb296fb085693a260f72cd2b52eeeb4fab1ccef6f825bab453e316"
 
 [metadata.files]
 alabaster = [
