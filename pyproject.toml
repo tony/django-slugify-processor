@@ -63,8 +63,8 @@ myst-parser = "~0.16.1"
 pytest = "*"
 pytest-rerunfailures = "*"
 pytest-django = "*"
-tox = {version = "^3.24.5", extras = ["test"]}
 django-extensions = "*"
+tox = {version = "^3.24.5", extras = ["test"]}
 tox-poetry-installer = {extras = ["poetry"], version = "^0.8.3"}
 
 ### Coverage ###
