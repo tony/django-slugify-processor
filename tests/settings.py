@@ -1,7 +1,7 @@
-SECRET_KEY = 'dummy'
+SECRET_KEY = "dummy"
 
-DATABASES = {'default': {'NAME': ':memory:', 'ENGINE': 'django.db.backends.sqlite3'}}
+DATABASES = {"default": {"NAME": ":memory:", "ENGINE": "django.db.backends.sqlite3"}}
 
-INSTALLED_APPS = ['test_app']
+INSTALLED_APPS = ["test_app"]
 
 USE_TZ = False

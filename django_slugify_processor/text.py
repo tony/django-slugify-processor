@@ -51,7 +51,7 @@ def slugify(value, allow_unicode=False):
             'project.app.slugify_us_currency',
         ]
     """
-    if hasattr(settings, 'SLUGIFY_PROCESSORS'):
+    if hasattr(settings, "SLUGIFY_PROCESSORS"):
         for slugify_fn_str in settings.SLUGIFY_PROCESSORS:
             slugify_fn_ = import_string(slugify_fn_str)
             value = slugify_fn_(value)
