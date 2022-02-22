@@ -30,7 +30,7 @@ watch_test:
 	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) test; else $(MAKE) test entr_warn; fi
 
 black:
-	poetry run black `${PY_FILES}` --skip-string-normalization
+	poetry run black `${PY_FILES}`
 
 isort:
 	poetry run isort `${PY_FILES}`
