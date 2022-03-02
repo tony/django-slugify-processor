@@ -4,7 +4,7 @@ pipeline for handling slugification edgecases
 [![Build Status](https://github.com/develtech/django-slugify-processor/workflows/tests/badge.svg)](https://github.com/develtech/django-slugify-processor/actions?query=workflow%3Atests)
 [![Docs](https://github.com/develtech/django-slugify-processor/workflows/docs/badge.svg)](https://github.com/develtech/django-slugify-processor/actions?query=workflow%3Adocs)
 [![Code Coverage](https://codecov.io/gh/develtech/django-slugify-processor/branch/master/graph/badge.svg)](https://codecov.io/gh/develtech/django-slugify-processor)
-![License](https://img.shields.io/github/license/develtech/django-slugify-processor.svg)
+[![License](https://img.shields.io/github/license/develtech/django-slugify-processor.svg)](https://github.com/develtech/django-slugify-processor/blob/master/LICENSE)
 
 # What are slugs?
 
