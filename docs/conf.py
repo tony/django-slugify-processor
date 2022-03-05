@@ -87,8 +87,8 @@ htmlhelp_basename = "%sdoc" % about["__title__"]
 latex_documents = [
     (
         "index",
-        "{0}.tex".format(about["__package_name__"]),
-        "{0} Documentation".format(about["__title__"]),
+        "{}.tex".format(about["__package_name__"]),
+        "{} Documentation".format(about["__title__"]),
         about["__author__"],
         "manual",
     )
@@ -98,7 +98,7 @@ man_pages = [
     (
         "index",
         about["__package_name__"],
-        "{0} Documentation".format(about["__title__"]),
+        "{} Documentation".format(about["__title__"]),
         about["__author__"],
         1,
     )
@@ -107,8 +107,8 @@ man_pages = [
 texinfo_documents = [
     (
         "index",
-        "{0}".format(about["__package_name__"]),
-        "{0} Documentation".format(about["__title__"]),
+        "{}".format(about["__package_name__"]),
+        "{} Documentation".format(about["__title__"]),
         about["__author__"],
         about["__package_name__"],
         about["__description__"],
