@@ -30,13 +30,13 @@
 - Remove unused `requirements.txt`-related files
 - `.tool-versions`, `.python-version`
 
-  In an effort to work across multiple versions with `pyenv` and `asdf` with
-  `asdf-python`, set multiple of the latest patched releases for python if
-  they're supported.
+  In an effort to work across multiple versions with `pyenv` and `asdf` with `asdf-python`, set
+  multiple of the latest patched releases for python if they're supported.
 
 - `tox` reorganization (#352)
   - Add `tox` as a test dependency
-  - Add [enpaul/tox-poetry-installer](https://github.com/enpaul/tox-poetry-installer) to work with our project dependencies
+  - Add [enpaul/tox-poetry-installer](https://github.com/enpaul/tox-poetry-installer) to work with
+    our project dependencies
   - Update tox.ini to use django's new `main` branch, python 3.8 minimum for django's main branch
 
 ## django-slugify-processor 0.11.0 (2021-06-16)
@@ -55,8 +55,7 @@
 - Move pipenv -> poetry
 - Move RTD -> self-hosted docs
 - Relax package constraints
-- Add package constraints for cases where python version / django
-  effects things
+- Add package constraints for cases where python version / django effects things
 
 ## django-slugify-processor 0.8.4 (2017-12-03)
 
@@ -65,8 +64,7 @@
 
 ## django-slugify-processor 0.8.3 (2017-12-02)
 
-- Add test_app, and tests for django-extensions and
-  django-autoslug
+- Add test_app, and tests for django-extensions and django-autoslug
 
 ## django-slugify-processor 0.8.2 (2017-12-02)
 
