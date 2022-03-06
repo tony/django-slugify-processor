@@ -4,6 +4,14 @@
 
 - _Add your latest changes from PRs here_
 
+### Documentation
+
+- Switch to `furo` theme
+
+### Development
+
+- Run pyupdate @ 3.7
+
 ## django-slugify-processor 1.0.0 (2022-01-08)
 
 ### Compatibility
