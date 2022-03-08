@@ -1,10 +1,10 @@
 pipeline for handling slugification edgecases
 
 [![Python Package](https://img.shields.io/pypi/v/django-slugify-processor.svg)](http://badge.fury.io/py/django-slugify-processor)
-[![Build Status](https://github.com/develtech/django-slugify-processor/workflows/tests/badge.svg)](https://github.com/develtech/django-slugify-processor/actions?query=workflow%3Atests)
-[![Docs](https://github.com/develtech/django-slugify-processor/workflows/docs/badge.svg)](https://github.com/develtech/django-slugify-processor/actions?query=workflow%3Adocs)
-[![Code Coverage](https://codecov.io/gh/develtech/django-slugify-processor/branch/master/graph/badge.svg)](https://codecov.io/gh/develtech/django-slugify-processor)
-[![License](https://img.shields.io/github/license/develtech/django-slugify-processor.svg)](https://github.com/develtech/django-slugify-processor/blob/master/LICENSE)
+[![Build Status](https://github.com/tony/django-slugify-processor/workflows/tests/badge.svg)](https://github.com/tony/django-slugify-processor/actions?query=workflow%3Atests)
+[![Docs](https://github.com/tony/django-slugify-processor/workflows/docs/badge.svg)](https://github.com/tony/django-slugify-processor/actions?query=workflow%3Adocs)
+[![Code Coverage](https://codecov.io/gh/tony/django-slugify-processor/branch/master/graph/badge.svg)](https://codecov.io/gh/tony/django-slugify-processor)
+[![License](https://img.shields.io/github/license/tony/django-slugify-processor.svg)](https://github.com/tony/django-slugify-processor/blob/master/LICENSE)
 
 # What are slugs?
 
@@ -211,19 +211,19 @@ class MyModel(models.Model):
 
 - python support >= 3.6, pypy3
 - django support 2.2, > 3.1,
-- Source https://github.com/develtech/django-slugify-processor
+- Source https://github.com/tony/django-slugify-processor
 - Docs https://django-slugify-processor.git-pull.com
 - API https://django-slugify-processor.git-pull.com/api.html
 - Changelog https://django-slugify-processor.git-pull.com/history.html
-- Issues https://github.com/develtech/django-slugify-processor/issues
-- Test Coverage https://codecov.io/gh/develtech/django-slugify-processor
+- Issues https://github.com/tony/django-slugify-processor/issues
+- Test Coverage https://codecov.io/gh/tony/django-slugify-processor
 - pypi https://pypi.python.org/pypi/django-slugify-processor
 - Open Hub https://www.openhub.net/p/django-slugify-processor
 - License MIT
 - git repo
 
   ```bash
-  $ git clone https://github.com/develtech/django-slugify-processor.git
+  $ git clone https://github.com/tony/django-slugify-processor.git
   ```
 
 - install stable
@@ -235,7 +235,7 @@ class MyModel(models.Model):
 - install dev
 
   ```bash
-  $ git clone https://github.com/develtech/django-slugify-processor.git
+  $ git clone https://github.com/tony/django-slugify-processor.git
   $ cd ./django-slugify-processor
   $ pipenv install --dev --skip-lock
   $ pipenv shell
