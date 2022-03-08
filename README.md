@@ -12,9 +12,9 @@ _Slugs_ are URL's, typically generated from post titles, that you want to be bot
 a valid URL. They are SEO friendly.
 
 Django provides a
-[slugify function](https://docs.djangoproject.com/en/1.11/ref/utils/#django.utils.text.slugify) in
+[slugify function](https://docs.djangoproject.com/en/4.0/ref/utils/#django.utils.text.slugify) in
 `django.utils.text.slugify` which is also made available as a
-[default filter](https://github.com/django/django/blob/1.11.4/django/template/defaultfilters.py#L232).
+[default filter](https://github.com/django/django/blob/4.0.0/django/template/defaultfilters.py#L247-255).
 
 Django slugs can be automatically generated in django models via packages such as:
 
@@ -34,11 +34,11 @@ This project is based on an article from [devel.tech](https://devel.tech) coveri
 Corner cases exist with slugification. For instance: Corner cases exist with slugification. For
 instance:
 
-| Term | `django.utils.text.slugify` | What you want |
-| ---- | --------------------------- | ------------- |
-| C    | c (correct)                 | n/a           |
-| C++  | c                           | cpp           |
-| C#   | c                           | c-sharp       |
+| Term | [`django.utils.text.slugify`] | What you want |
+| ---- | ----------------------------- | ------------- |
+| C    | c (correct)                   | n/a           |
+| C++  | c                             | cpp           |
+| C#   | c                             | c-sharp       |
 
 To make matters worse, if using a specialized model field like `AutoSlugField` from django-autoslug
 or django-extensions, the default behavior may be to name the slugs for C++ and C# to "c-1", "c-2"
@@ -46,30 +46,31 @@ after "c" is taken.
 
 Here's another case, acronyms / shorthands:
 
-| Term              | `django.utils.text.slugify` | What you (may) want |
-| ----------------- | --------------------------- | ------------------- |
-| New York City     | new-york-city               | nyc                 |
-| Y Combinator      | y-combinator                | yc                  |
-| Portland          | portland                    | pdx                 |
-| Texas             | texas                       | tx                  |
-| $                 | '' (empty)                  | usd, aud, etc?      |
-| US$               | us                          | usd                 |
-| A$                | a                           | aud                 |
-| bitcoin           | bitcoin                     | btc                 |
-| United States     | united-states               | usa                 |
-| League of Legends | league-of-legends           | league              |
-| Apple® iPod Touch | apple-ipod-touch            | ipod-touch          |
+| Term              | [`django.utils.text.slugify`] | What you (may) want |
+| ----------------- | ----------------------------- | ------------------- |
+| New York City     | new-york-city                 | nyc                 |
+| Y Combinator      | y-combinator                  | yc                  |
+| Portland          | portland                      | pdx                 |
+| Texas             | texas                         | tx                  |
+| $                 | '' (empty)                    | usd, aud, etc?      |
+| US$               | us                            | usd                 |
+| A$                | a                             | aud                 |
+| bitcoin           | bitcoin                       | btc                 |
+| United States     | united-states                 | usa                 |
+| League of Legends | league-of-legends             | league              |
+| Apple® iPod Touch | apple-ipod-touch              | ipod-touch          |
 
 Each website and niche has its own edge cases for slugs. So we need a solution that can scale, where
 you can craft your own functions.
 
 # How django-slugify-processor helps
 
-This builds on top of
-[django.utils.text.slugify](https://docs.djangoproject.com/en/1.11/ref/utils/#django.utils.text.slugify)
-to handle your django project's edgecases. By default, django-slugify-processor will be a pass
-through to django's default behavior. Adding slugification functions via your Django project's
-settings file allows you to adjust.
+This builds on top of [`django.utils.text.slugify`] to handle your django project's edgecases. By
+default, django-slugify-processor will be a pass through to django's default behavior. Adding
+slugification functions via your Django project's settings file allows you to adjust.
+
+[`django.utils.text.slugify`]:
+  https://github.com/django/django/blob/4.0/django/template/defaultfilters.py#L232
 
 # Installation
 
@@ -90,7 +91,7 @@ def my_processor(value):
 
 Inside of your settings, add a `SLUGIFY_PROCESSORS` list of strings that points to the function.
 Anything that's compatible with
-[import_string](https://docs.djangoproject.com/en/1.11/ref/utils/#django.utils.module_loading.import_string),
+[import_string](https://docs.djangoproject.com/en/4.0/ref/utils/#django.utils.module_loading.import_string),
 in your settings file:
 
 ```python
