@@ -11,6 +11,7 @@
 ### Development
 
 - Run pyupdate @ 3.7
+- New repo URL: https://github.com/tony/django-slugify-processor
 
 ## django-slugify-processor 1.0.0 (2022-01-08)
 
