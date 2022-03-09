@@ -1,6 +1,6 @@
 __title__ = "django-slugify-processor"
 __package_name__ = "django_slugify_processor"
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 __description__ = "pipeline for slugification edgecases in django"
 __email__ = "tony@git-pull.com"
 __pypi__ = "https://pypi.python.org/pypi/django-slugify-processor"

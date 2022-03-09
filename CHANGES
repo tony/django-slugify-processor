@@ -4,6 +4,12 @@
 
 - _Add your latest changes from PRs here_
 
+## django-slugify-processor 1.1.1 (2022-03-08)
+
+### Documentation
+
+- README URL fixes
+
 ## django-slugify-processor 1.1.0 (2022-03-08)
 
 Mainly an update for the new repo URL: https://github.com/tony/django-slugify-processor
