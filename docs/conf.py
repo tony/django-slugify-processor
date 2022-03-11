@@ -1,12 +1,16 @@
 # flake8: NOQA E501
 import os
 import sys
+from pathlib import Path
 
 import django_slugify_processor
 
 # Get the project root dir, which is the parent dir of this
-cwd = os.getcwd()
-project_root = os.path.dirname(cwd)
+cwd = Path.cwd()
+project_root = cwd.parent
+
+sys.path.insert(0, str(project_root))
+sys.path.insert(0, str(cwd / "_ext"))
 
 # for autodoc to detect module
 sys.path.insert(0, project_root)
