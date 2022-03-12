@@ -24,7 +24,7 @@ watch_flake8:
 	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) flake8; else $(MAKE) flake8 entr_warn; fi
 
 start:
-	$(MAKE) test && poetry run ptw .
+	$(MAKE) test; poetry run ptw .
 
 test:
 	poetry run py.test $(test)
