@@ -1,7 +1,9 @@
+# django-slugify-processor
+
 pipeline for handling slugification edgecases
 
-[![Python Package](https://img.shields.io/pypi/v/django-slugify-processor.svg)](http://badge.fury.io/py/django-slugify-processor)
-[![Build Status](https://github.com/tony/django-slugify-processor/workflows/tests/badge.svg)](https://github.com/tony/django-slugify-processor/actions?query=workflow%3Atests)
+[![Python Package](https://img.shields.io/pypi/v/django-slugify-processor.svg)](https://pypi.org/project/django-slugify-processor/)
+[![Build Status](https://github.com/tony/django-slugify-processor/workflows/tests/badge.svg)](https://django-slugify-processor.git-pull.com/)
 [![Docs](https://github.com/tony/django-slugify-processor/workflows/docs/badge.svg)](https://github.com/tony/django-slugify-processor/actions?query=workflow%3Adocs)
 [![Code Coverage](https://codecov.io/gh/tony/django-slugify-processor/branch/master/graph/badge.svg)](https://codecov.io/gh/tony/django-slugify-processor)
 [![License](https://img.shields.io/github/license/tony/django-slugify-processor.svg)](https://github.com/tony/django-slugify-processor/blob/master/LICENSE)
