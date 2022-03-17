@@ -1,4 +1,4 @@
-# django-slugify-processor
+(index)=
 
 ```{include} ../README.md
 
