@@ -1,6 +1,7 @@
 # django-slugify-processor
 
-pipeline for handling slugification edgecases
+Custom-[`slugify()`](https://docs.djangoproject.com/en/4.0/ref/utils/#django.utils.text.slugify)
+support for django.
 
 [![Python Package](https://img.shields.io/pypi/v/django-slugify-processor.svg)](https://pypi.org/project/django-slugify-processor/)
 [![Build Status](https://github.com/tony/django-slugify-processor/workflows/tests/badge.svg)](https://django-slugify-processor.git-pull.com/)
