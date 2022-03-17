@@ -1,15 +1,23 @@
+---
+hide-toc: true
+---
+
 (index)=
 
 ```{include} ../README.md
 
 ```
 
-Contents:
-
 ```{toctree}
-:maxdepth: 2
+:hidden:
 
 api
-history
+```
 
+```{toctree}
+:caption: Project
+:hidden:
+
+history
+GitHub <https://github.com/tony/django-slugify-processor>
 ```
