@@ -174,6 +174,11 @@ pseudoxml:
 	@echo
 	@echo "Build finished. The pseudo-XML files are in $(BUILDDIR)/pseudoxml."
 
+redirects:
+	$(SPHINXBUILD) -b rediraffewritediff $(ALLSPHINXOPTS) $(BUILDDIR)/redirects
+	@echo
+	@echo "Build finished. The redirects are in rediraffe_redirects."
+
 checkbuild:
 	rm -rf $(BUILDDIR)
 	$(SPHINXBUILD) -n -q ./ $(BUILDDIR)
