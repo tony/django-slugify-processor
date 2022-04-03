@@ -10,6 +10,12 @@
 
 - README URL fixes
 
+### Development
+
+- CI: Remove tox and tox-poetry-installer
+
+  This would break the poetry command when used inside the virtualenv.
+
 ## django-slugify-processor 1.1.0 (2022-03-08)
 
 Mainly an update for the new repo URL: https://github.com/tony/django-slugify-processor
