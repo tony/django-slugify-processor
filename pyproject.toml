@@ -72,8 +72,6 @@ pytest-rerunfailures = "*"
 pytest-django = "*"
 pytest-watcher = "^0.2.3"
 django-extensions = "*"
-tox = {version = "^3.24.5", extras = ["test"]}
-tox-poetry-installer = {extras = ["poetry"], version = "^0.8.3"}
 
 ### Coverage ###
 codecov = "*"
@@ -89,7 +87,7 @@ flake8 = "*"
 
 [tool.poetry.extras]
 docs = ["sphinx", "sphinx-issues", "sphinx-autodoc-typehints", "sphinx-autobuild", "sphinx-copybutton", "sphinxext-opengraph", "sphinx-inline-tabs", "sphinxext-rediraffe", "myst_parser", "furo"]
-test = ["pytest", "pytest-rerunfailures", "pytest-django", "pytest-watcher", "django-extensions", "tox-poetry-installer"]
+test = ["pytest", "pytest-rerunfailures", "pytest-django", "pytest-watcher", "django-extensions"]
 coverage = ["codecov", "coverage", "pytest-cov"]
 format = ["black", "isort"]
 lint = ["flake8"]
