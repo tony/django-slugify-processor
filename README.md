@@ -77,7 +77,7 @@ slugification functions via your Django project's settings file allows you to ad
 
 # Installation
 
-```sh
+```console
 $ pip install django-slugify-processor
 ```
 
@@ -231,23 +231,34 @@ class MyModel(models.Model):
   $ git clone https://github.com/tony/django-slugify-processor.git
   ```
 
-- install stable
+## Development
 
-  ```bash
-  $ pip install django-slugify-processor
-  ```
+Install stable:
 
-- install dev
+```console
+$ pip install django-slugify-processor
+```
 
-  ```bash
-  $ git clone https://github.com/tony/django-slugify-processor.git
-  $ cd ./django-slugify-processor
-  $ pipenv install --dev --skip-lock
-  $ pipenv shell
-  ```
+Local installation:
 
-- tests
+```console
+$ git clone https://github.com/tony/django-slugify-processor.git
+```
 
-  ```bash
-   $ make test
-  ```
+```console
+$ cd ./django-slugify-processor
+```
+
+```console
+$ poetry shell
+```
+
+```console
+$ pipenv install
+```
+
+Test:
+
+```console
+$ make test
+```
