@@ -12,7 +12,7 @@ jobs:
       matrix:
         python-version: [ '3.9' ]
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v3
     - name: Configure git
       run: |
         git config --global user.name 'travis-ci'	
@@ -39,7 +39,7 @@ jobs:
       run: echo "PUBLISH=$(echo true)" >> $GITHUB_ENV
 
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
 
@@ -68,7 +68,7 @@ jobs:
       run: poetry config virtualenvs.in-project true
 
     - name: Set up cache
-      uses: actions/cache@v2
+      uses: actions/cache@v3
       id: cache
       with:
         path: |
