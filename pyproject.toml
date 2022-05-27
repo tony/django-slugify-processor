@@ -22,21 +22,21 @@ classifiers = [
   'Programming Language :: Python :: 3.10',
   'Programming Language :: Python :: Implementation :: CPython',
   'Programming Language :: Python :: Implementation :: PyPy',
-  'Topic :: Utilities'
+  'Topic :: Utilities',
 ]
 
 license = "MIT"
 
 authors = [
-    "Tony Narlock <tony@git-pull.com>"
+  "Tony Narlock <tony@git-pull.com>",
 ]
 
 readme = 'README.md'
 packages = [
-    { include = "django_slugify_processor" }
+  { include = "django_slugify_processor" },
 ]
 include = [
-    { path = "tests", format = "sdist" }
+  { path = "tests", format = "sdist" },
 ]
 keywords = ["django", "slug", "text"]
 
@@ -50,7 +50,7 @@ Changes = "https://github.com/tony/django-slugify-processor/blob/master/CHANGES"
 
 [tool.poetry.dependencies]
 python = "^3.7"
-django-extensions = {version="*", optional = true}
+django-extensions = { version = "*", optional = true }
 Django = ">=2.2"
 
 [tool.poetry.dev-dependencies]
@@ -86,8 +86,25 @@ isort = "*"
 flake8 = "*"
 
 [tool.poetry.extras]
-docs = ["sphinx", "sphinx-issues", "sphinx-autodoc-typehints", "sphinx-autobuild", "sphinx-copybutton", "sphinxext-opengraph", "sphinx-inline-tabs", "sphinxext-rediraffe", "myst_parser", "furo"]
-test = ["pytest", "pytest-rerunfailures", "pytest-django", "pytest-watcher", "django-extensions"]
+docs = [
+  "sphinx",
+  "sphinx-issues",
+  "sphinx-autodoc-typehints",
+  "sphinx-autobuild",
+  "sphinx-copybutton",
+  "sphinxext-opengraph",
+  "sphinx-inline-tabs",
+  "sphinxext-rediraffe",
+  "myst_parser",
+  "furo",
+]
+test = [
+  "pytest",
+  "pytest-rerunfailures",
+  "pytest-django",
+  "pytest-watcher",
+  "django-extensions",
+]
 coverage = ["codecov", "coverage", "pytest-cov"]
 format = ["black", "isort"]
 lint = ["flake8"]
