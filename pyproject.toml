@@ -84,6 +84,7 @@ isort = "*"
 
 ### Lint ###
 flake8 = "*"
+mypy = "*"
 
 [tool.poetry.extras]
 docs = [
@@ -107,7 +108,7 @@ test = [
 ]
 coverage = ["codecov", "coverage", "pytest-cov"]
 format = ["black", "isort"]
-lint = ["flake8"]
+lint = ["flake8", "mypy"]
 
 [build-system]
 requires = ["poetry_core>=1.0.0", "poetry>=1.1.12"]

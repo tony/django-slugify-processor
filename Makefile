@@ -17,12 +17,6 @@ build_docs:
 watch_docs:
 	pushd docs; $(MAKE) watch_docs; popd
 
-flake8:
-	poetry run flake8 django_slugify_processors tests
-
-watch_flake8:
-	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) flake8; else $(MAKE) flake8 entr_warn; fi
-
 start:
 	$(MAKE) test; poetry run ptw .
 
@@ -43,6 +37,18 @@ black:
 
 isort:
 	poetry run isort `${PY_FILES}`
+
+flake8:
+	poetry run flake8 django_slugify_processors tests
+
+watch_flake8:
+	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) flake8; else $(MAKE) flake8 entr_warn; fi
+
+mypy:
+	poetry run mypy `${PY_FILES}`
+
+watch_mypy:
+	if command -v entr > /dev/null; then ${PY_FILES} | entr -c $(MAKE) mypy; else $(MAKE) mypy entr_warn; fi
 
 format_markdown:
 	prettier --parser=markdown -w *.md docs/*.md docs/**/*.md CHANGES
