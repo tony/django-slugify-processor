@@ -21,6 +21,9 @@ Infrastructure updates for static type checking and doctest examples.
 
 - CI (docs): Skip if no `PUBLISH` condition triggered, via #359
 
+- CI: Remove `.pre-commit-config.yaml`, users should know enough to handle these
+  things themselves.
+
 ## django-slugify-processor 1.1.1 (2022-03-08)
 
 ### Documentation
