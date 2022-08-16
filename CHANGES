@@ -19,7 +19,7 @@ Infrastructure updates for static type checking and doctest examples.
 - CI (tests, docs): Improve caching of python dependencies via
   `action/setup-python`'s v3/4's new poetry caching, via #359
 
-- CI (docs): Skip if no `PUBLISH` condition tirggered
+- CI (docs): Skip if no `PUBLISH` condition triggered, via #359
 
 ## django-slugify-processor 1.1.1 (2022-03-08)
 
