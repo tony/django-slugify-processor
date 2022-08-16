@@ -1,8 +1,25 @@
 # Changelog
 
-## Current
+## django-slugify-processor 1.2.x (unreleased)
 
 - _Add your latest changes from PRs here_
+
+### Development
+
+Infrastructure updates for static type checking and doctest examples.
+
+- Initial [doctests] support added, via #359 
+
+  [doctests]: https://docs.python.org/3/library/doctest.html
+
+- Initial [mypy] validation, via #359 
+
+  [mypy]: https://github.com/python/mypy
+
+- CI (tests, docs): Improve caching of python dependencies via
+  `action/setup-python`'s v3/4's new poetry caching, via #359
+
+- CI (docs): Skip if no `PUBLISH` condition tirggered
 
 ## django-slugify-processor 1.1.1 (2022-03-08)
 
