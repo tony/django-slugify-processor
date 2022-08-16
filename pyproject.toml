@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-slugify-processor"
-version = "1.2.0a0"
+version = "1.2.0"
 description = "pipeline for slugification edgecases in django"
 
 classifiers = [
