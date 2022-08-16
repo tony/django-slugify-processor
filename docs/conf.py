@@ -15,7 +15,7 @@ sys.path.insert(0, str(cwd / "_ext"))
 
 # package data
 about: t.Dict[str, str] = {}
-with open("../django_slugify_processor/__about__.py") as fp:
+with open(project_root / "django_slugify_processor" / "__about__.py") as fp:
     exec(fp.read(), about)
 
 extensions = [
