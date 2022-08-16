@@ -1,6 +1,7 @@
 # flake8: NOQA E501
 import os
 import sys
+import typing as t
 from pathlib import Path
 
 import django_slugify_processor
@@ -54,8 +55,8 @@ html_static_path = ["_static"]
 html_css_files = ["css/custom.css"]
 html_extra_path = ["manifest.json"]
 html_theme = "furo"
-html_theme_path = []
-html_theme_options = {
+html_theme_path: t.List[str] = []
+html_theme_options: t.Dict[str, t.Union[str, t.List[t.Dict[str, str]]]] = {
     "light_logo": "img/icons/logo.svg",
     "dark_logo": "img/icons/logo.svg",
     "footer_icons": [
