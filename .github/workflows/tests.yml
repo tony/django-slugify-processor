@@ -32,13 +32,16 @@ jobs:
       if: ${{ matrix.django-extensions != '' }}
       run: poetry run pip install 'django-extensions${{ matrix.django-extensions }}'
 
-    - name: Lint with flake8
-      run: poetry run flake8
-
     - name: Print python versions
       run: |
         python -V
         poetry run python -V
+
+    - name: Lint with flake8
+      run: poetry run flake8
+
+    - name: Lint with mypy
+      run: poetry run mypy .
 
     - name: Test with pytest
       run: poetry run py.test --cov=./ --cov-report=xml
