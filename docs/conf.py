@@ -7,17 +7,14 @@ from pathlib import Path
 import django_slugify_processor
 
 # Get the project root dir, which is the parent dir of this
-cwd = Path.cwd()
+cwd = Path(__file__).parent
 project_root = cwd.parent
 
 sys.path.insert(0, str(project_root))
 sys.path.insert(0, str(cwd / "_ext"))
 
-# for autodoc to detect module
-sys.path.insert(0, project_root)
-
 # package data
-about = {}
+about: t.Dict[str, str] = {}
 with open("../django_slugify_processor/__about__.py") as fp:
     exec(fp.read(), about)
 
