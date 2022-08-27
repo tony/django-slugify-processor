@@ -27,6 +27,7 @@ extensions = [
     "sphinx_copybutton",
     "sphinxext.opengraph",
     "sphinxext.rediraffe",
+    "sphinx_autoissues",
     "myst_parser",
 ]
 myst_enable_extensions = ["colon_fence", "substitution", "replacements"]
@@ -79,6 +80,10 @@ html_sidebars = {
         "sidebar/scroll-end.html",
     ]
 }
+
+# sphinx-autoissues
+issuetracker = "github"
+issuetracker_project = "tony/django-slugify-processor"
 
 # sphinxext.opengraph
 ogp_site_url = about["__docs__"]

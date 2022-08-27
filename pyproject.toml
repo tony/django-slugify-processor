@@ -59,11 +59,11 @@ sphinx = "*"
 furo = "*"
 sphinx-autobuild = "*"
 sphinx-autodoc-typehints = "*"
-sphinx-issues = "*"
 sphinx-inline-tabs = { version = "*", python = "^3.7" }
 sphinxext-opengraph = "*"
 sphinx-copybutton = "*"
 sphinxext-rediraffe = "*"
+sphinx-autoissues = "*"
 myst_parser = "*"
 
 ### Testing ###
@@ -90,13 +90,13 @@ django-stubs = "^1.12.0"
 [tool.poetry.extras]
 docs = [
   "sphinx",
-  "sphinx-issues",
   "sphinx-autodoc-typehints",
   "sphinx-autobuild",
   "sphinx-copybutton",
   "sphinxext-opengraph",
   "sphinx-inline-tabs",
   "sphinxext-rediraffe",
+  "sphinx-autoissues",
   "myst_parser",
   "furo",
 ]
