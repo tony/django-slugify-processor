@@ -27,6 +27,8 @@ Infrastructure updates for static type checking and doctest examples.
 
 - CI: Remove `.pre-commit-config.yaml`, users should know enough to handle these things themselves.
 
+- Add [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear) (#361)
+
 ## django-slugify-processor 1.1.1 (2022-03-08)
 
 ### Documentation
