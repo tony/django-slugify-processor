@@ -29,6 +29,8 @@ Infrastructure updates for static type checking and doctest examples.
 
 - Add [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear) (#361)
 
+- Add [flake8-comprehensions](https://github.com/adamchainz/flake8-comprehensions) (#362)
+
 ## django-slugify-processor 1.1.1 (2022-03-08)
 
 ### Documentation
