@@ -85,6 +85,7 @@ isort = "*"
 ### Lint ###
 flake8 = "*"
 flake8-bugbear = "^22.8.23"
+flake8-comprehensions = "^3.10.0"
 mypy = "*"
 django-stubs = "^1.12.0"
 
@@ -110,7 +111,13 @@ test = [
 ]
 coverage = ["codecov", "coverage", "pytest-cov"]
 format = ["black", "isort"]
-lint = ["flake8", "flake8-bugbear", "mypy", "django-stubs"]
+lint = [
+  "flake8",
+  "flake8-bugbear",
+  "flake8-comprehensions",
+  "mypy",
+  "django-stubs",
+]
 
 [tool.mypy]
 plugins = ["mypy_django_plugin.main"]
@@ -120,7 +127,7 @@ django_settings_module = "tests.settings"
 
 [[tool.mypy.overrides]]
 module = [
-  "django_extensions.*"
+  "django_extensions.*",
 ]
 ignore_missing_imports = true
 
