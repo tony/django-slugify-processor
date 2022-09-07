@@ -57,6 +57,7 @@ Django = ">=2.2"
 ### Docs ###
 sphinx = "*"
 furo = "*"
+gp-libs = "~0.0.1a9"
 sphinx-autobuild = "*"
 sphinx-autodoc-typehints = "*"
 sphinx-inline-tabs = { version = "*", python = "^3.7" }
@@ -101,6 +102,7 @@ docs = [
   "sphinx-autoissues",
   "myst_parser",
   "furo",
+  "gp-libs",
 ]
 test = [
   "pytest",
