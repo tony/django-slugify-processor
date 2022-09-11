@@ -16,6 +16,7 @@
 
 Infrastructure updates for static type checking and doctest examples.
 
+- Move project layout to `src/`, va #364
 - Initial [doctests] support added, via #359
 
   [doctests]: https://docs.python.org/3/library/doctest.html
