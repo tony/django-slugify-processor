@@ -33,7 +33,7 @@ authors = [
 
 readme = 'README.md'
 packages = [
-  { include = "django_slugify_processor" },
+  { include = "*", from = "src" },
 ]
 include = [
   { path = "tests", format = "sdist" },
