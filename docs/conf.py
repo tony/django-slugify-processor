@@ -27,8 +27,9 @@ extensions = [
     "sphinx_copybutton",
     "sphinxext.opengraph",
     "sphinxext.rediraffe",
-    "sphinx_autoissues",
     "myst_parser",
+    "sphinx_toctree_autodoc_fix",
+    "linkify_issues",
 ]
 myst_enable_extensions = ["colon_fence", "substitution", "replacements"]
 
@@ -81,9 +82,8 @@ html_sidebars = {
     ]
 }
 
-# sphinx-autoissues
-issuetracker = "github"
-issuetracker_project = "tony/django-slugify-processor"
+# linkify_issues
+issue_url_tpl = "https://github.com/tony/django-slugify-processor/issues/{issue_id}"
 
 # sphinxext.opengraph
 ogp_site_url = about["__docs__"]
