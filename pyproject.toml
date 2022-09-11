@@ -64,7 +64,6 @@ sphinx-inline-tabs = { version = "*", python = "^3.7" }
 sphinxext-opengraph = "*"
 sphinx-copybutton = "*"
 sphinxext-rediraffe = "*"
-sphinx-autoissues = "*"
 myst_parser = "*"
 
 ### Testing ###
@@ -99,7 +98,6 @@ docs = [
   "sphinxext-opengraph",
   "sphinx-inline-tabs",
   "sphinxext-rediraffe",
-  "sphinx-autoissues",
   "myst_parser",
   "furo",
   "gp-libs",
