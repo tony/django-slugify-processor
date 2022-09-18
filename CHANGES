@@ -13,6 +13,8 @@
   - Split out release to separate job so the PyPI Upload docker image isn't pulled on normal runs
   - Clean up CodeQL
 
+- Bump poetry 1.1.x to 1.2.x
+
 ## django-slugify-processor 1.3.0 (2022-09-11)
 
 ### Documentation
