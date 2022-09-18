@@ -4,6 +4,15 @@
 
 - _Add your latest changes from PRs here_
 
+## django-slugify-processor 1.3.1 (unreleased)
+
+### Infrastructure
+
+- CI speedups (#365)
+
+  - Split out release to separate job so the PyPI Upload docker image isn't pulled on normal runs
+  - Clean up CodeQL
+
 ## django-slugify-processor 1.3.0 (2022-09-11)
 
 ### Documentation
