@@ -57,7 +57,7 @@ Django = ">=2.2"
 ### Docs ###
 sphinx = "*"
 furo = "*"
-gp-libs = "~0.0.1a9"
+gp-libs = "~0.0.1a12"
 sphinx-autobuild = "*"
 sphinx-autodoc-typehints = "*"
 sphinx-inline-tabs = { version = "*", python = "^3.7" }
@@ -70,7 +70,7 @@ myst_parser = "*"
 pytest = "*"
 pytest-rerunfailures = "*"
 pytest-django = "*"
-pytest-watcher = "^0.2.3"
+pytest-watcher = "*"
 django-extensions = "*"
 
 ### Coverage ###
@@ -84,10 +84,10 @@ isort = "*"
 
 ### Lint ###
 flake8 = "*"
-flake8-bugbear = "^22.8.23"
-flake8-comprehensions = "^3.10.0"
+flake8-bugbear = "*"
+flake8-comprehensions = "*"
 mypy = "*"
-django-stubs = "^1.12.0"
+django-stubs = "*"
 
 [tool.poetry.extras]
 docs = [
