@@ -34,8 +34,7 @@ Django slugs can be automatically generated in django models via packages such a
 This project is based on an article from [devel.tech](https://devel.tech) covering
 [django's import strings](https://devel.tech/tips/n/djms3tTe/how-django-uses-deferred-imports-to-scale/).
 
-Corner cases exist with slugification. For instance: Corner cases exist with slugification. For
-instance:
+Corner cases exist with slugification. For instance:
 
 | Term | [`django.utils.text.slugify`] | What you want |
 | ---- | ----------------------------- | ------------- |
