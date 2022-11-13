@@ -8,6 +8,7 @@
 
 ### Infrastructure
 
+- Bump python to 3.11
 - CI speedups (#365)
 
   - Split out release to separate job so the PyPI Upload docker image isn't pulled on normal runs
