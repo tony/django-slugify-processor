@@ -25,7 +25,7 @@ jobs:
             - 'docs/**'
             - 'examples/**'
           python_files:
-            - 'django_slugify_processor/**'
+            - 'src/django_slugify_processor/**'
             - pyproject.toml
             - poetry.lock
 
