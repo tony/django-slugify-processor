@@ -54,7 +54,7 @@ python = "^3.7"
 django-extensions = { version = "*", optional = true }
 Django = ">=2.2"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 ### Docs ###
 sphinx = "*"
 furo = "*"
@@ -79,17 +79,8 @@ codecov = "*"
 coverage = "*"
 pytest-cov = "*"
 
-### Format ###
-black = "*"
-isort = "*"
-
 ### Lint ###
-flake8 = [
-  { version = "*", python = "^3.7" },
-  { version = ">=5", python = "^3.8" },
-]
-flake8-bugbear = "*"
-flake8-comprehensions = "*"
+ruff = "*"
 mypy = "*"
 django-stubs = "*"
 
@@ -114,11 +105,8 @@ test = [
   "django-extensions",
 ]
 coverage = ["codecov", "coverage", "pytest-cov"]
-format = ["black", "isort"]
 lint = [
-  "flake8",
-  "flake8-bugbear",
-  "flake8-comprehensions",
+  "ruff",
   "mypy",
   "django-stubs",
 ]

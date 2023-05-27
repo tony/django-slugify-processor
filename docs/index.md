@@ -18,6 +18,7 @@ api
 :caption: Project
 :hidden:
 
+developing
 history
 GitHub <https://github.com/tony/django-slugify-processor>
 ```

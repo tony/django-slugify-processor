@@ -32,17 +32,11 @@ start_docs:
 design_docs:
 	$(MAKE) -C docs design
 
-black:
-	poetry run black `${PY_FILES}`
+ruff:
+	poetry run ruff .
 
-isort:
-	poetry run isort `${PY_FILES}`
-
-flake8:
-	poetry run flake8 django_slugify_processors tests
-
-watch_flake8:
-	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) flake8; else $(MAKE) flake8 entr_warn; fi
+watch_ruff:
+	if command -v entr > /dev/null; then ${WATCH_FILES} | entr -c $(MAKE) ruff; else $(MAKE) ruff entr_warn; fi
 
 mypy:
 	poetry run mypy `${PY_FILES}`
