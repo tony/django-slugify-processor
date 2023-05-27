@@ -6,6 +6,9 @@ from pathlib import Path
 
 import django_slugify_processor
 
+if t.TYPE_CHECKING:
+    from sphinx.application import Sphinx
+
 # Get the project root dir, which is the parent dir of this
 cwd = Path(__file__).parent
 project_root = cwd.parent
@@ -154,3 +157,14 @@ intersphinx_mapping = {
         "https://docs.djangoproject.com/en/2.2/_objects/",
     ),
 }
+
+
+def remove_tabs_js(app: "Sphinx", exc: Exception) -> None:
+    # Fix for sphinx-inline-tabs#18
+    if app.builder.format == "html" and not exc:
+        tabs_js = Path(app.builder.outdir) / "_static" / "tabs.js"
+        tabs_js.unlink()
+
+
+def setup(app: "Sphinx") -> None:
+    app.connect("build-finished", remove_tabs_js)
