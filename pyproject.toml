@@ -125,6 +125,10 @@ lint = [
 
 [tool.mypy]
 plugins = ["mypy_django_plugin.main"]
+files = [
+  "src/",
+  "tests/",
+]
 
 [tool.django-stubs]
 django_settings_module = "django_slugify_processor.settings"
