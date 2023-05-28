@@ -32,6 +32,9 @@ start_docs:
 design_docs:
 	$(MAKE) -C docs design
 
+black:
+	poetry run black `${PY_FILES}`
+
 ruff:
 	poetry run ruff .
 

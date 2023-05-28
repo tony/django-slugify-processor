@@ -80,6 +80,7 @@ coverage = "*"
 pytest-cov = "*"
 
 ### Lint ###
+black = "*"
 ruff = "*"
 mypy = "*"
 django-stubs = "*"
@@ -106,6 +107,7 @@ test = [
 ]
 coverage = ["codecov", "coverage", "pytest-cov"]
 lint = [
+  "black",
   "ruff",
   "mypy",
   "django-stubs",
