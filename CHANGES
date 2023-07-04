@@ -4,7 +4,7 @@
 
 - _Add your latest changes from PRs here_
 
-## django-slugify-processor 1.3.1 (unreleased)
+## django-slugify-processor 1.3.1 (2023-07-04)
 
 _Maintenance only, no bug fixes or features_
 
@@ -34,6 +34,7 @@ _Maintenance only, no bug fixes or features_
   - https://github.com/python-poetry/poetry/releases/tag/1.4.0
   - https://github.com/python-poetry/poetry/releases/tag/1.3.0
   - https://github.com/python-poetry/poetry/releases/tag/1.2.0
+- Typings: Fix django-stubs settings module issue on CI (#372)
 
 ### Packaging
 
