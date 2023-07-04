@@ -17,6 +17,8 @@ _Maintenance only, no bug fixes or features_
 
   This change replaces isort, flake8 and flake8 plugins.
 
+  Including additional formatting rules for ruff in #372.
+
 ### Infrastructure
 
 - Bump python to 3.11

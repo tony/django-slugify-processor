@@ -1,4 +1,6 @@
-SECRET_KEY = "dummy"
+import os
+
+SECRET_KEY = os.getenv("SECRET_KEY", "dummy")
 
 DATABASES = {"default": {"NAME": ":memory:", "ENGINE": "django.db.backends.sqlite3"}}
 
