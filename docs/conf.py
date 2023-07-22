@@ -1,8 +1,9 @@
-# flake8: NOQA E501
-import os
+# flake8: NOQA: E501
+import inspect
+import pathlib
 import sys
 import typing as t
-from pathlib import Path
+from os.path import relpath
 
 import django_slugify_processor
 
@@ -10,7 +11,7 @@ if t.TYPE_CHECKING:
     from sphinx.application import Sphinx
 
 # Get the project root dir, which is the parent dir of this
-cwd = Path(__file__).parent
+cwd = pathlib.Path(__file__).parent
 project_root = cwd.parent
 src_root = project_root / "src"
 
@@ -19,13 +20,14 @@ sys.path.insert(0, str(cwd / "_ext"))
 
 # package data
 about: t.Dict[str, str] = {}
-with open(src_root / "django_slugify_processor" / "__about__.py") as fp:
+with (src_root / "django_slugify_processor" / "__about__.py").open() as fp:
     exec(fp.read(), about)
 
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx_autodoc_typehints",
     "sphinx.ext.intersphinx",
+    "sphinx.ext.linkcode",
     "sphinx.ext.napoleon",
     "sphinx_inline_tabs",
     "sphinx_copybutton",
@@ -159,10 +161,81 @@ intersphinx_mapping = {
 }
 
 
+def linkcode_resolve(domain: str, info: t.Dict[str, str]) -> t.Union[None, str]:
+    """
+    Determine the URL corresponding to Python object
+
+    Notes
+    -----
+    From https://github.com/numpy/numpy/blob/v1.15.1/doc/source/conf.py, 7c49cfa
+    on Jul 31. License BSD-3. https://github.com/numpy/numpy/blob/v1.15.1/LICENSE.txt
+    """
+    if domain != "py":
+        return None
+
+    modname = info["module"]
+    fullname = info["fullname"]
+
+    submod = sys.modules.get(modname)
+    if submod is None:
+        return None
+
+    obj = submod
+    for part in fullname.split("."):
+        try:
+            obj = getattr(obj, part)
+        except Exception:  # ruff: noqa: PERF203
+            return None
+
+    # strip decorators, which would resolve to the source of the decorator
+    # possibly an upstream bug in getsourcefile, bpo-1764286
+    try:
+        unwrap = inspect.unwrap
+    except AttributeError:
+        pass
+    else:
+        if callable(obj):
+            obj = unwrap(obj)
+
+    try:
+        fn = inspect.getsourcefile(obj)
+    except Exception:
+        fn = None
+    if not fn:
+        return None
+
+    try:
+        source, lineno = inspect.getsourcelines(obj)
+    except Exception:
+        lineno = None
+
+    linespec = "#L%d-L%d" % (lineno, lineno + len(source) - 1) if lineno else ""
+
+    fn = relpath(fn, start=pathlib.Path(django_slugify_processor.__file__).parent)
+
+    if "dev" in about["__version__"]:
+        return "{}/blob/master/{}/{}/{}{}".format(
+            about["__github__"],
+            "src",
+            about["__package_name__"],
+            fn,
+            linespec,
+        )
+    else:
+        return "{}/blob/v{}/{}/{}/{}{}".format(
+            about["__github__"],
+            about["__version__"],
+            "src",
+            about["__package_name__"],
+            fn,
+            linespec,
+        )
+
+
 def remove_tabs_js(app: "Sphinx", exc: Exception) -> None:
     # Fix for sphinx-inline-tabs#18
     if app.builder.format == "html" and not exc:
-        tabs_js = Path(app.builder.outdir) / "_static" / "tabs.js"
+        tabs_js = pathlib.Path(app.builder.outdir) / "_static" / "tabs.js"
         tabs_js.unlink(missing_ok=True)
 
 
