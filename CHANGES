@@ -4,6 +4,10 @@
 
 - _Add your latest changes from PRs here_
 
+### Breaking changes
+
+- Drop Python 3.7 (#374)
+
 ## django-slugify-processor 1.3.1 (2023-07-04)
 
 _Maintenance only, no bug fixes or features_
@@ -43,7 +47,6 @@ _Maintenance only, no bug fixes or features_
 - Remove `MANIFEST.in` (#366)
 
   This is made obsolete via poetry's `include` inside of pyproject.toml.
-- Drop Python 3.7 (#374)
 
 ## django-slugify-processor 1.3.0 (2022-09-11)
 
