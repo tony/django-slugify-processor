@@ -164,7 +164,7 @@ Output should be: cpp
 
 ## Models
 
-For the most up to date documentation, view the documetation for the plugin you're using (e.g.
+For the most up to date documentation, view the documentation for the plugin you're using (e.g.
 django-autoslug or django-extensions).
 
 To use django-slugify-processor's `slugify` instead of django's default, there will be a field
