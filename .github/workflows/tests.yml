@@ -9,46 +9,46 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [ '3.8', '3.9', '3.10', '3.11' ]
-        django-version: [ '2.2', '3.1', '3.2', '4.0', '4.1', '4.2' ]
+        python-version: ['3.8', '3.9', '3.10', '3.11']
+        django-version: ['2.2', '3.1', '3.2', '4.0', '4.1', '4.2']
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - name: Install poetry
-      run: pipx install "poetry==1.6.1"
+      - name: Install poetry
+        run: pipx install "poetry==1.6.1"
 
-    - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v4
-      with:
-        python-version: ${{ matrix.python-version }}
-        cache: 'poetry'
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'poetry'
 
-    - name: Install dependencies
-      run: |
-        poetry install -E "docs test coverage lint"
-        poetry run pip install DJANGO~=${{ matrix.django-version }}
+      - name: Install dependencies
+        run: |
+          poetry install -E "docs test coverage lint"
+          poetry run pip install DJANGO~=${{ matrix.django-version }}
 
-    - name: Install django-extensions @ version, if exists
-      if: ${{ matrix.django-extensions != '' }}
-      run: poetry run pip install 'django-extensions${{ matrix.django-extensions }}'
+      - name: Install django-extensions @ version, if exists
+        if: ${{ matrix.django-extensions != '' }}
+        run: poetry run pip install 'django-extensions${{ matrix.django-extensions }}'
 
-    - name: Print python versions
-      run: |
-        python -V
-        poetry run python -V
+      - name: Print python versions
+        run: |
+          python -V
+          poetry run python -V
 
-    - name: Lint with ruff
-      run: poetry run ruff .
+      - name: Lint with ruff
+        run: poetry run ruff .
 
-    - name: Lint with mypy
-      run: poetry run mypy .
+      - name: Lint with mypy
+        run: poetry run mypy .
 
-    - name: Test with pytest
-      run: poetry run py.test --cov=./ --cov-report=xml
+      - name: Test with pytest
+        run: poetry run py.test --cov=./ --cov-report=xml
 
-    - uses: codecov/codecov-action@v2
-      with:
-        token: ${{ secrets.CODECOV_TOKEN }}
+      - uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
 
   release:
     runs-on: ubuntu-latest
@@ -57,7 +57,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: ["3.11"]
+        python-version: ['3.11']
 
     steps:
       - uses: actions/checkout@v3
