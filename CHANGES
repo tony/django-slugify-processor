@@ -4,6 +4,10 @@
 
 - _Add your latest changes from PRs here_
 
+### Packaging
+
+- Move pytest configuration to `pyproject.toml` (#375)
+
 ### Breaking changes
 
 - Drop Python 3.7 (#374)
