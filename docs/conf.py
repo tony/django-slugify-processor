@@ -118,8 +118,6 @@ copybutton_remove_prompts = True
 rediraffe_redirects = "redirects.txt"
 rediraffe_branch = "master~1"
 
-htmlhelp_basename = "%sdoc" % about["__title__"]
-
 intersphinx_mapping = {
     "py": ("https://docs.python.org", None),
     "django": (
