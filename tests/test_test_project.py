@@ -1,9 +1,11 @@
+import typing as t
+
 import pytest
 from django.apps import apps
 
 
 @pytest.mark.django_db
-def test_models_passthrough(settings):
+def test_models_passthrough(settings: t.Any) -> None:
     MyModel = apps.get_model("test_app.MyModel")
     entered = "c++"
     expected = "c"
@@ -15,7 +17,7 @@ def test_models_passthrough(settings):
 
 
 @pytest.mark.django_db
-def test_models(settings):
+def test_models(settings: t.Any) -> None:
     settings.SLUGIFY_PROCESSORS = ["test_app.coding.slugify_programming"]
     MyModel = apps.get_model("test_app.MyModel")
     entered = "c++"

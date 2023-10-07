@@ -1,3 +1,2 @@
-def slugify_programming(value):
-    value = value.replace("c++", "cpp")
-    return value
+def slugify_programming(value:str) -> str:
+    return value.replace("c++", "cpp")

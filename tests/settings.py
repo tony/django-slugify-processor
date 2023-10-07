@@ -1,9 +1,12 @@
 import os
+import typing as t
 
-SECRET_KEY = os.getenv("SECRET_KEY", "dummy")
+SECRET_KEY: str = os.getenv("SECRET_KEY", "dummy")
 
-DATABASES = {"default": {"NAME": ":memory:", "ENGINE": "django.db.backends.sqlite3"}}
+DATABASES: t.Dict[str, t.Any] = {
+    "default": {"NAME": ":memory:", "ENGINE": "django.db.backends.sqlite3"}
+}
 
-INSTALLED_APPS = ["test_app"]
+INSTALLED_APPS: t.List[str] = ["test_app"]
 
-USE_TZ = False
+USE_TZ: bool = False
