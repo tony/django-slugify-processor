@@ -1,7 +1,9 @@
+import typing as t
+
 from django.template import Context, Template
 
 
-def test_slugify_via_builtin_override(settings):
+def test_slugify_via_builtin_override(settings: t.Any) -> None:
     settings.SLUGIFY_PROCESSORS = ["test_app.coding.slugify_programming"]
     settings.TEMPLATES = [
         {
@@ -17,7 +19,7 @@ def test_slugify_via_builtin_override(settings):
     assert template.render(Context({})) == "cpp"
 
 
-def test_slugify_via_load_templatetags(settings):
+def test_slugify_via_load_templatetags(settings: t.Any) -> None:
     settings.SLUGIFY_PROCESSORS = ["test_app.coding.slugify_programming"]
     settings.INSTALLED_APPS = ["django_slugify_processor"]
     settings.TEMPLATES = [

@@ -3,7 +3,7 @@ from django.utils.module_loading import import_string
 from django.utils.text import slugify as django_slugify
 
 
-def slugify(value, allow_unicode=False):
+def slugify(value: str, allow_unicode: bool = False) -> str:
     """Override default slugify in django to handle custom scenarios.
 
     Run value through functions declared in SLUGIFY_PROCESSORS. The value is

@@ -114,6 +114,7 @@ lint = [
 
 [tool.mypy]
 plugins = ["mypy_django_plugin.main"]
+strict = true
 files = [
   "src/",
   "tests/",

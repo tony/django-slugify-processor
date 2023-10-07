@@ -8,7 +8,7 @@ register = template.Library()
 
 @register.filter(is_safe=True)
 @stringfilter
-def slugify(value):
+def slugify(value: str) -> str:
     """Template filter intended to override django 1.11+'s default slugify.
 
     This can be installed via a builtin, or via
