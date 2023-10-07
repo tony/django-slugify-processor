@@ -105,7 +105,6 @@ toc_object_entries_show_parents = "hide"
 # sphinxext.opengraph
 ogp_site_url = about["__docs__"]
 ogp_image = "_static/img/icons/icon-192x192.png"
-ogp_description_length = about["__description__"]
 ogp_site_name = about["__title__"]
 
 # sphinx-copybutton
