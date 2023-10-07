@@ -4,6 +4,12 @@
 
 - _Add your latest changes from PRs here_
 
+## What's new
+
+- Now [`mypy --strict`] compliant (#376)
+
+  [`mypy --strict`]: https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict
+
 ### Packaging
 
 - Move pytest configuration to `pyproject.toml` (#375)
