@@ -1492,4 +1492,4 @@ test = ["django-extensions"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "6c0088572f1845e74c12c0e74a9827391c3f460b9ad5cf74c2855631c91f9307"
+content-hash = "92e606f6c7e4dea4ac7c7437d98d48109bb3818944322f3c079757a1860eb7cd"

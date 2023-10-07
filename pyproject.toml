@@ -7,8 +7,6 @@ classifiers = [
   'Development Status :: 5 - Production/Stable',
   'Environment :: Web Environment',
   'Framework :: Django',
-  'Framework :: Django :: 2.2',
-  'Framework :: Django :: 3.1',
   'Framework :: Django :: 3.2',
   'Framework :: Django :: 4.0',
   'Framework :: Django :: 4.1',
@@ -53,13 +51,13 @@ Changes = "https://github.com/tony/django-slugify-processor/blob/master/CHANGES"
 [tool.poetry.dependencies]
 python = "^3.8"
 django-extensions = { version = "*", optional = true }
-Django = ">=2.2"
+Django = ">=3.2"
 
 [tool.poetry.group.dev.dependencies]
 ### Docs ###
 sphinx = "*"
 furo = "*"
-gp-libs = "~0.0.1a12"
+gp-libs = "~0.0.2"
 sphinx-autobuild = "*"
 sphinx-autodoc-typehints = "*"
 sphinx-inline-tabs = "*"
