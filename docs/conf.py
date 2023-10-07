@@ -120,38 +120,6 @@ rediraffe_branch = "master~1"
 
 htmlhelp_basename = "%sdoc" % about["__title__"]
 
-latex_documents = [
-    (
-        "index",
-        "{}.tex".format(about["__package_name__"]),
-        "{} Documentation".format(about["__title__"]),
-        about["__author__"],
-        "manual",
-    )
-]
-
-man_pages = [
-    (
-        "index",
-        about["__package_name__"],
-        "{} Documentation".format(about["__title__"]),
-        about["__author__"],
-        1,
-    )
-]
-
-texinfo_documents = [
-    (
-        "index",
-        "{}".format(about["__package_name__"]),
-        "{} Documentation".format(about["__title__"]),
-        about["__author__"],
-        about["__package_name__"],
-        about["__description__"],
-        "Miscellaneous",
-    )
-]
-
 intersphinx_mapping = {
     "py": ("https://docs.python.org", None),
     "django": (
