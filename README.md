@@ -1,6 +1,6 @@
 # django-slugify-processor
 
-Custom-[`slugify()`](https://docs.djangoproject.com/en/4.0/ref/utils/#django.utils.text.slugify)
+Custom-[`slugify()`](https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.text.slugify)
 support for django.
 
 [![Python Package](https://img.shields.io/pypi/v/django-slugify-processor.svg)](https://pypi.org/project/django-slugify-processor/)
@@ -14,10 +14,8 @@ support for django.
 _Slugs_ are URL's, typically generated from post titles, that you want to be both human readable and
 a valid URL. They are SEO friendly.
 
-Django provides a
-[slugify function](https://docs.djangoproject.com/en/4.0/ref/utils/#django.utils.text.slugify) in
-`django.utils.text.slugify` which is also made available as a
-[default filter](https://github.com/django/django/blob/4.0.0/django/template/defaultfilters.py#L247-255).
+Django provides a [`slugify()`](https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.text.slugify)
+function which is also made available as a [default filter](https://github.com/django/django/blob/4.2.6/django/template/defaultfilters.py#L253-L261).
 
 Django slugs can be automatically generated in django models via packages such as:
 
@@ -71,7 +69,7 @@ This builds on top of [`django.utils.text.slugify`] to handle your django projec
 default, django-slugify-processor will be a pass through to django's default behavior. Adding
 slugification functions via your Django project's settings file allows you to adjust.
 
-[`django.utils.text.slugify`]: https://github.com/django/django/blob/4.0/django/template/defaultfilters.py#L232
+[`django.utils.text.slugify`]: https://github.com/django/django/blob/4.2.6/django/template/defaultfilters.py#L253-L261
 
 # Installation
 
@@ -92,7 +90,7 @@ def my_processor(value):
 
 Inside of your settings, add a `SLUGIFY_PROCESSORS` list of strings that points to the function.
 Anything that's compatible with
-[import_string](https://docs.djangoproject.com/en/4.0/ref/utils/#django.utils.module_loading.import_string),
+[import_string](https://docs.djangoproject.com/en/4.2/ref/utils/#django.utils.module_loading.import_string),
 in your settings file:
 
 ```python
