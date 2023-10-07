@@ -71,7 +71,7 @@ _Maintenance only, no bug fixes or features_
 
 ### Documentation
 
-- Render changelog in [`linkify_issues`] (~~#360~~, #355)
+- Render changelog in [`linkify_issues`] (#360, #355)
 - Fix Table of contents rendering with sphinx autodoc with [`sphinx_toctree_autodoc_fix`] (#355)
 
 [`linkify_issues`]: https://gp-libs.git-pull.com/linkify_issues/
