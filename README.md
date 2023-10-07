@@ -22,12 +22,12 @@ Django provides a
 Django slugs can be automatically generated in django models via packages such as:
 
 - [django-autoslug](https://pypi.python.org/pypi/django-autoslug)
-  ([docs](https://pythonhosted.org/django-autoslug/))
-  ([github](https://github.com/neithere/django-autoslug))
+  ([docs](https://pythonhosted.org/django-autoslug/),
+  [github](https://github.com/neithere/django-autoslug))
 - [django-extensions](https://pypi.python.org/pypi/django-extensions) via
   [AutoSlugField](https://django-extensions.readthedocs.io/en/latest/field_extensions.html)
-  ([docs](https://django-extensions.readthedocs.io/en/latest/))
-  ([github](https://github.com/django-extensions/django-extensions))
+  ([docs](https://django-extensions.readthedocs.io/en/latest/),
+  [github](https://github.com/django-extensions/django-extensions))
 
 # The problem
 
@@ -48,18 +48,18 @@ after "c" is taken.
 
 Here's another case, acronyms / shorthands:
 
-| Term              | [`django.utils.text.slugify`] | What you (may) want |
-| ----------------- | ----------------------------- | ------------------- |
-| New York City     | new-york-city                 | nyc                 |
-| Y Combinator      | y-combinator                  | yc                  |
-| Portland          | portland                      | pdx                 |
-| Texas             | texas                         | tx                  |
-| $                 | '' (empty)                    | usd, aud, etc?      |
-| US$               | us                            | usd                 |
-| A$                | a                             | aud                 |
-| bitcoin           | bitcoin                       | btc                 |
-| United States     | united-states                 | usa                 |
-| League of Legends | league-of-legends             | league              |
+| Term               | [`django.utils.text.slugify`] | What you (may) want |
+| ------------------ | ----------------------------- | ------------------- |
+| New York City      | new-york-city                 | nyc                 |
+| Y Combinator       | y-combinator                  | yc                  |
+| Portland           | portland                      | pdx                 |
+| Texas              | texas                         | tx                  |
+| $                  | '' (empty)                    | usd, aud, etc?      |
+| US$                | us                            | usd                 |
+| A$                 | a                             | aud                 |
+| bitcoin            | bitcoin                       | btc                 |
+| United States      | united-states                 | usa                 |
+| League of Legends  | league-of-legends             | league              |
 | Apple® iPod Touch | apple-ipod-touch              | ipod-touch          |
 
 Each website and niche has its own edge cases for slugs. So we need a solution that can scale, where
@@ -71,8 +71,7 @@ This builds on top of [`django.utils.text.slugify`] to handle your django projec
 default, django-slugify-processor will be a pass through to django's default behavior. Adding
 slugification functions via your Django project's settings file allows you to adjust.
 
-[`django.utils.text.slugify`]:
-  https://github.com/django/django/blob/4.0/django/template/defaultfilters.py#L232
+[`django.utils.text.slugify`]: https://github.com/django/django/blob/4.0/django/template/defaultfilters.py#L232
 
 # Installation
 
