@@ -250,7 +250,7 @@ $ poetry shell
 ```
 
 ```console
-$ pipenv install
+$ poetry install
 ```
 
 Test:
