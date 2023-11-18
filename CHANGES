@@ -30,6 +30,7 @@
 
   [Poetry's docs on managing dependencies]: https://python-poetry.org/docs/master/managing-dependencies/
 
+- Packaging: Add Python 3.12 to trove classifiers
 - CI: Update action packages to fix warnings
 
   - [dorny/paths-filter]: 2.7.0 -> 2.11.1
