@@ -1,8 +1,12 @@
 # Changelog
 
-## django-slugify-processor 1.5.x (unreleased)
+## django-slugify-processor 1.6.x (unreleased)
 
 - _Add your latest changes from PRs here_
+
+## django-slugify-processor 1.5.0 (2023-11-18)
+
+_Maintenance only, no bug fixes or features_
 
 ### Development
 
