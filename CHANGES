@@ -15,6 +15,18 @@
   dev dependency by using our existing rust-based `ruff` linter.
 
   [`ruff format`]: https://docs.astral.sh/ruff/formatter/
+- Packaging (poetry): Fix development dependencies
+
+  Per [Poetry's docs on managing dependencies] and `poetry check`, we had it wrong: Instead of using extras, we should create these:
+
+  ```toml
+  [tool.poetry.group.[group-name].dependencies]
+  dev-dependency = "1.0.0"
+  ```
+
+  Which we now do.
+
+  [Poetry's docs on managing dependencies]: https://python-poetry.org/docs/master/managing-dependencies/
 
 ## django-slugify-processor 1.4.0post0 (2023-10-07)
 
