@@ -54,7 +54,7 @@ python = "^3.8"
 django-extensions = { version = "*", optional = true }
 Django = ">=3.2"
 
-[tool.poetry.group.dev.dependencies]
+[tool.poetry.group.docs.dependencies]
 ### Docs ###
 sphinx = "*"
 furo = "*"
@@ -67,6 +67,7 @@ sphinx-copybutton = "*"
 sphinxext-rediraffe = "*"
 myst_parser = ">=0.18.1"
 
+[tool.poetry.group.test.dependencies]
 ### Testing ###
 pytest = "*"
 pytest-rerunfailures = "*"
@@ -74,42 +75,17 @@ pytest-django = "*"
 pytest-watcher = "*"
 django-extensions = "*"
 
+[tool.poetry.group.coverage.dependencies]
 ### Coverage ###
 codecov = "*"
 coverage = "*"
 pytest-cov = "*"
 
+[tool.poetry.group.lint.dependencies]
 ### Lint ###
 ruff = "*"
 mypy = "*"
 django-stubs = "*"
-
-[tool.poetry.extras]
-docs = [
-  "sphinx",
-  "sphinx-autodoc-typehints",
-  "sphinx-autobuild",
-  "sphinx-copybutton",
-  "sphinxext-opengraph",
-  "sphinx-inline-tabs",
-  "sphinxext-rediraffe",
-  "myst_parser",
-  "furo",
-  "gp-libs",
-]
-test = [
-  "pytest",
-  "pytest-rerunfailures",
-  "pytest-django",
-  "pytest-watcher",
-  "django-extensions",
-]
-coverage = ["codecov", "coverage", "pytest-cov"]
-lint = [
-  "ruff",
-  "mypy",
-  "django-stubs",
-]
 
 [tool.mypy]
 plugins = ["mypy_django_plugin.main"]

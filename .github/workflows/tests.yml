@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          poetry install -E "docs test coverage lint"
+          poetry install --with=docs,test,coverage,lint
           poetry run pip install DJANGO~=${{ matrix.django-version }}
 
       - name: Install django-extensions @ version, if exists
