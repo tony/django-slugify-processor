@@ -1,6 +1,10 @@
+(changes)=
+(changelog)=
 (history)=
 
-# History
+```{currentmodule} django_slugify_processor
+
+```
 
 ```{include} ../CHANGES
 
