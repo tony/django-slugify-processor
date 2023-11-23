@@ -75,6 +75,7 @@ pytest-rerunfailures = "*"
 pytest-django = "*"
 pytest-watcher = "*"
 django-extensions = "*"
+gp-libs = "*"
 
 [tool.poetry.group.coverage.dependencies]
 ### Coverage ###
