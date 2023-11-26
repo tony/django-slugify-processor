@@ -4,6 +4,10 @@
 
 - _Add your latest changes from PRs here_
 
+### CI
+
+- Move CodeQL from advanced configuration file to GitHub's default
+
 ## django-slugify-processor 1.5.0 (2023-11-18)
 
 _Maintenance only, no bug fixes or features_
