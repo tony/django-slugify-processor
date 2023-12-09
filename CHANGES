@@ -4,6 +4,10 @@
 
 - _Add your latest changes from PRs here_
 
+### Development
+
+- Remove `django_slugify_processor.settings`, which was unused (#381).
+
 ### CI
 
 - Move CodeQL from advanced configuration file to GitHub's default
