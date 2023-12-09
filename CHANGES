@@ -4,6 +4,11 @@
 
 - _Add your latest changes from PRs here_
 
+### Packaging
+
+- pyproject.toml: Add django 5.0 (#382)
+- pyproject.toml: Remove django 4.0 and 4.1 from pyproject (#382)
+
 ### Development
 
 - Remove `django_slugify_processor.settings`, which was unused (#381).
@@ -12,6 +17,11 @@
 
 - Move CodeQL from advanced configuration file to GitHub's default
 - ci: Add pydocstyle rule to ruff (#380)
+- ci(tests): Remove django 4.0 and 4.1 from testgrid (#382)
+- ci(tests): Add django 5.0 to testgrid (#382)
+- ci(tests): Only test latest python (#382)
+
+  As django 5.0 drops python 3.8 and 3.9, just use `3.x` to reduce the amount of jobs created in the test matrix (and keep the workflow itself simple).
 
 ### Documentation
 
