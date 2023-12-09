@@ -1,3 +1,4 @@
+"""Sphinx configuration for Django Slugify Processor."""
 # flake8: NOQA: E501
 import inspect
 import pathlib
@@ -129,7 +130,7 @@ intersphinx_mapping = {
 
 def linkcode_resolve(domain: str, info: t.Dict[str, str]) -> t.Union[None, str]:
     """
-    Determine the URL corresponding to Python object
+    Determine the URL corresponding to Python object.
 
     Notes
     -----
@@ -199,11 +200,12 @@ def linkcode_resolve(domain: str, info: t.Dict[str, str]) -> t.Union[None, str]:
 
 
 def remove_tabs_js(app: "Sphinx", exc: Exception) -> None:
-    # Fix for sphinx-inline-tabs#18
+    """Fix for sphinx-inline-tabs#18."""
     if app.builder.format == "html" and not exc:
         tabs_js = pathlib.Path(app.builder.outdir) / "_static" / "tabs.js"
         tabs_js.unlink(missing_ok=True)
 
 
 def setup(app: "Sphinx") -> None:
+    """Sphinx setup hook."""
     app.connect("build-finished", remove_tabs_js)

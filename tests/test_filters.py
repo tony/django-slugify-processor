@@ -1,9 +1,11 @@
+"""Test package for django-slugify-processor filters."""
 import typing as t
 
 from django.template import Context, Template
 
 
 def test_slugify_via_builtin_override(settings: t.Any) -> None:
+    """Tests for overriding of django template builtins."""
     settings.SLUGIFY_PROCESSORS = ["test_app.coding.slugify_programming"]
     settings.TEMPLATES = [
         {
@@ -20,6 +22,7 @@ def test_slugify_via_builtin_override(settings: t.Any) -> None:
 
 
 def test_slugify_via_load_templatetags(settings: t.Any) -> None:
+    """Tests for using django-slugify-processor via loading template tag."""
     settings.SLUGIFY_PROCESSORS = ["test_app.coding.slugify_programming"]
     settings.INSTALLED_APPS = ["django_slugify_processor"]
     settings.TEMPLATES = [

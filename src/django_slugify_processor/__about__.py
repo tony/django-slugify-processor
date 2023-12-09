@@ -1,3 +1,4 @@
+"""Metadata for django-slugify-processor."""
 __title__ = "django-slugify-processor"
 __package_name__ = "django_slugify_processor"
 __version__ = "1.5.0"

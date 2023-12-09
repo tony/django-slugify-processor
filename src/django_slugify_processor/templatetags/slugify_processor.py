@@ -1,3 +1,4 @@
+"""Slugify django template filter."""
 from django import template
 from django.template.defaultfilters import stringfilter
 
@@ -11,8 +12,7 @@ register = template.Library()
 def slugify(value: str) -> str:
     """Template filter intended to override django 1.11+'s default slugify.
 
-    This can be installed via a builtin, or via
-    ``{% load slugify_processor %}``.
+    This can be installed via a builtin, or via ``{% load slugify_processor %}``.
 
     Usage in a Django template:
 
@@ -22,5 +22,4 @@ def slugify(value: str) -> str:
        {{variable|slugify}}  {# assuming "variable" is in context %}
        {{"C++"|slugify}}
     """
-
     return _slugify(value)
