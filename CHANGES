@@ -11,6 +11,11 @@
 ### CI
 
 - Move CodeQL from advanced configuration file to GitHub's default
+- ci: Add pydocstyle rule to ruff (#380)
+
+### Documentation
+
+- Add docstrings to functions, methods, classes, and packages (#380)
 
 ## django-slugify-processor 1.5.0 (2023-11-18)
 
