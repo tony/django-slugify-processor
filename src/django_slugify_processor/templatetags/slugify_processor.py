@@ -22,5 +22,4 @@ def slugify(value: str) -> str:
        {{variable|slugify}}  {# assuming "variable" is in context %}
        {{"C++"|slugify}}
     """
-
     return _slugify(value)
