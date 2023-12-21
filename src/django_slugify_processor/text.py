@@ -10,11 +10,15 @@ def slugify(value: str, allow_unicode: bool = False) -> str:
     Run value through functions declared in SLUGIFY_PROCESSORS. The value is
     then passed-through to django's slugify.
 
-    :param value: string to slugify
-    :type value: string
-    :param allow_unicode: whether or not to allow unicode (e.g. chinese)
-    :type allow_unicode: bool
+    Parameters
+    ----------
+    value : str
+        string to slugify
+    allow_unicode : bool
+        whether or not to allow unicode (e.g. chinese)
 
+    Examples
+    --------
     Examples of slugify processors, assume *project/app/slugify_processors.py*:
 
     .. code-block:: python
