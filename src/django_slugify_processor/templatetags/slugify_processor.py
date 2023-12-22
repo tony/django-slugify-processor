@@ -10,16 +10,30 @@ register = template.Library()
 @register.filter(is_safe=True)
 @stringfilter
 def slugify(value: str) -> str:
-    """Template filter intended to override django 1.11+'s default slugify.
+    """Template filter override for Django's :func:`django.utils.text.slugify()`.
 
-    This can be installed via a builtin, or via ``{% load slugify_processor %}``.
+    Can be installed via a builtin, or via ``{% load slugify_processor %}``.
 
+    Parameters
+    ----------
+    value : str
+        A value such as an article name or page title, to "slugify", (turn into a
+        clean, URL-friendly short name)
+
+    Returns
+    -------
+    str
+        Clean, URL-friendly short name (a.k.a. "slug") of a string (e.g. a page or
+        article name).
+
+    Examples
+    --------
     Usage in a Django template:
 
     .. code-block:: django
 
-       {% load slugify_processor %}  {# unless you added it to builtins %}
-       {{variable|slugify}}  {# assuming "variable" is in context %}
-       {{"C++"|slugify}}
+       {% load slugify_processor %}
+       {{ variable|slugify }}
+       {{ "C++"|slugify }}
     """
     return _slugify(value)
