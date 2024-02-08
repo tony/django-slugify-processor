@@ -12,9 +12,9 @@ def test_slugify_via_builtin_override(settings: t.Any) -> None:
             "BACKEND": "django.template.backends.django.DjangoTemplates",
             "APP_DIRS": True,
             "OPTIONS": {
-                "builtins": ["django_slugify_processor.templatetags.slugify_processor"]
+                "builtins": ["django_slugify_processor.templatetags.slugify_processor"],
             },
-        }
+        },
     ]
 
     template = Template("{{'c++'|slugify}}")
@@ -26,7 +26,10 @@ def test_slugify_via_load_templatetags(settings: t.Any) -> None:
     settings.SLUGIFY_PROCESSORS = ["test_app.coding.slugify_programming"]
     settings.INSTALLED_APPS = ["django_slugify_processor"]
     settings.TEMPLATES = [
-        {"BACKEND": "django.template.backends.django.DjangoTemplates", "APP_DIRS": True}
+        {
+            "BACKEND": "django.template.backends.django.DjangoTemplates",
+            "APP_DIRS": True,
+        },
     ]
 
     template = Template('{% load slugify_processor %}{{"c++"|slugify}}')
