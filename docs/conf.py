@@ -1,4 +1,5 @@
 """Sphinx configuration for Django Slugify Processor."""
+
 # flake8: NOQA: E501
 import inspect
 import pathlib

@@ -1,4 +1,5 @@
 """Test package for django-slugify-processor filters."""
+
 import typing as t
 
 from django.template import Context, Template

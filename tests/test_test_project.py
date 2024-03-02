@@ -1,4 +1,5 @@
 """Tests using django test app for django-slugify-processor."""
+
 import typing as t
 
 import pytest
