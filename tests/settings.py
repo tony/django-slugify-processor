@@ -1,4 +1,5 @@
 """Django settings module for django-slugify-processor tests."""
+
 import os
 import typing as t
 

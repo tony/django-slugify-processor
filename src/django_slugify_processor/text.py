@@ -1,4 +1,5 @@
 """Core functionality for django-slugify-processor."""
+
 from django.conf import settings
 from django.utils.module_loading import import_string
 from django.utils.text import slugify as django_slugify
