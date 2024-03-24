@@ -3,7 +3,7 @@
 from django import template
 from django.template.defaultfilters import stringfilter
 
-from ..text import slugify as _slugify
+from django_slugify_processor.text import slugify as _slugify
 
 register = template.Library()
 
