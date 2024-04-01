@@ -4,6 +4,10 @@
 
 - _Add your latest changes from PRs here_
 
+### Documentation
+
+- Automatically linkify links that were previously only text.
+
 ### Development
 
 - Aggressive automated lint fixes via `ruff` (#388)
