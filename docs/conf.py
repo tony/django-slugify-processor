@@ -124,8 +124,8 @@ rediraffe_branch = "master~1"
 intersphinx_mapping = {
     "py": ("https://docs.python.org", None),
     "django": (
-        "https://docs.djangoproject.com/en/3.2/",
-        "https://docs.djangoproject.com/en/3.2/_objects/",
+        "https://docs.djangoproject.com/en/4.2/",
+        "https://docs.djangoproject.com/en/4.2/_objects/",
     ),
 }
 
