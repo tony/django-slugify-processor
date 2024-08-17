@@ -14,6 +14,10 @@
 
   [^DJ3_2_deprecation]: Django Project. Unsupported previous releases. https://www.djangoproject.com/download/#unsupported-versions.
 
+### Development
+
+- Support for Django 5.1 in CI, trove classifiers (#398)
+
 ## django-slugify-processor 1.7.0 (2024-08-17)
 
 ### Upcoming deprecations
