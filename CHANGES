@@ -1,8 +1,16 @@
 # Changelog
 
-## django-slugify-processor 1.7.x (unreleased)
+## django-slugify-processor 1.8.x (unreleased)
 
 - _Add your latest changes from PRs here_
+
+## django-slugify-processor 1.7.0 (2024-08-17)
+
+### Upcoming deprecations
+
+- 1.7.x is the last branch supporting Django 3.2.
+
+  1.8+ will drop Django 3.2.
 
 ### Documentation
 
