@@ -4,6 +4,16 @@
 
 - _Add your latest changes from PRs here_
 
+### Breaking changes
+
+- Django 4.2+ is the new minimum version. Support for django 3.2 is dropped (#397).
+
+  v1.7.x is the final Django 3.2 versions.
+
+  Django 3.2's extended support has ended April 1st, 2024 [^DJ3_2_deprecation].
+
+  [^DJ3_2_deprecation]: Django Project. Unsupported previous releases. https://www.djangoproject.com/download/#unsupported-versions.
+
 ## django-slugify-processor 1.7.0 (2024-08-17)
 
 ### Upcoming deprecations
@@ -34,14 +44,17 @@
       --exec 'poetry run ruff check --select ALL . --fix --unsafe-fixes --preview --show-fixes; poetry run ruff format .; git add src tests; git commit --amend --no-edit' \
       origin/master
   ```
+
 - poetry: 1.7.1 -> 1.8.2
 
   See also: https://github.com/python-poetry/poetry/blob/1.8.2/CHANGELOG.md
+
 - ruff 0.2.2 -> 0.3.0 (#386)
 
   Related formattings. Update CI to use `ruff check .` instead of `ruff .`.
 
   See also: https://github.com/astral-sh/ruff/blob/v0.3.0/CHANGELOG.md
+
 - Strengthen linting (#385)
 
   - Add flake8-commas (COM)

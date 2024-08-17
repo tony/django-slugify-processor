@@ -211,7 +211,7 @@ class MyModel(models.Model):
 # Project details
 
 - python support >= 3.8, pypy3
-- django support > 3.2,
+- django support > 4.2,
 - Source https://github.com/tony/django-slugify-processor
 - Docs https://django-slugify-processor.git-pull.com
 - API https://django-slugify-processor.git-pull.com/api.html
