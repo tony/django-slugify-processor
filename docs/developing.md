@@ -63,7 +63,7 @@ $ poetry run ruff
 If you setup manually:
 
 ```console
-$ ruff .
+$ ruff check .
 ```
 
 ````
@@ -91,13 +91,13 @@ requires [`entr(1)`].
 poetry:
 
 ```console
-$ poetry run ruff . --fix
+$ poetry run ruff check . --fix
 ```
 
 If you setup manually:
 
 ```console
-$ ruff . --fix
+$ ruff check . --fix
 ```
 
 ````
