@@ -1,18 +1,31 @@
 # Development
 
-[poetry] is a required package to develop.
+[uv] is a required package to develop.
 
-`git clone https://github.com/tony/django-slugify-processor.git`
+Install and [git] and [uv]
 
-`cd g`
+Clone:
 
-`poetry install -E "docs test coverage lint"`
+```console
+$ git clone https://github.com/tony/django-slugify-processor.git
+```
 
-Makefile commands prefixed with `watch_` will watch files and rerun.
+```console
+$ cd django-slugify-processor
+```
+
+Install packages:
+
+```console
+$ uv sync --all-extras --dev
+```
+
+[installation documentation]: https://docs.astral.sh/uv/getting-started/installation/
+[git]: https://git-scm.com/
 
 ## Tests
 
-`poetry run py.test`
+`uv run py.test`
 
 Helpers: `make test`
 
@@ -54,10 +67,10 @@ The project uses [ruff] to handle formatting, sorting imports and linting.
 
 ````{tab} Command
 
-poetry:
+uv:
 
 ```console
-$ poetry run ruff
+$ uv run ruff
 ```
 
 If you setup manually:
@@ -88,10 +101,10 @@ requires [`entr(1)`].
 
 ````{tab} Fix files
 
-poetry:
+uv:
 
 ```console
-$ poetry run ruff check . --fix
+$ uv run ruff check . --fix
 ```
 
 If you setup manually:
@@ -108,10 +121,10 @@ $ ruff check . --fix
 
 ````{tab} Command
 
-poetry:
+uv:
 
 ```console
-$ poetry run ruff format .
+$ uv run ruff format .
 ```
 
 If you setup manually:
@@ -136,10 +149,10 @@ $ make ruff_format
 
 ````{tab} Command
 
-poetry:
+uv:
 
 ```console
-$ poetry run mypy .
+$ uv run mypy .
 ```
 
 If you setup manually:
@@ -169,7 +182,7 @@ requires [`entr(1)`].
 
 ## Releasing
 
-[poetry] handles virtualenv creation, package requirements, versioning,
+[uv] handles virtualenv creation, package requirements, versioning,
 building, and publishing. Therefore there is no setup.py or requirements files.
 
 Update `__version__` in `__about__.py` and `pyproject.toml`::
@@ -178,10 +191,8 @@ Update `__version__` in `__about__.py` and `pyproject.toml`::
     git tag v0.1.1
     git push
     git push --tags
-    poetry build
-    poetry publish
 
-[poetry]: https://python-poetry.org/
+[uv]: https://github.com/astral-sh/uv
 [entr(1)]: http://eradman.com/entrproject/
 [`entr(1)`]: http://eradman.com/entrproject/
 [ruff format]: https://docs.astral.sh/ruff/formatter/
