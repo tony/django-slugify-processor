@@ -178,7 +178,7 @@ def linkcode_resolve(domain: str, info: t.Dict[str, str]) -> t.Union[None, str]:
     except Exception:
         lineno = None
 
-    linespec = "#L%d-L%d" % (lineno, lineno + len(source) - 1) if lineno else ""
+    linespec = f"#L{lineno}-L{lineno + len(source) - 1}" if lineno else ""
 
     fn = relpath(fn, start=pathlib.Path(django_slugify_processor.__file__).parent)
 
