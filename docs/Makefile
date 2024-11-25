@@ -6,7 +6,7 @@ HTTP_PORT     = 8030
 
 # You can set these variables from the command line.
 SPHINXOPTS    =
-SPHINXBUILD   = poetry run sphinx-build
+SPHINXBUILD   = uv run sphinx-build
 PAPER         =
 BUILDDIR      = _build
 
@@ -201,8 +201,8 @@ dev:
 	$(MAKE) -j watch serve
 
 start:
-	poetry run sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) --port ${HTTP_PORT} $(O)
+	uv run sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) --port ${HTTP_PORT} $(O)
 
 design:
 	# This adds additional watch directories (for _static file changes) and disable incremental builds
-	poetry run sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) --port ${HTTP_PORT} --watch "." -a $(O)
+	uv run sphinx-autobuild "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) --port ${HTTP_PORT} --watch "." -a $(O)

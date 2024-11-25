@@ -245,14 +245,6 @@ $ git clone https://github.com/tony/django-slugify-processor.git
 $ cd ./django-slugify-processor
 ```
 
-```console
-$ poetry shell
-```
-
-```console
-$ poetry install
-```
-
 Test:
 
 ```console

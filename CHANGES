@@ -17,6 +17,11 @@
 ### Development
 
 - Support for Django 5.1 in CI, trove classifiers (#398)
+- Project and package management: poetry to uv (#402)
+
+  [uv] is the new package and project manager for the project, replacing Poetry.
+
+[uv]: https://github.com/astral-sh/uv
 
 ## django-slugify-processor 1.7.0 (2024-08-17)
 

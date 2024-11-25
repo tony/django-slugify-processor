@@ -1,8 +1,12 @@
-[tool.poetry]
+[project]
 name = "django-slugify-processor"
 version = "1.7.0"
 description = "pipeline for slugification edgecases in django"
-
+requires-python = ">=3.8,<4.0"
+license = { text = "MIT" }
+authors = [
+  {name = "Tony Narlock", email = "tony@git-pull.com"}
+]
 classifiers = [
   'Development Status :: 5 - Production/Stable',
   'Environment :: Web Environment',
@@ -26,13 +30,6 @@ classifiers = [
   'Topic :: Utilities',
   "Typing :: Typed",
 ]
-
-license = "MIT"
-
-authors = [
-  "Tony Narlock <tony@git-pull.com>",
-]
-
 readme = 'README.md'
 packages = [
   { include = "*", from = "src" },
@@ -41,54 +38,91 @@ include = [
   { path = "tests", format = "sdist" },
 ]
 keywords = ["django", "slug", "text"]
-
 homepage = "https://django-slugify-processor.git-pull.com"
+dependencies = [
+  "django>=4.2"
+]
 
-[tool.poetry.urls]
+[project.urls]
 "Bug Tracker" = "https://github.com/tony/django-slugify-processor/issues"
 Documentation = "https://django-slugify-processor.git-pull.com"
 Repository = "https://github.com/tony/django-slugify-processor"
 Changes = "https://github.com/tony/django-slugify-processor/blob/master/CHANGES"
 
-[tool.poetry.dependencies]
-python = "^3.8"
-django-extensions = { version = "*", optional = true }
-Django = ">=4.2"
+[project.optional-dependencies]
+django-extensions = [
+  "django-extensions"
+]
 
-[tool.poetry.group.docs.dependencies]
-### Docs ###
-sphinx = "*"
-furo = "*"
-gp-libs = "*"
-sphinx-autobuild = "*"
-sphinx-autodoc-typehints = "*"
-sphinx-inline-tabs = "*"
-sphinxext-opengraph = "<0.8" # https://github.com/wpilibsuite/sphinxext-opengraph/issues/100
-sphinx-copybutton = "*"
-sphinxext-rediraffe = "*"
-myst_parser = ">=0.18.1"
-linkify-it-py = "*"
+[tool.uv]
+dev-dependencies = [
+  # Docs
+  "sphinx",
+  "furo",
+  "gp-libs",
+  "sphinx-autobuild",
+  "sphinx-autodoc-typehints",
+  "sphinx-inline-tabs",
+  "sphinxext-opengraph",
+  "sphinx-copybutton",
+  "sphinxext-rediraffe",
+  "myst-parser",
+  "linkify-it-py",
+  # Testing
+  "gp-libs",
+  "pytest",
+  "pytest-rerunfailures",
+  "pytest-mock",
+  "pytest-watcher",
+  "pytest-django",
+  "django-extensions",
+  # Coverage
+  "codecov",
+  "coverage",
+  "pytest-cov",
+  # Lint
+  "ruff",
+  "mypy",
+  "django-stubs",
+]
 
-[tool.poetry.group.test.dependencies]
-### Testing ###
-pytest = "*"
-pytest-rerunfailures = "*"
-pytest-django = "*"
-pytest-watcher = "*"
-django-extensions = "*"
-gp-libs = "*"
+[dependency-groups]
+docs = [
+  "sphinx",
+  "furo",
+  "gp-libs",
+  "sphinx-autobuild",
+  "sphinx-autodoc-typehints",
+  "sphinx-inline-tabs",
+  "sphinxext-opengraph",
+  "sphinx-copybutton",
+  "sphinxext-rediraffe",
+  "myst-parser",
+  "linkify-it-py",
+]
+testing = [
+  "gp-libs",
+  "pytest",
+  "pytest-rerunfailures",
+  "pytest-mock",
+  "pytest-watcher",
+  "pytest-django",
+  "django-extensions",
+]
+coverage =[
+  "codecov",
+  "coverage",
+  "pytest-cov",
+]
+lint = [
+  "ruff",
+  "mypy",
+  "django-stubs",
+]
 
-[tool.poetry.group.coverage.dependencies]
-### Coverage ###
-codecov = "*"
-coverage = "*"
-pytest-cov = "*"
-
-[tool.poetry.group.lint.dependencies]
-### Lint ###
-ruff = "*"
-mypy = "*"
-django-stubs = "*"
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.mypy]
 plugins = ["mypy_django_plugin.main"]
@@ -183,7 +217,3 @@ filterwarnings = [
 # pytest-django
 django_find_project = false
 DJANGO_SETTINGS_MODULE = "tests.settings"
-
-[build-system]
-requires = ["poetry_core>=1.0.0", "poetry>=1.1.12"]
-build-backend = "poetry.core.masonry.api"
