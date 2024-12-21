@@ -126,6 +126,7 @@ build-backend = "hatchling.build"
 [tool.mypy]
 plugins = ["mypy_django_plugin.main"]
 strict = true
+python_version = "3.9"
 files = [
   "src/",
   "tests/",
@@ -163,7 +164,7 @@ exclude_lines = [
 ]
 
 [tool.ruff]
-target-version = "py38"
+target-version = "py39"
 
 [tool.ruff.lint]
 select = [
