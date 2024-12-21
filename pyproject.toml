@@ -1,6 +1,6 @@
 [project]
 name = "django-slugify-processor"
-version = "1.8.0"
+version = "1.9.0"
 description = "pipeline for slugification edgecases in django"
 requires-python = ">=3.9,<4.0"
 license = { text = "MIT" }
