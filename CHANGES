@@ -12,6 +12,16 @@
 
   Python 3.8 reached end-of-life status on October 7th, 2024 (see PEP 569).
 
+### Development
+
+- Aggressive automated lint fixes via `ruff` (#404)
+
+  via ruff v0.8.4, all automated lint fixes, including unsafe and previews were applied for Python 3.9:
+
+  ```sh
+  ruff check --select ALL . --fix --unsafe-fixes --preview --show-fixes; ruff format .
+  ```
+
 ## django-slugify-processor 1.8.0 (2024-11-26)
 
 _Maintenance only, no bug fixes or features_
