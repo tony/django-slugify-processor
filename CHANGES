@@ -4,6 +4,14 @@
 
 - _Add your latest changes from PRs here_
 
+### Breaking changes (#405)
+
+- Drop Python 3.8
+
+  The minimum version of Python in this and future releases is Python 3.9.
+
+  Python 3.8 reached end-of-life status on October 7th, 2024 (see PEP 569).
+
 ## django-slugify-processor 1.8.0 (2024-11-26)
 
 _Maintenance only, no bug fixes or features_
