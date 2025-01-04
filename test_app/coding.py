@@ -1,5 +1,7 @@
 """Example slug function for django-slugify-processor tests."""
 
+from __future__ import annotations
+
 
 def slugify_programming(value: str) -> str:
     """Replace c++ with cpp (URL safe)."""

@@ -1,5 +1,7 @@
 """Tests for django-slugify-processor's text utilities."""
 
+from __future__ import annotations
+
 import typing as t
 
 from django.utils.text import slugify as django_slugify

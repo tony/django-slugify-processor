@@ -1,5 +1,7 @@
 """Metadata for django-slugify-processor."""
 
+from __future__ import annotations
+
 __title__ = "django-slugify-processor"
 __package_name__ = "django_slugify_processor"
 __version__ = "1.9.0"

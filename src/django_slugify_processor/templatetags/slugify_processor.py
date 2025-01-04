@@ -1,5 +1,7 @@
 """Slugify django template filter."""
 
+from __future__ import annotations
+
 from django import template
 from django.template.defaultfilters import stringfilter
 

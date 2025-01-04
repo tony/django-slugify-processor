@@ -1,5 +1,7 @@
 """Django models for django-slugify-processor test app."""
 
+from __future__ import annotations
+
 import django_extensions.db.fields
 from django.db import models
 
