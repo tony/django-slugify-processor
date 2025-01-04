@@ -1,6 +1,8 @@
 """Sphinx configuration for Django Slugify Processor."""
 
 # flake8: NOQA: E501
+from __future__ import annotations
+
 import inspect
 import pathlib
 import sys
@@ -69,7 +71,7 @@ html_css_files = ["css/custom.css"]
 html_extra_path = ["manifest.json"]
 html_theme = "furo"
 html_theme_path: list[str] = []
-html_theme_options: dict[str, t.Union[str, list[dict[str, str]]]] = {
+html_theme_options: dict[str, str | list[dict[str, str]]] = {
     "light_logo": "img/icons/logo.svg",
     "dark_logo": "img/icons/logo-dark.svg",
     "footer_icons": [
@@ -130,7 +132,7 @@ intersphinx_mapping = {
 }
 
 
-def linkcode_resolve(domain: str, info: dict[str, str]) -> t.Union[None, str]:
+def linkcode_resolve(domain: str, info: dict[str, str]) -> None | str:
     """
     Determine the URL corresponding to Python object.
 
@@ -200,13 +202,13 @@ def linkcode_resolve(domain: str, info: dict[str, str]) -> t.Union[None, str]:
     )
 
 
-def remove_tabs_js(app: "Sphinx", exc: Exception) -> None:
+def remove_tabs_js(app: Sphinx, exc: Exception) -> None:
     """Fix for sphinx-inline-tabs#18."""
     if app.builder.format == "html" and not exc:
         tabs_js = pathlib.Path(app.builder.outdir) / "_static" / "tabs.js"
         tabs_js.unlink(missing_ok=True)
 
 
-def setup(app: "Sphinx") -> None:
+def setup(app: Sphinx) -> None:
     """Sphinx setup hook."""
     app.connect("build-finished", remove_tabs_js)
