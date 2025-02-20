@@ -25,6 +25,14 @@ jobs:
       - name: Set up Python ${{ matrix.python-version }}
         run: uv python install ${{ matrix.python-version }}
 
+      - name: Test runtime dependencies
+        run: |
+          uv run --no-dev -p python${{ matrix.python-version }} -- python -c '
+          from django_slugify_processor import __about__, text, templatetags, __version__
+          from django_slugify_processor.templatetags import slugify_processor
+          print("django_slugify_processor version:", __version__)
+          '
+
       - name: Install dependencies
         run: uv sync --all-extras --dev
 
