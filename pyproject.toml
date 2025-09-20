@@ -53,8 +53,8 @@ django-extensions = [
   "django-extensions"
 ]
 
-[tool.uv]
-dev-dependencies = [
+[dependency-groups]
+dev = [
   # Docs
   "sphinx",
   "furo",
@@ -85,7 +85,6 @@ dev-dependencies = [
   "django-stubs",
 ]
 
-[dependency-groups]
 docs = [
   "sphinx",
   "furo",
