@@ -11,6 +11,10 @@ DATABASES: dict[str, t.Any] = {
     "default": {"NAME": ":memory:", "ENGINE": "django.db.backends.sqlite3"},
 }
 
-INSTALLED_APPS: list[str] = ["test_app"]
+INSTALLED_APPS: list[str] = [
+    "django.contrib.contenttypes",
+    "django.contrib.auth",
+    "test_app",
+]
 
 USE_TZ: bool = False

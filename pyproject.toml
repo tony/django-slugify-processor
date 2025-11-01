@@ -140,6 +140,12 @@ module = [
 ]
 ignore_missing_imports = true
 
+[[tool.mypy.overrides]]
+module = [
+  "test_app.*",
+]
+disable_error_code = ["no-untyped-call"]
+
 [tool.coverage.run]
 branch = true
 parallel = true
