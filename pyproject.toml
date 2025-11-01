@@ -2,7 +2,7 @@
 name = "django-slugify-processor"
 version = "1.9.0"
 description = "pipeline for slugification edgecases in django"
-requires-python = ">=3.9,<4.0"
+requires-python = ">=3.10,<4.0"
 license = { text = "MIT" }
 authors = [
   {name = "Tony Narlock", email = "tony@git-pull.com"}
