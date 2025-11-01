@@ -27,9 +27,11 @@ $ uv add django-slugify-processor --prerelease allow
 $ uvx --from 'django-slugify-processor' --prerelease allow django-slugify-processor
 ```
 
-## django-slugify-processor 1.10.x (unreleased)
+## django-slugify-processor 1.11.x (unreleased)
 
 - _Add your latest changes from PRs here_
+
+## django-slugify-processor 1.10.0 (2025-11-01)
 
 ### Breaking Changes
 
