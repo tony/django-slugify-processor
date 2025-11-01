@@ -11,6 +11,7 @@ hide-toc: true
 ```{toctree}
 :hidden:
 
+quickstart
 api
 ```
 
