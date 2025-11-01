@@ -1,5 +1,32 @@
 # Changelog
 
+To install the unreleased django-slugify-processor version, see [developmental releases](https://django-slugify-processor.git-pull.com/quickstart.html#developmental-releases).
+
+[pip](https://pip.pypa.io/en/stable/):
+
+```console
+$ pip install --user --upgrade --pre django-slugify-processor
+```
+
+[pipx](https://pypa.github.io/pipx/docs/):
+
+```console
+$ pipx install --suffix=@next 'django-slugify-processor' --pip-args '\--pre' --force
+// Usage: django-slugify-processor@next [args]
+```
+
+[uv](https://docs.astral.sh/uv/):
+
+```console
+$ uv add django-slugify-processor --prerelease allow
+```
+
+[uvx](https://docs.astral.sh/uv/guides/tools/):
+
+```console
+$ uvx --from 'django-slugify-processor' --prerelease allow django-slugify-processor
+```
+
 ## django-slugify-processor 1.10.x (unreleased)
 
 - _Add your latest changes from PRs here_
