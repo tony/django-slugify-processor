@@ -180,7 +180,6 @@ why: reason
 what:
 - bullet of concrete change
 - bullet of tests/tooling touched
-refs: #issue or links (optional)
 ```
 Commit types: feat, fix, refactor, docs, chore, test, style, py(deps), py(deps[dev]). Keep subject ≤50 chars; body ≤72 chars/line; imperative mood.
 
