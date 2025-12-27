@@ -27,12 +27,12 @@ $ uv sync --all-extras --dev
 
 `uv run py.test`
 
-Helpers: `make test`
+Helpers: `just test`
 
 ## Automatically run tests on file save
 
-1. `make start` (via [pytest-watcher])
-2. `make watch_test` (requires installing [entr(1)])
+1. `just start` (via [pytest-watcher])
+2. `just watch-test` (requires installing [entr(1)])
 
 [pytest-watcher]: https://github.com/olzhasar/pytest-watcher
 
@@ -42,22 +42,21 @@ Default preview server: http://localhost:8034
 
 [sphinx-autobuild] will automatically build the docs, watch for file changes and launch a server.
 
-From home directory: `make start_docs`
-From inside `docs/`: `make start`
+From home directory: `just start-docs`
+From inside `docs/`: `just start`
 
 [sphinx-autobuild]: https://github.com/executablebooks/sphinx-autobuild
 
 ### Manual documentation (the hard way)
 
-`cd docs/` and `make html` to build. `make serve` to start http server.
+`cd docs/` and `just html` to build. `just serve` to start http server.
 
 Helpers:
-`make build_docs`, `make serve_docs`
+`just build-docs`, `just serve-docs`
 
-Rebuild docs on file change: `make watch_docs` (requires [entr(1)])
+Rebuild docs on file change: `just watch-docs` (requires [entr(1)])
 
-Rebuild docs and run server via one terminal: `make dev_docs` (requires above, and a
-`make(1)` with `-J` support, e.g. GNU Make)
+Rebuild docs and run server via one terminal: `just dev-docs`
 
 ## Formatting / Linting
 
@@ -81,10 +80,10 @@ $ ruff check .
 
 ````
 
-````{tab} make
+````{tab} just
 
 ```console
-$ make ruff
+$ just ruff
 ```
 
 ````
@@ -92,7 +91,7 @@ $ make ruff
 ````{tab} Watch
 
 ```console
-$ make watch_ruff
+$ just watch-ruff
 ```
 
 requires [`entr(1)`].
@@ -135,10 +134,10 @@ $ ruff format .
 
 ````
 
-````{tab} make
+````{tab} just
 
 ```console
-$ make ruff_format
+$ just ruff-format
 ```
 
 ````
@@ -163,10 +162,10 @@ $ mypy .
 
 ````
 
-````{tab} make
+````{tab} just
 
 ```console
-$ make mypy
+$ just mypy
 ```
 
 ````
@@ -174,7 +173,7 @@ $ make mypy
 ````{tab} Watch
 
 ```console
-$ make watch_mypy
+$ just watch-mypy
 ```
 
 requires [`entr(1)`].
