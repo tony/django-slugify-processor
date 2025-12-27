@@ -248,5 +248,5 @@ $ cd ./django-slugify-processor
 Test:
 
 ```console
-$ make test
+$ just test
 ```
