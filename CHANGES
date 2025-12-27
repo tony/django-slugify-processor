@@ -31,6 +31,10 @@ $ uvx --from 'django-slugify-processor' --prerelease allow django-slugify-proces
 
 - _Add your latest changes from PRs here_
 
+### Documentation
+
+- Migrate docs deployment to AWS OIDC authentication and AWS CLI
+
 ## django-slugify-processor 1.10.0 (2025-11-01)
 
 ### Breaking Changes
