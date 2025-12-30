@@ -165,6 +165,39 @@ value : str
 """
 ```
 
+### Doctests
+
+**All functions and methods MUST have working doctests.** Doctests serve as both documentation and tests.
+
+**CRITICAL RULES:**
+- Doctests MUST actually execute - never comment out function calls or similar
+- Doctests MUST NOT be converted to `.. code-block::` as a workaround (code-blocks don't run)
+- If you cannot create a working doctest, **STOP and ask for help**
+
+**Available tools for doctests:**
+- `doctest_namespace` fixtures: `tmp_path`
+- Django `settings` fixture (from pytest-django)
+- Ellipsis for variable output: `# doctest: +ELLIPSIS`
+- Update `conftest.py` to add new fixtures to `doctest_namespace`
+
+**`# doctest: +SKIP` is NOT permitted** - it's just another workaround that doesn't test anything. Use fixtures properly.
+
+**Using fixtures in doctests:**
+```python
+>>> from django_slugify_processor.text import slugify
+>>> slugify("Hello World")
+'hello-world'
+>>> slugify("C++ Programming")  # With processor configured
+'cpp-programming'
+```
+
+**When output varies, use ellipsis:**
+```python
+>>> from django.conf import settings
+>>> hasattr(settings, 'SLUGIFY_PROCESSORS')  # doctest: +ELLIPSIS
+...
+```
+
 ### Dev Loop (from `.cursor/rules/dev-loop.mdc`)
 - Format first: `uv run ruff format .`
 - Run tests: `uv run py.test` (or `uv run ptw .` for watch / doctests)
