@@ -29,7 +29,9 @@ $ uvx --from 'django-slugify-processor' --prerelease allow django-slugify-proces
 
 ## django-slugify-processor 1.11.x (unreleased)
 
-- _Add your latest changes from PRs here_
+### CI
+
+- Migrate to PyPI Trusted Publisher (#410)
 
 ### Development
 
