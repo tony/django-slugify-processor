@@ -207,7 +207,7 @@ value : str
 
 ### Git Commit Standards (from `.cursor/rules/git-commits.mdc`)
 ```
-Component/File(commit-type[scope]): Concise description
+Scope(type[detail]): concise description
 
 why: reason
 what:
@@ -215,6 +215,10 @@ what:
 - bullet of tests/tooling touched
 ```
 Commit types: feat, fix, refactor, docs, chore, test, style, py(deps), py(deps[dev]). Keep subject ≤50 chars; body ≤72 chars/line; imperative mood.
+
+- **ai(rules[AGENTS])**: AI rule updates
+- **ai(claude[rules])**: Claude Code rules (CLAUDE.md)
+- **ai(claude[command])**: Claude Code command changes
 
 ## Debugging Tips (from `.cursor/rules/avoid-debug-loops.mdc`)
 - If fixes loop without progress, pause and state the loop.
