@@ -198,6 +198,86 @@ value : str
 ...
 ```
 
+### Logging Standards
+
+These rules guide future logging changes; existing code may not yet conform.
+
+#### Logger setup
+
+- Use `logging.getLogger(__name__)` in every module
+- Add `NullHandler` in library `__init__.py` files
+- Never configure handlers, levels, or formatters in library code — that's the application's job
+
+#### Structured context via `extra`
+
+Pass structured data on every log call where useful for filtering, searching, or test assertions.
+
+**Core keys** (stable, scalar, safe at any log level):
+
+| Key | Type | Context |
+|-----|------|---------|
+| `django_app` | `str` | Django app label |
+| `django_setting` | `str` | settings key accessed |
+| `django_slugify_processor` | `str` | processor function name |
+
+Treat established keys as compatibility-sensitive — downstream users may build dashboards and alerts on them. Change deliberately.
+
+#### Key naming rules
+
+- `snake_case`, not dotted; `django_` prefix
+- Prefer stable scalars; avoid ad-hoc objects
+
+#### Lazy formatting
+
+`logger.debug("msg %s", val)` not f-strings. Two rationales:
+- Deferred string interpolation: skipped entirely when level is filtered
+- Aggregator message template grouping: `"Running %s"` is one signature grouped ×10,000; f-strings make each line unique
+
+When computing `val` itself is expensive, guard with `if logger.isEnabledFor(logging.DEBUG)`.
+
+#### stacklevel for wrappers
+
+Increment for each wrapper layer so `%(filename)s:%(lineno)d` and OTel `code.filepath` point to the real caller. Verify whenever call depth changes.
+
+#### Log levels
+
+| Level | Use for | Examples |
+|-------|---------|----------|
+| `DEBUG` | Internal mechanics | Template rendering, processor pipeline steps |
+| `INFO` | Lifecycle, user-visible operations | Extension loaded, configuration applied |
+| `WARNING` | Recoverable issues, deprecation | Deprecated setting, missing optional dependency |
+| `ERROR` | Failures that stop an operation | Rendering failed, invalid configuration |
+
+#### Message style
+
+- Lowercase, past tense for events: `"extension loaded"`, `"rendering failed"`
+- No trailing punctuation
+- Keep messages short; put details in `extra`, not the message string
+
+#### Exception logging
+
+- Use `logger.exception()` only inside `except` blocks when you are **not** re-raising
+- Use `logger.error(..., exc_info=True)` when you need the traceback outside an `except` block
+- Avoid `logger.exception()` followed by `raise` — this duplicates the traceback. Either add context via `extra` that would otherwise be lost, or let the exception propagate
+
+#### Testing logs
+
+Assert on `caplog.records` attributes, not string matching on `caplog.text`:
+- Scope capture: `caplog.at_level(logging.DEBUG, logger="django_slugify_processor.text")`
+- Filter records rather than index by position: `[r for r in caplog.records if hasattr(r, "django_app")]`
+- Assert on schema: `record.django_app == "myapp"` not `"myapp" in caplog.text`
+- `caplog.record_tuples` cannot access extra fields — always use `caplog.records`
+
+#### Avoid
+
+- f-strings/`.format()` in log calls
+- Unguarded logging in hot loops (guard with `isEnabledFor()`)
+- Catch-log-reraise without adding new context
+- `print()` for diagnostics
+- Logging secret env var values (log key names only)
+- Non-scalar ad-hoc objects in `extra`
+- Requiring custom `extra` fields in format strings without safe defaults (missing keys raise `KeyError`)
+
 ### Dev Loop (from `.cursor/rules/dev-loop.mdc`)
 - Format first: `uv run ruff format .`
 - Run tests: `uv run py.test` (or `uv run ptw .` for watch / doctests)
