@@ -1,11 +1,13 @@
-{# Import the theme's layout. #}
-{% extends "!layout.html" %}
+{% extends "!page.html" %}
 
-{# Include our new CSS file into existing ones. #}
 {% set css_files = css_files + ['_static/django-slugify-processor.css']%}
+
 
 {%- block extrahead %}
   {{ super() }}
+  {%- for href in font_preload_hrefs|default([]) %}
+  <link rel="preload" href="{{ pathto('_static/fonts/' + href, 1) }}" as="font" type="font/woff2" crossorigin="">
+  {%- endfor %}
   {%- if theme_show_meta_manifest_tag == true %}
   <link rel="manifest" href="/manifest.json">
   {% endif -%}
