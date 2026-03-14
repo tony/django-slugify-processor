@@ -1,8 +1,5 @@
 {% extends "!page.html" %}
 
-{% set css_files = css_files + ['_static/django-slugify-processor.css']%}
-
-
 {%- block extrahead %}
   {{ super() }}
   {%- for href in font_preload_hrefs|default([]) %}
