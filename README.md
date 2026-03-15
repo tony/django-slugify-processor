@@ -223,7 +223,7 @@ class MyModel(models.Model):
 - License MIT
 - git repo
 
-  ```bash
+  ```console
   $ git clone https://github.com/tony/django-slugify-processor.git
   ```
 
