@@ -67,6 +67,7 @@ dev = [
   "sphinxext-rediraffe",
   "myst-parser",
   "linkify-it-py",
+  "sphinx-design",  # https://sphinx-design.readthedocs.io/
   # Testing
   "gp-libs",
   "pytest",
@@ -97,6 +98,7 @@ docs = [
   "sphinxext-rediraffe",
   "myst-parser",
   "linkify-it-py",
+  "sphinx-design",  # https://sphinx-design.readthedocs.io/
 ]
 testing = [
   "gp-libs",
