@@ -39,8 +39,10 @@ extensions = [
     "sphinxext.opengraph",
     "sphinxext.rediraffe",
     "myst_parser",
+    "sphinx_design",  # https://sphinx-design.readthedocs.io/
     "linkify_issues",
 ]
+myst_heading_anchors = 4
 myst_enable_extensions = [
     "colon_fence",
     "substitution",
