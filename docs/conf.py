@@ -30,6 +30,7 @@ conf = merge_sphinx_config(
     source_branch="master",
     light_logo="img/icons/logo.svg",
     dark_logo="img/icons/logo-dark.svg",
+    extra_extensions=["sphinx_autodoc_api_style"],
     intersphinx_mapping={
         "py": ("https://docs.python.org", None),
         "django": (
