@@ -37,6 +37,11 @@ $ uvx --from 'django-slugify-processor' --prerelease allow django-slugify-proces
 - _Add your latest changes from PRs here_
 <!-- END PLACEHOLDER - ADD NEW CHANGELOG ENTRIES BELOW THIS LINE -->
 
+### Documentation
+
+- Visual improvements to API docs from [gp-sphinx](https://gp-sphinx.git-pull.com)-based Sphinx packages (#417)
+
+
 ### Development
 
 #### Makefile -> Justfile (#411)
