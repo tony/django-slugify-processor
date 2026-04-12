@@ -40,6 +40,7 @@ $ uvx --from 'django-slugify-processor' --prerelease allow django-slugify-proces
 ### Documentation
 
 - Visual improvements to API docs from [gp-sphinx](https://gp-sphinx.git-pull.com)-based Sphinx packages (#417)
+- Bump gp-sphinx docs stack to v0.0.1a8 (#418)
 
 
 ### Development
