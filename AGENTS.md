@@ -148,7 +148,7 @@ def test_custom_processor(settings):
 
 ### Imports
 
-- Prefer namespace imports (e.g., `import typing as t`), avoiding `from module import *`
+- Prefer namespace imports for stdlib (e.g., `import typing as t`); third-party packages may use `from X import Y`
 - Include `from __future__ import annotations` at the top of Python files
 
 ### Docstrings
