@@ -1,6 +1,7 @@
 # Changelog
 
-To install the unreleased django-slugify-processor version, see [developmental releases](https://django-slugify-processor.git-pull.com/quickstart.html#developmental-releases).
+To install the unreleased django-slugify-processor version, see
+[developmental releases](https://django-slugify-processor.git-pull.com/quickstart.html#developmental-releases).
 
 [pip](https://pip.pypa.io/en/stable/):
 
@@ -16,7 +17,6 @@ $ pipx install \
     --pip-args '\--pre' \
     --force \
     'django-slugify-processor'
-// Usage: django-slugify-processor@next [args]
 ```
 
 [uv](https://docs.astral.sh/uv/):
@@ -37,429 +37,636 @@ $ uvx --from 'django-slugify-processor' --prerelease allow django-slugify-proces
 - _Add your latest changes from PRs here_
 <!-- END PLACEHOLDER - ADD NEW CHANGELOG ENTRIES BELOW THIS LINE -->
 
-### Documentation
-
-- Visual improvements to API docs from [gp-sphinx](https://gp-sphinx.git-pull.com)-based Sphinx packages (#417)
-- Bump gp-sphinx docs stack to v0.0.1a8 (#418)
-- Bump gp-sphinx docs stack to v0.0.1a16 — docs site now renders
-  via `gp-furo-theme`, a Tailwind v4 respin of Furo, with
-  `sphinx-vite-builder` handling theme-asset builds (#419)
-
-
-### Development
-
-#### Makefile -> Justfile (#411)
-
-- Migrate from `Makefile` to `justfile` for running development tasks
-- Update documentation to reference `just` commands
-
-### Documentation
-
-- Migrate docs deployment to AWS OIDC authentication and AWS CLI
-
-## django-slugify-processor 1.10.0 (2025-11-01)
-
-### Breaking Changes
-
-- Drop Python 3.9 (#409)
-
-  Python 3.9 reached end-of-life status on October 5th, 2025 (see PEP 596).
-
-  See also:
-  - https://devguide.python.org/versions/#:~:text=Release%20manager-,3.9,-PEP%20596
-  - https://peps.python.org/pep-0596/
-
-### Development
-
-- Add Python 3.14 to test matrix (#408)
-
-#### chore: Implement PEP 563 deferred annotation resolution (#406)
-
-- Add `from __future__ import annotations` to defer annotation resolution and reduce unnecessary runtime computations during type checking.
-- Enable Ruff checks for PEP-compliant annotations:
-  - [non-pep585-annotation (UP006)](https://docs.astral.sh/ruff/rules/non-pep585-annotation/)
-  - [non-pep604-annotation (UP007)](https://docs.astral.sh/ruff/rules/non-pep604-annotation/)
-
-For more details on PEP 563, see: https://peps.python.org/pep-0563/
-
-## django-slugify-processor 1.9.0 (2024-12-20)
-
-_Maintenance only, no bug fixes or features_
-
-### Breaking changes (#405)
-
-- Drop Python 3.8
-
-  The minimum version of Python in this and future releases is Python 3.9.
-
-  Python 3.8 reached end-of-life status on October 7th, 2024 (see PEP 569).
-
-### Development
-
-- Aggressive automated lint fixes via `ruff` (#404)
-
-  via ruff v0.8.4, all automated lint fixes, including unsafe and previews were applied for Python 3.9:
-
-  ```sh
-  ruff check --select ALL . --fix --unsafe-fixes --preview --show-fixes; ruff format .
-  ```
-
-## django-slugify-processor 1.8.0 (2024-11-26)
-
-_Maintenance only, no bug fixes or features_
-
-### Breaking changes
-
-#### Project and package management: poetry to uv (#402)
-
-[uv] is the new package and project manager for the project, replacing Poetry.
-
-[uv]: https://github.com/astral-sh/uv
-
-#### Build system: poetry to hatchling (#402)
-
-[Build system] moved from [poetry] to [hatchling].
-
-[Build system]: https://packaging.python.org/en/latest/tutorials/packaging-projects/#choosing-a-build-backend
-[poetry]: https://github.com/python-poetry/poetry
-[hatchling]: https://hatch.pypa.io/latest/
-
-#### Django 3.2 dropped (#397)
-
-Django 4.2+ is the new minimum version. Support for django 3.2 is dropped.
-
-v1.7.x is the final Django 3.2 versions.
-
-Django 3.2's extended support has ended April 1st, 2024 [^DJ3_2_deprecation].
-
-[^DJ3_2_deprecation]: Django Project. Unsupported previous releases. https://www.djangoproject.com/download/#unsupported-versions.
-
-### Development
-
-- Support for Django 5.1 in CI, trove classifiers (#398)
-
-## django-slugify-processor 1.7.0 (2024-08-17)
-
-### Upcoming deprecations
-
-- 1.7.x is the last branch supporting Django 3.2.
-
-  1.8+ will drop Django 3.2.
-
-### Documentation
-
-- Automatically linkify links that were previously only text.
-
-### Development
-
-- Aggressive automated lint fixes via `ruff` (#388)
-
-  via ruff v0.3.4, all automated lint fixes, including unsafe and previews were applied:
-
-  ```sh
-  ruff check --select ALL . --fix --unsafe-fixes --preview --show-fixes; ruff format .
-  ```
-
-  Branches were treated with:
-
-  ```sh
-  git rebase \
-      --strategy-option=theirs \
-      --exec 'poetry run ruff check --select ALL . --fix --unsafe-fixes --preview --show-fixes; poetry run ruff format .; git add src tests; git commit --amend --no-edit' \
-      origin/master
-  ```
-
-- poetry: 1.7.1 -> 1.8.2
-
-  See also: https://github.com/python-poetry/poetry/blob/1.8.2/CHANGELOG.md
-
-- ruff 0.2.2 -> 0.3.0 (#386)
-
-  Related formattings. Update CI to use `ruff check .` instead of `ruff .`.
-
-  See also: https://github.com/astral-sh/ruff/blob/v0.3.0/CHANGELOG.md
-
-- Strengthen linting (#385)
-
-  - Add flake8-commas (COM)
-
-    - https://docs.astral.sh/ruff/rules/#flake8-commas-com
-    - https://pypi.org/project/flake8-commas/
-
-  - Add flake8-builtins (A)
-
-    - https://docs.astral.sh/ruff/rules/#flake8-builtins-a
-    - https://pypi.org/project/flake8-builtins/
-
-  - Add flake8-errmsg (EM)
-
-    - https://docs.astral.sh/ruff/rules/#flake8-errmsg-em
-    - https://pypi.org/project/flake8-errmsg/
-
-## django-slugify-processor 1.6.0 (2023-12-09)
-
-_Maintenance only, no bug fixes or features_
-
-### Packaging
-
-- pyproject.toml: Add django 5.0 (#382)
-- pyproject.toml: Remove django 4.0 and 4.1 from pyproject (#382)
-
-### Development
-
-- Remove `django_slugify_processor.settings`, which was unused (#381).
-
-### CI
-
-- Move CodeQL from advanced configuration file to GitHub's default
-- ci: Add pydocstyle rule to ruff (#380)
-- ci(tests): Remove django 4.0 and 4.1 from testgrid (#382)
-- ci(tests): Add django 5.0 to testgrid (#382)
-- ci(tests): Only test latest python (#382)
-
-  As django 5.0 drops python 3.8 and 3.9, just use `3.x` to reduce the amount of jobs created in the test matrix (and keep the workflow itself simple).
-
-### Documentation
-
-- Add docstrings to functions, methods, classes, and packages (#380)
-
-## django-slugify-processor 1.5.0 (2023-11-18)
-
-_Maintenance only, no bug fixes or features_
-
-### Development
-
-- Poetry: 1.6.1 -> 1.7.0
-
-  See also: https://github.com/python-poetry/poetry/blob/1.7.0/CHANGELOG.md
-
-- Move formatting from `black` to [`ruff format`] (#379)
-
-  This retains the same formatting style of `black` while eliminating a
-  dev dependency by using our existing rust-based `ruff` linter.
-
-  [`ruff format`]: https://docs.astral.sh/ruff/formatter/
-
-- Packaging (poetry): Fix development dependencies
-
-  Per [Poetry's docs on managing dependencies] and `poetry check`, we had it wrong: Instead of using extras, we should create these:
-
-  ```toml
-  [tool.poetry.group.group-name.dependencies]
-  dev-dependency = "1.0.0"
-  ```
-
-  Which we now do.
-
-  [Poetry's docs on managing dependencies]: https://python-poetry.org/docs/master/managing-dependencies/
-
-- Packaging: Add Python 3.12 to trove classifiers
-- CI: Update action packages to fix warnings
-
-  - [dorny/paths-filter]: 2.7.0 -> 2.11.1
-  - [codecov/codecov-action]: 2 -> 3
-
-  [dorny/paths-filter]: https://github.com/dorny/paths-filter
-  [codecov/codecov-action]: https://github.com/codecov/codecov-action
-
-## django-slugify-processor 1.4.0post0 (2023-10-07)
-
-### Documentation
-
-- README updates so links point to new django version
-
-## django-slugify-processor 1.4.0 (2023-10-07)
+django-slugify-processor 1.11.x is a documentation and contributor-experience
+refresh for the same small slugification API. The release keeps
+{func}`~django_slugify_processor.text.slugify` and
+{func}`~django_slugify_processor.templatetags.slugify_processor.slugify` aligned
+with Django's behavior, while making the docs easier to browse, API reference
+pages easier to scan, and local automation easier to run. It also exposes
+`django_slugify_processor.__version__` at package import time so documentation
+tooling can build correct source links without reaching into package metadata.
 
 ### What's new
 
-- Now [`mypy --strict`] compliant (#376)
+#### Package version metadata is available at import time
 
-  [`mypy --strict`]: https://mypy.readthedocs.io/en/stable/command_line.html#cmdoption-mypy-strict
+`django_slugify_processor.__version__` now re-exports the version from
+`django_slugify_processor.__about__`. This gives Sphinx linkcode resolution and
+similar tooling a stable public place to read the installed package version,
+which prevents generated source links from falling back to malformed
+versionless URLs.
 
-### Packaging
+### Documentation
 
-- Move pytest configuration to `pyproject.toml` (#375)
+#### Library Skeleton documentation structure (#415)
+
+The documentation site now opens with a purpose-built landing page instead of a
+rendered README include. The first screen gives readers a direct path into
+{ref}`quickstart`, {ref}`api`, and {ref}`project`, with short examples for
+installing the package, registering `SLUGIFY_PROCESSORS`, and calling
+{func}`~django_slugify_processor.text.slugify`.
+
+Contributor material moved into a dedicated project section. Development setup,
+code style, and release steps now live as navigable pages instead of one long
+development note, so maintainers can point contributors at the exact workflow
+they need.
+
+#### Faster and steadier documentation browsing (#413, #416)
+
+The docs gained the browsing polish first developed locally for this site:
+self-hosted IBM Plex fonts, preload and fallback metrics to prevent font-driven
+layout shifts, stable badge and logo sizing, and SPA-like navigation that keeps
+the sidebar, theme state, and loaded assets in place while moving between pages.
+
+Those pieces are no longer carried as repo-local Sphinx extensions, templates,
+CSS, and JavaScript. They now come from [gp-sphinx](https://gp-sphinx.git-pull.com),
+so django-slugify-processor benefits from the shared git-pull documentation
+stack without maintaining its own copy of the frontend machinery.
+
+#### Shared API documentation design via gp-sphinx (#416, #417, #418, #419)
+
+The API reference now uses the gp-sphinx autodoc stack for card-style function
+signatures, cleaner Python cross-references, consistent badges, and IBM Plex
+typography. The local Sphinx configuration shrank to the project-specific
+settings around repository links, logos, intersphinx, and the
+`sphinx_autodoc_api_style` extension.
+
+The docs stack was refreshed through `gp-sphinx 0.0.1a17`, including the
+`gp-furo-theme` Tailwind v4 port of Furo and `sphinx-vite-builder` for the Vite
+asset pipeline. Wheels now ship with built theme assets, so installed docs
+dependencies render the site without each consumer rebuilding the theme locally.
+
+#### Copyable command examples (#414)
+
+Documentation shell examples now use `console` code fences with `$` prompts and
+split long commands with line continuations. The changelog's developmental
+install commands, README examples, and contributor guidance follow the same
+copy-friendly format.
+
+#### Documentation publishing uses OIDC-backed AWS credentials
+
+The docs deployment workflow now uses GitHub OIDC to assume the AWS role for the
+documentation environment, syncs the built site with the AWS CLI, and invalidates
+targeted CloudFront paths after upload. That removes long-lived AWS access keys
+from the publishing path while keeping the existing S3 and CDN deployment model.
+
+### Development
+
+#### `just` replaces the project Makefiles (#411)
+
+Local development tasks now run through `just` at the repository root and in
+`docs/`. The new recipes cover tests, ruff, mypy, documentation builds,
+documentation preview servers, and watch-mode workflows; the old root
+`Makefile` and `docs/Makefile` were removed.
+
+README, contributor docs, CI, and agent guidance now point at the same `just`
+commands, so a maintainer can use one command vocabulary locally and in
+automation.
+
+#### Git-pull package pins bypass uv's freshness cooldown
+
+The project now exempts git-pull-authored packages from uv's
+`exclude-newer-package` cooldown. Fresh gp-sphinx and gp-libs releases can be
+consumed immediately during coordinated workspace updates instead of blocking
+every contributor's `uv sync` until a rolling freshness window expires.
+
+#### Changelog authoring conventions are codified
+
+`AGENTS.md` now records the release-note shape used by this changelog: lead
+paragraphs, fixed section order, deliverable headings, PR references in
+headings, and MyST roles for documented APIs. Future changelog edits have an
+explicit local standard instead of relying on tribal knowledge.
+
+## django-slugify-processor 1.10.0 (2025-11-01)
+
+django-slugify-processor 1.10.0 moves the supported runtime forward after
+Python 3.9 reached end of life. The package now targets Python 3.10 and newer,
+adds Python 3.14 to the supported and tested range, and refreshes the project
+metadata so Django 5.2 appears in the public compatibility matrix. Existing
+slug processor behavior is unchanged.
 
 ### Breaking changes
 
-- Drop Python 3.7 (#374)
-- Drop Django 2.2, 3.0, 3.1
+#### Python 3.9 support removed (#409)
 
-  Django 3.2+ is now supported
+Python 3.10 is now the minimum supported Python version. Projects still pinned
+to Python 3.9 should stay on django-slugify-processor 1.9.x until they can
+upgrade their runtime.
+
+The test, lint, type-check, README, and dependency metadata all moved to the new
+floor together so local development and CI agree on the same minimum.
+
+### What's new
+
+#### Python 3.14 is supported (#408)
+
+The GitHub Actions test matrix now includes Python 3.14 alongside the existing
+supported interpreters. The package classifiers and local tool-version files
+were updated so installers and maintainers see the same compatibility story.
+
+#### Developmental release installation docs
+
+The changelog gained copyable install commands for pre-release testing via
+`pip`, `pipx`, `uv`, and `uvx`. See {ref}`developmental-releases` for the
+matching quickstart guidance.
+
+### Development
+
+#### Deferred annotations throughout the package (#406)
+
+The package now imports `from __future__ import annotations` where needed, and
+Ruff enforces modern annotation forms. This reduces runtime annotation work and
+keeps the codebase aligned with the Python versions supported by the 1.10.x
+line.
+
+## django-slugify-processor 1.9.0 (2024-12-20)
+
+django-slugify-processor 1.9.0 is a maintenance release that raises the Python
+floor to 3.9 and modernizes the codebase around that baseline. It does not add
+new slugification behavior or bug fixes.
+
+### Breaking changes
+
+#### Python 3.8 support removed (#405)
+
+Python 3.9 is now the minimum supported Python version. Python 3.8 reached end
+of life on October 7, 2024, so future releases no longer test or advertise it.
+
+### Development
+
+#### Ruff modernization for the Python 3.9 floor (#404)
+
+The codebase received an aggressive automated Ruff cleanup against the new
+minimum runtime. This was a maintenance pass across formatting and lint fixes,
+not a user-facing behavior change.
+
+## django-slugify-processor 1.8.0 (2024-11-26)
+
+django-slugify-processor 1.8.0 is the project-management and Django floor
+release. It moves packaging from Poetry to uv and hatchling, drops Django 3.2
+after its extended-support window, and keeps the public slugification API
+focused on Django 4.2 and newer.
+
+### Breaking changes
+
+#### Django 3.2 support removed (#397)
+
+Django 4.2 is now the minimum supported Django version. Projects still on
+Django 3.2 should stay on django-slugify-processor 1.7.x until they can move to
+a supported Django LTS line.
+
+#### Project management moved from Poetry to uv (#402)
+
+The repository now uses [uv](https://docs.astral.sh/uv/) for environment and
+dependency management. Contributor setup, docs development, and CI dependency
+installation all follow the uv workflow.
+
+#### Build backend moved to hatchling (#402)
+
+The package build backend changed from Poetry to
+[hatchling](https://hatch.pypa.io/latest/). Source distributions and wheels now
+build through the standard `[build-system]` backend declared in `pyproject.toml`.
+
+### Development
+
+#### Django 5.1 is part of the support matrix (#398)
+
+CI and package classifiers now include Django 5.1. At the same time, unsupported
+Django 4.0 and 4.1 metadata was removed from the active test grid.
+
+## django-slugify-processor 1.7.0 (2024-08-17)
+
+django-slugify-processor 1.7.0 is the final line that supports Django 3.2. The
+release mainly prepares users for the upcoming Django 4.2+ floor while refreshing
+linting and docs-link behavior.
+
+### Upcoming deprecations
+
+#### Final Django 3.2 branch
+
+The 1.7.x series is the last branch intended for Django 3.2 users. The next
+feature line, 1.8.x, removes Django 3.2 support after Django 3.2's extended
+support ended on April 1, 2024.
+
+### Documentation
+
+#### Plain URLs are automatically linkified
+
+Documentation pages now link URLs that were previously rendered as plain text,
+making older release notes and references easier to follow.
+
+### Development
+
+#### Ruff linting tightened (#385, #386, #388)
+
+The project adopted a stricter Ruff configuration and refreshed the codebase
+with automated fixes from the newer Ruff release line. The added rule families
+cover comma style, builtin shadowing, and exception-message hygiene; the changes
+are development-quality improvements rather than runtime changes.
+
+## django-slugify-processor 1.6.0 (2023-12-09)
+
+django-slugify-processor 1.6.0 updates the Django compatibility window and
+keeps the project small by removing unused settings code. It adds Django 5.0
+coverage, removes old Django 4.0 and 4.1 test targets, and improves the
+documentation surface with real docstrings.
+
+### What's new
+
+#### Django 5.0 compatibility (#382)
+
+The package metadata and CI matrix now include Django 5.0. Because Django 5.0
+sets its own Python floor, the test matrix was simplified around the latest
+Python job for that line.
+
+### Documentation
+
+#### Public modules gained docstrings (#380)
+
+Functions, classes, packages, and methods now have docstrings so generated API
+documentation and doctest-oriented examples have real text to render.
+
+### Development
+
+#### Unused settings module removed (#381)
+
+The old `django_slugify_processor.settings` module was deleted because the
+package reads configuration from Django's normal settings object instead.
+
+#### CI and linting refreshed (#380, #382)
+
+CodeQL now uses GitHub's default setup, Ruff includes pydocstyle checks, and the
+Django test grid reflects the currently supported versions.
+
+## django-slugify-processor 1.5.0 (2023-11-18)
+
+django-slugify-processor 1.5.0 is a maintenance release for contributor tooling.
+The package runtime is unchanged, but formatting, dependency grouping, Python
+classifier metadata, and GitHub Actions dependencies were brought up to date.
+
+### Development
+
+#### Formatting moved from Black to Ruff format (#379)
+
+The project now uses `ruff format` for code formatting. This keeps the familiar
+Black-style layout while removing a separate formatter dependency from the
+development stack.
+
+#### Poetry development dependencies were corrected
+
+Development-only dependencies now use Poetry's dependency-group shape instead of
+extras. That matches Poetry's own validation model and makes local installs less
+surprising.
+
+#### Python 3.12 and CI dependency updates
+
+Package classifiers now include Python 3.12. GitHub Actions dependencies such as
+`dorny/paths-filter` and `codecov/codecov-action` were refreshed to remove
+workflow warnings and keep CI current.
+
+## django-slugify-processor 1.4.0post0 (2023-10-07)
+
+django-slugify-processor 1.4.0post0 is a documentation-only follow-up to the
+1.4.0 release. It corrects README links so readers land on the current Django
+documentation instead of stale version-specific pages.
+
+### Documentation
+
+#### README links point at current Django docs
+
+The README was updated to point at the current Django documentation for the
+slugify behavior that django-slugify-processor extends.
+
+## django-slugify-processor 1.4.0 (2023-10-07)
+
+django-slugify-processor 1.4.0 is a compatibility cleanup release. It drops
+unsupported Python and Django versions, moves pytest configuration into
+`pyproject.toml`, and makes the package strict-mypy compliant for maintainers.
+
+### Breaking changes
+
+#### Python 3.7 support removed (#374)
+
+Python 3.8 and newer are now required. Projects still on Python 3.7 should stay
+on an older django-slugify-processor release.
+
+#### Django 2.2, 3.0, and 3.1 support removed
+
+Django 3.2 and newer are now supported. The package no longer advertises or
+tests the older Django lines removed in this release.
+
+### What's new
+
+#### Strict mypy compliance (#376)
+
+The codebase now passes `mypy --strict`, giving maintainers a stronger type
+checking baseline for future changes.
+
+### Development
+
+#### Pytest configuration lives in `pyproject.toml` (#375)
+
+The repository moved pytest configuration out of standalone configuration files
+and into the central project metadata file.
 
 ## django-slugify-processor 1.3.1 (2023-07-04)
 
-_Maintenance only, no bug fixes or features_
+django-slugify-processor 1.3.1 is a maintenance release focused on repository
+tooling. It moves linting and formatting to Ruff, fixes CI typing behavior with
+django-stubs, and simplifies packaging metadata.
 
-### Internal improvements
+### Development
 
-- Move formatting, import sorting, and linting to [ruff].
+#### Formatting, import sorting, and linting moved to Ruff (#372)
 
-  This rust-based checker has dramatically improved performance. Linting and
-  formatting can be done almost instantly.
+Ruff replaced the previous isort, flake8, and plugin stack for faster local
+feedback. Additional Ruff rules were enabled so the project keeps a stricter
+style baseline.
 
-  This change replaces isort, flake8 and flake8 plugins.
+#### CI and type-checking infrastructure refreshed
 
-  Including additional formatting rules for ruff in #372.
+CI moved to Python 3.11, Poetry moved to the 1.5 release line, and the
+django-stubs settings-module issue in CI was fixed.
 
-[ruff]: https://ruff.rs
+#### Packaging metadata simplified (#366)
 
-### Infrastructure
-
-- Bump python to 3.11
-- CI speedups (#365)
-
-  - Split out release to separate job so the PyPI Upload docker image isn't pulled on normal runs
-  - Clean up CodeQL
-
-- poetry: 1.1.x -> 1.5.0
-
-  See also:
-
-  - <https://github.com/python-poetry/poetry/releases/tag/1.5.0>
-  - <https://github.com/python-poetry/poetry/releases/tag/1.4.0>
-  - <https://github.com/python-poetry/poetry/releases/tag/1.3.0>
-  - <https://github.com/python-poetry/poetry/releases/tag/1.2.0>
-
-- Typings: Fix django-stubs settings module issue on CI (#372)
-
-### Packaging
-
-- Remove `.tmuxp-before-script.sh` (was used by `.tmuxp.yaml`'s `before_script`)
-- Merge `.coveragerc` into `pyproject.toml` (#366)
-- Remove `MANIFEST.in` (#366)
-
-  This is made obsolete via poetry's `include` inside of pyproject.toml.
+Coverage configuration moved into `pyproject.toml`, `MANIFEST.in` was removed,
+and an obsolete tmuxp setup hook was deleted.
 
 ## django-slugify-processor 1.3.0 (2022-09-11)
 
+django-slugify-processor 1.3.0 moves the repository to the modern Python
+library layout used by later releases. The package now lives under `src/`, docs
+render through gp-libs Sphinx helpers, and the development stack adds stronger
+linting.
+
 ### Documentation
 
-- Render changelog in [`linkify_issues`] (#360, #355)
-- Fix Table of contents rendering with sphinx autodoc with [`sphinx_toctree_autodoc_fix`] (#355)
+#### Changelog and autodoc rendering use gp-libs helpers (#355, #360, #363)
 
-[`linkify_issues`]: https://gp-libs.git-pull.com/linkify_issues/
-[`sphinx_toctree_autodoc_fix`]: https://gp-libs.git-pull.com/sphinx_toctree_autodoc_fix/
+The documentation site now uses gp-libs Sphinx helpers to link issue references
+inside the changelog and to keep autodoc table-of-contents rendering stable.
 
 ### Development
 
-- Add [flake8-bugbear](https://github.com/PyCQA/flake8-bugbear) (#361)
-- Add [flake8-comprehensions](https://github.com/adamchainz/flake8-comprehensions) (#362)
+#### Source package layout moved to `src/` (#364)
+
+The Python package moved under a `src/` directory. This makes local test imports
+match installed-package imports more closely and avoids accidentally relying on
+repository-root import behavior.
+
+#### Linting rules expanded (#361, #362)
+
+The development stack added flake8-bugbear and flake8-comprehensions so CI can
+catch common Python mistakes and simplification opportunities earlier.
 
 ## django-slugify-processor 1.2.0 (2022-08-16)
 
+django-slugify-processor 1.2.0 establishes the testing and static-analysis
+baseline that later releases build on. It adds doctest support, mypy validation,
+cached dependency setup in CI, and a cleaner docs publishing condition.
+
 ### Development
 
-Infrastructure updates for static type checking and doctest examples.
+#### Doctests and mypy validation (#359)
 
-- Move project layout to `src/`, va #364
-- Initial [doctests] support added, via #359
+The test configuration now collects doctests and runs mypy with the Django stubs
+plugin. That gives examples and type hints a place in the normal validation
+flow.
 
-  [doctests]: https://docs.python.org/3/library/doctest.html
+#### CI dependency caching and docs publishing cleanup (#359)
 
-- Initial [mypy] validation, via #359
+GitHub Actions now use setup-python's dependency caching, and documentation
+publishing is skipped unless the workflow conditions say docs should be
+published.
 
-  [mypy]: https://github.com/python/mypy
+#### Pre-commit configuration removed
 
-- CI (tests, docs): Improve caching of python dependencies via `action/setup-python`'s v3/4's new
-  poetry caching, via #359
-
-- CI (docs): Skip if no `PUBLISH` condition triggered, via #359
-
-- CI: Remove `.pre-commit-config.yaml`, users should know enough to handle these things themselves.
+The repository no longer carries a pre-commit configuration. Contributors can
+run the documented commands directly instead of installing hooks that may not
+match their local workflow.
 
 ## django-slugify-processor 1.1.1 (2022-03-08)
 
+django-slugify-processor 1.1.1 is a small documentation and CI cleanup release.
+It fixes README URLs and removes a tox integration that broke Poetry when run
+inside an existing virtual environment.
+
 ### Documentation
 
-- README URL fixes
+#### README URLs corrected (#357)
+
+Project links in the README were updated so readers reach the current source,
+documentation, and package pages.
 
 ### Development
 
-- CI: Remove tox and tox-poetry-installer
+#### tox-poetry-installer removed from CI
 
-  This would break the poetry command when used inside the virtualenv.
+The tox-poetry-installer integration was removed because it could break Poetry
+commands when tox was already running inside a virtual environment.
 
 ## django-slugify-processor 1.1.0 (2022-03-08)
 
-Mainly an update for the new repo URL: https://github.com/tony/django-slugify-processor
+django-slugify-processor 1.1.0 updates the project identity after the repository
+move to `tony/django-slugify-processor`. It also refreshes the docs theme and
+keeps the codebase aligned with the Python 3.7 floor used at the time.
 
 ### Documentation
 
-- Switch to `furo` theme
+#### Documentation theme moved to Furo
+
+The docs site adopted the Furo theme, giving the API and usage pages a cleaner
+layout.
+
+#### Repository URLs updated
+
+Project metadata and documentation now point at
+`https://github.com/tony/django-slugify-processor`.
 
 ### Development
 
-- Run pyupdate @ 3.7
-- New repo URL: https://github.com/tony/django-slugify-processor
+#### pyupgrade run for Python 3.7
+
+The codebase was modernized with pyupgrade for the Python 3.7 baseline.
 
 ## django-slugify-processor 1.0.0 (2022-01-08)
 
-### Compatibility
+django-slugify-processor 1.0.0 is the first stable release after the early
+series. It drops old Python support, adds Python 3.10 and Django 4.0 coverage,
+and includes tests in source distributions so downstream packaging checks have
+the same fixtures maintainers use.
 
-- Python 3.6 support dropped (#350)
-- Python 3.10 support added (#350)
-- Django 4.0 support
-- Include tests/ in packages
+### Breaking changes
+
+#### Python 3.6 support removed (#350)
+
+Python 3.7 and newer are required for the 1.x line.
+
+### What's new
+
+#### Python 3.10 and Django 4.0 compatibility (#350)
+
+The package metadata and CI matrix were updated for Python 3.10 and Django 4.0,
+keeping the slugify processor pipeline available on the then-current Django
+release line.
+
+#### Tests are included in source distributions (#350)
+
+The `tests/` package is included in source distributions so downstream packagers
+can run the project's own checks from the published artifact.
 
 ### Development
 
-- Poetry: Update poetry to 1.1
-  - CI: Use poetry 1.1.12 and `install-poetry.py` installer (#333 + #350)
-  - Relock poetry.lock at 1.1 (w/ 1.1.7's fix)
-- Add `.pre-commit-config.yaml` (#350)
-- Remove unused `requirements.txt`-related files
-- `.tool-versions`, `.python-version`
+#### Poetry and tox workflow refreshed (#333, #350, #352)
 
-  In an effort to work across multiple versions with `pyenv` and `asdf` with `asdf-python`, set
-  multiple of the latest patched releases for python if they're supported.
+Poetry moved to the 1.1 release line, tox was reworked around the project
+dependencies, and a pre-commit configuration was added for local checks.
 
-- `tox` reorganization (#352)
-  - Add `tox` as a test dependency
-  - Add [enpaul/tox-poetry-installer](https://github.com/enpaul/tox-poetry-installer) to work with
-    our project dependencies
-  - Update tox.ini to use django's new `main` branch, python 3.8 minimum for django's main branch
+#### Runtime-version files updated
+
+`.tool-versions` and `.python-version` were updated to list current patch
+versions for the supported Python interpreters used by pyenv and asdf users.
 
 ## django-slugify-processor 0.11.0 (2021-06-16)
 
-- #329: Move to markdown
+django-slugify-processor 0.11.0 moves the project documentation source to
+Markdown. That makes the changelog and docs easier to maintain with the MyST
+tooling adopted by later releases.
+
+### Documentation
+
+#### Documentation source moved to Markdown (#329)
+
+The docs were converted from reStructuredText-oriented source files to Markdown
+so project documentation could evolve with the rest of the git-pull docs stack.
 
 ## django-slugify-processor 0.10.0 (2021-06-16)
 
-- Drop python 2.7, 3.5 and unsupported django versions
-- Remove unneeded `utf-8` versions
+django-slugify-processor 0.10.0 removes legacy Python and Django compatibility
+targets that were already outside normal support windows. It also cleans up
+older UTF-8 compatibility shims.
+
+### Breaking changes
+
+#### Python 2.7, Python 3.5, and unsupported Django versions removed (#328)
+
+The package now targets supported Python 3 and Django combinations. Projects
+still on Python 2.7, Python 3.5, or unsupported Django releases should remain on
+older django-slugify-processor versions.
+
+### Development
+
+#### Legacy UTF-8 compatibility code removed (#328)
+
+Old UTF-8 helpers kept for Python 2 era compatibility were removed as part of
+the runtime cleanup.
 
 ## django-slugify-processor 0.9.0 (2020-08-08)
 
-- Move doc URL from to git-pull.com
-- Move travis -> gh actions
-- Move pipenv -> poetry
-- Move RTD -> self-hosted docs
-- Relax package constraints
-- Add package constraints for cases where python version / django effects things
+django-slugify-processor 0.9.0 is the packaging and hosting modernization
+release. The project moved from Pipenv to Poetry, Travis CI to GitHub Actions,
+Read the Docs to git-pull-hosted documentation, and published package metadata
+that better matched the supported Python and Django combinations.
+
+### Documentation
+
+#### Documentation moved to git-pull.com (#327)
+
+The documentation URL moved to the git-pull.com hosting path, README badges and
+links were refreshed, and the docs tree was renamed and reorganized for the new
+publishing workflow.
+
+### Development
+
+#### Project management moved from Pipenv to Poetry (#327)
+
+Pipenv files and setup.py-era packaging were replaced with Poetry and
+`pyproject.toml`. The Makefile and tmuxp development helpers were updated around
+the new environment manager.
+
+#### CI moved from Travis to GitHub Actions (#327)
+
+The old Travis configuration was removed and GitHub Actions workflows were added
+for package checks and documentation publishing.
+
+#### Compatibility metadata tightened (#327)
+
+Package constraints and classifiers were updated so Python and Django version
+support is expressed more accurately to installers and readers.
 
 ## django-slugify-processor 0.8.4 (2017-12-03)
 
-- Get docs online
-- Clean up API docs in code
+django-slugify-processor 0.8.4 brings the early documentation online and cleans
+up the generated API docs. It is a documentation-focused release for the first
+public package line.
+
+### Documentation
+
+#### Hosted docs and API cleanup
+
+The docs site came online, and the API documentation was cleaned up so users had
+a stable place to learn the processor pipeline.
 
 ## django-slugify-processor 0.8.3 (2017-12-02)
 
-- Add test_app, and tests for django-extensions and django-autoslug
+django-slugify-processor 0.8.3 adds integration coverage around common Django
+slug-field helpers. The test app and tests make sure the package works with the
+model-field workflows users were likely to pair with custom slugification.
+
+### What's new
+
+#### Test app coverage for Django slug integrations
+
+The release added a test app plus tests for django-extensions and
+django-autoslug integration paths.
 
 ## django-slugify-processor 0.8.2 (2017-12-02)
 
-- Try to tweak README / fix on PyPI
+django-slugify-processor 0.8.2 is a packaging-presentation follow-up to the
+initial release. It adjusts the README and PyPI-facing content so the project
+renders more clearly for installers.
+
+### Documentation
+
+#### README and PyPI rendering cleanup
+
+The README was tweaked to improve how the package description appears on PyPI.
 
 ## django-slugify-processor 0.8.1 (2017-12-01)
 
-- README updates
-- Support for overriding builtin slugify in templates
-- Move template filter to _templatetags/slugify_processor.py_
+django-slugify-processor 0.8.1 adds the template-filter path that lets Django
+templates use the same slugification pipeline as Python code. This is the
+release that makes overriding Django's built-in `slugify` filter practical in
+template-heavy projects.
+
+### What's new
+
+#### Template filter override support
+
+The package added a `slugify_processor` template tag module so templates can use
+the custom slugify pipeline through a filter.
+
+### Documentation
+
+#### README usage expanded
+
+The README gained instructions for overriding Django's built-in template filter
+and using the package from templates.
 
 ## django-slugify-processor 0.8.0 (2017-11-26)
 
-- Initial commit
+django-slugify-processor 0.8.0 is the initial public release. It introduces a
+Django-focused slugification pipeline that lets projects run their own text
+processors before falling back to Django's normal slug generation.
+
+### What's new
+
+#### Initial slugify processor pipeline
+
+The first release established the core idea of the package: configure custom
+processors for edge cases such as programming-language names or currency text,
+then pass the result through Django's built-in slugify behavior.
 
 <!---
 # vim: set filetype=markdown:
