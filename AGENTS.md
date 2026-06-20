@@ -290,6 +290,7 @@ Assert on `caplog.records` attributes, not string matching on `caplog.text`:
 Scope(type[detail]): concise description
 
 why: reason
+
 what:
 - bullet of concrete change
 - bullet of tests/tooling touched
