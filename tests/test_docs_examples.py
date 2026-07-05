@@ -54,12 +54,22 @@ def test_library_install_docs_do_not_recommend_tool_installers(
         assert forbidden_command not in text
 
 
-def test_sphinx_doctest_recipe_runs() -> None:
-    """Assert docs/ doctest examples run through the documented recipe."""
+def test_sphinx_doctest_builder_runs() -> None:
+    """Assert docs/ doctest examples run without requiring external just."""
     completed = subprocess.run(
-        ["just", "-f", "docs/justfile", "doctest"],
+        [
+            "uv",
+            "run",
+            "sphinx-build",
+            "-b",
+            "doctest",
+            "-d",
+            "_build/doctrees",
+            ".",
+            "_build/doctest",
+        ],
         check=False,
-        cwd=PROJECT_ROOT,
+        cwd=PROJECT_ROOT / "docs",
         stderr=subprocess.STDOUT,
         stdout=subprocess.PIPE,
         text=True,
