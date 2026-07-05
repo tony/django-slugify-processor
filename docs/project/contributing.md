@@ -19,6 +19,17 @@ Install packages:
 $ uv sync --all-extras --dev
 ```
 
+## Codebase Map
+
+The slugification behavior lives in `src/django_slugify_processor/text.py`.
+Template integration lives in
+`src/django_slugify_processor/templatetags/slugify_processor.py`, which delegates
+to the same Python helper so templates and Python code do not diverge.
+
+Tests live in `tests/`, with importable example processors in `test_app/`.
+Documentation pages live in `docs/`; API pages are generated from docstrings,
+and runnable docs examples are checked by the `docs/` doctest recipe.
+
 ## Tests
 
 Run the test suite directly:
@@ -116,7 +127,7 @@ The project uses [ruff] to handle formatting, sorting imports and linting.
 uv:
 
 ```console
-$ uv run ruff
+$ uv run ruff check .
 ```
 
 If you setup manually:
@@ -231,8 +242,10 @@ requires [`entr(1)`].
 [uv] handles virtualenv creation, package requirements, versioning,
 building, and publishing. Therefore there is no setup.py or requirements files.
 
-Update `__version__` in `__about__.py` and `pyproject.toml`, then commit the
-release:
+See {ref}`releasing` for the release checklist. Update
+{data}`django_slugify_processor.__version__` in
+`src/django_slugify_processor/__about__.py` and `version` in `pyproject.toml`,
+then commit the release:
 
 ```console
 $ git commit -m 'Tag v0.1.1'

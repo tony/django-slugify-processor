@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import os
 import pathlib
 import sys
 
@@ -14,6 +15,8 @@ cwd = pathlib.Path(__file__).parent
 project_root = cwd.parent
 src_root = project_root / "src"
 
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "tests.settings")
+sys.path.insert(0, str(project_root))
 sys.path.insert(0, str(src_root))
 
 # package data
@@ -30,7 +33,7 @@ conf = merge_sphinx_config(
     source_branch="master",
     light_logo="img/icons/logo.svg",
     dark_logo="img/icons/logo-dark.svg",
-    extra_extensions=["sphinx_autodoc_api_style"],
+    extra_extensions=["sphinx.ext.doctest", "sphinx_autodoc_api_style"],
     intersphinx_mapping={
         "py": ("https://docs.python.org", None),
         "django": (
@@ -48,4 +51,11 @@ conf = merge_sphinx_config(
     # treating it as an orphan document.
     exclude_patterns=["_build", "AGENTS.md", "CLAUDE.md"],
 )
+conf["doctest_global_setup"] = """
+import django
+from django.apps import apps
+
+if not apps.ready:
+    django.setup()
+"""
 globals().update(conf)

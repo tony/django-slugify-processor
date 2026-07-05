@@ -8,63 +8,49 @@ from django.utils.text import slugify as django_slugify
 
 
 def slugify(value: str, allow_unicode: bool = False) -> str:
-    """Override default slugify in django to handle custom scenarios.
+    """Override Django's default slugify behavior with custom processors.
 
-    Run value through functions declared in ``SLUGIFY_PROCESSORS`` setting. The value is
-    then passed-through to Django's :func:`django.utils.text.slugify()`.
+    Run ``value`` through functions declared in ``SLUGIFY_PROCESSORS``. The
+    value then passes to Django's :func:`django.utils.text.slugify`.
 
     Parameters
     ----------
     value : str
-        A value such as an article name or page title, to "slugify", (turn into a
-        clean, URL-friendly short name)
+        A value such as an article name or page title to turn into a clean,
+        URL-friendly short name.
     allow_unicode : bool
-        Whether or not to allow unicode (e.g. chinese).
+        Whether to allow Unicode characters in Django's final slugification
+        step.
 
     Returns
     -------
     str
-        Clean, URL-friendly short name (a.k.a. "slug") of a string (e.g. a page or
-        article name).
+        Clean, URL-friendly short name.
 
     Examples
     --------
-    Examples of slugify processors, assume *project/app/slugify_processors.py*:
+    With no processors configured, this matches Django's slugifier:
 
-    .. code-block:: python
+    >>> from django_slugify_processor.text import slugify
+    >>> slugify("c++")
+    'c'
 
-        def slugify_programming_languages(value):
-            value = value.lower()
+    Processors run before Django's final slugification:
 
-            value = value.replace('c++', 'cpp')
-            value = value.replace('c#', 'c-sharp')
-            return value
+    >>> from django.test import override_settings
+    >>> with override_settings(
+    ...     SLUGIFY_PROCESSORS=["test_app.coding.slugify_programming"],
+    ... ):
+    ...     slugify("c++")
+    'cpp'
 
-        def slugify_geo_acronyms(value):
-            value = value.lower()
+    The ``allow_unicode`` flag is passed to Django after processors run:
 
-            value = value.replace('New York City', 'nyc')
-            value = value.replace('United States', 'usa')
-            return value
-
-        def slugify_us_currency(value):
-            value = value.lower()
-
-            value = value.replace('$', 'usd')
-            value = value.replace('US$', 'usd')
-            value = value.replace('US Dollar', 'usd')
-            value = value.replace('U.S. Dollar', 'usd')
-            return value
-
-    Settings:
-
-    .. code-block:: python
-
-        SLUGIFY_PROCESSORS = [
-            'project.app.slugify_programming_languages',
-            'project.app.slugify_geo_acronyms',
-            'project.app.slugify_us_currency',
-        ]
+    >>> with override_settings(
+    ...     SLUGIFY_PROCESSORS=["test_app.coding.slugify_programming"],
+    ... ):
+    ...     slugify("東京 c++", allow_unicode=True)
+    '東京-cpp'
     """
     slugify_processors = getattr(settings, "SLUGIFY_PROCESSORS", [])
     for slugify_fn_str in slugify_processors:

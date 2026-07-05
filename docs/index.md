@@ -37,7 +37,7 @@ Development setup, code style, release process.
 ## Install
 
 ```console
-$ pip install django-slugify-processor
+$ python -m pip install django-slugify-processor
 ```
 
 ```console
@@ -49,13 +49,15 @@ $ uv add django-slugify-processor
 Define a processor function that rewrites the text before Django finishes the
 slug:
 
-```python
-def my_processor(value: str) -> str:
-    value = value.replace("++", "pp")
-    return value
+```{doctest}
+>>> def my_processor(value: str) -> str:
+...     return value.replace("C++", "Cpp")
+>>> my_processor("C++")
+'Cpp'
 ```
 
-Register it in your [Django settings](https://docs.djangoproject.com/en/4.2/topics/settings/):
+Register the processor's import string in your
+[Django settings](https://docs.djangoproject.com/en/4.2/topics/settings/):
 
 ```python
 SLUGIFY_PROCESSORS = [
@@ -65,10 +67,14 @@ SLUGIFY_PROCESSORS = [
 
 Use the drop-in {func}`~django_slugify_processor.text.slugify` replacement:
 
-```python
-from django_slugify_processor.text import slugify
-
-slugify("C++")  # 'cpp'
+```{doctest}
+>>> from django.test import override_settings
+>>> from django_slugify_processor.text import slugify
+>>> with override_settings(
+...     SLUGIFY_PROCESSORS=["test_app.coding.slugify_programming_languages"],
+... ):
+...     slugify("C++")
+'cpp'
 ```
 
 ```{toctree}

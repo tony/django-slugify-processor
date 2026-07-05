@@ -13,30 +13,43 @@ register = template.Library()
 @register.filter(is_safe=True)
 @stringfilter
 def slugify(value: str) -> str:
-    """Template filter override for Django's :func:`django.utils.text.slugify()`.
+    """Template filter override for Django's :func:`django.utils.text.slugify`.
 
-    Can be installed via a builtin, or via ``{% load slugify_processor %}``.
+    Install via a template builtin, or load with ``{% load slugify_processor %}``.
 
     Parameters
     ----------
     value : str
-        A value such as an article name or page title, to "slugify", (turn into a
-        clean, URL-friendly short name)
+        A value such as an article name or page title to turn into a clean,
+        URL-friendly short name.
 
     Returns
     -------
     str
-        Clean, URL-friendly short name (a.k.a. "slug") of a string (e.g. a page or
-        article name).
+        Clean, URL-friendly short name.
 
     Examples
     --------
-    Usage in a Django template:
-
-    .. code-block:: django
-
-       {% load slugify_processor %}
-       {{ variable|slugify }}
-       {{ "C++"|slugify }}
+    >>> from django.template import Context, Template
+    >>> from django.test import override_settings
+    >>> with override_settings(
+    ...     INSTALLED_APPS=[
+    ...         "django.contrib.contenttypes",
+    ...         "django.contrib.auth",
+    ...         "test_app",
+    ...         "django_slugify_processor",
+    ...     ],
+    ...     TEMPLATES=[
+    ...         {
+    ...             "BACKEND": "django.template.backends.django.DjangoTemplates",
+    ...             "APP_DIRS": True,
+    ...         },
+    ...     ],
+    ...     SLUGIFY_PROCESSORS=["test_app.coding.slugify_programming_languages"],
+    ... ):
+    ...     Template(
+    ...         '{% load slugify_processor %}{{ "C++ Guide"|slugify }}',
+    ...     ).render(Context({}))
+    'cpp-guide'
     """
     return _slugify(value)
