@@ -14,21 +14,13 @@ Releases are published to [PyPI](https://pypi.org/project/django-slugify-process
 $ git commit -m 'Tag vX.Y.Z'
 ```
 
-AI agents stop after the release commit. The human release maintainer creates
-and pushes tags, because tags trigger the publishing workflow.
+AI agents stop after the release commit. The human release maintainer handles
+tag creation and tag pushes, because tags trigger the publishing workflow.
 
-```console
-$ git tag vX.Y.Z
-```
-
-3. Push the release commit and tag:
+3. Push the release commit:
 
 ```console
 $ git push
-```
-
-```console
-$ git push --tags
 ```
 
 The CI workflow builds the package and publishes it to PyPI automatically.

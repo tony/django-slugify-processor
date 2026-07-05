@@ -107,7 +107,7 @@ $ just dev-docs
 
 ## Formatting / Linting
 
-### ruff
+### Linting and Formatting
 
 The project uses [ruff] to handle formatting, sorting imports and linting.
 
@@ -161,7 +161,7 @@ $ ruff check . --fix
 
 ````
 
-#### ruff format
+#### Formatting
 
 [ruff format] is used for formatting.
 
@@ -189,7 +189,7 @@ $ just ruff-format
 
 ````
 
-### mypy
+### Type Checking
 
 [mypy] is used for static type checking.
 
