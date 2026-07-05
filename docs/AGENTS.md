@@ -66,10 +66,10 @@ common case pay a comprehension tax for the advanced one.
 
 ## Examples that run
 
-Doctests on pages under `docs/` execute: `testpaths` in
-`pyproject.toml` includes `docs`, and gp-libs' doctest collector
-picks up `>>>` examples in Markdown. `just test` runs them alongside
-the suite, so a wrong example fails loudly.
+Doctests on pages under `docs/` execute through
+`just -f docs/justfile doctest`, and pytest runs Python docstrings
+through `--doctest-modules`. A wrong example should fail loudly before
+the docs are considered complete.
 
 - There are no `doctest_namespace` fixtures in this repo — import
   what you use (`from django_slugify_processor.text import slugify`).
@@ -77,10 +77,11 @@ the suite, so a wrong example fails loudly.
   which set no `SLUGIFY_PROCESSORS` — a bare example shows the
   pass-through default. An example that needs a processor must
   configure one itself, e.g. with `django.test.override_settings`.
-- Fence a `>>>` session as a ```` ```python ```` block; `ELLIPSIS`
-  and `NORMALIZE_WHITESPACE` are already on via `doctest_optionflags`
-  in `pyproject.toml`. Use a ```` ```console ```` block for shell
-  commands at a `$` prompt.
+- Use a ```` ```{doctest} ```` directive for docs-page `>>>`
+  sessions that must run through Sphinx. `ELLIPSIS` and
+  `NORMALIZE_WHITESPACE` are already on via `doctest_optionflags` in
+  `pyproject.toml`. Use a ```` ```console ```` block for shell commands
+  at a `$` prompt.
 
 ## What stays precise
 
@@ -133,7 +134,7 @@ the surrounding prose instead.
   be named by concept instead?
 - Are the template-builtin and model-field parts clearly marked
   opt-in?
-- Do the doctests pass under `just test`, and did you leave every
-  code block, table, and cross-reference exact?
+- Do `just test` and `just -f docs/justfile doctest` pass, and did you
+  leave every code block, table, and cross-reference exact?
 - Did `just build-docs` stay clean — no new warning, no broken
   cross-reference?

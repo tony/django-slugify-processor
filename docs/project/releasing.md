@@ -8,7 +8,7 @@ via [OIDC trusted publishing](https://docs.pypi.org/trusted-publishers/) from
 
 ## Steps
 
-1. Update `__version__` in `src/django_slugify_processor/__about__.py` and `version` in `pyproject.toml`.
+1. Update {data}`django_slugify_processor.__version__` in `src/django_slugify_processor/__about__.py` and `version` in `pyproject.toml`.
 
 2. Commit the release:
 
