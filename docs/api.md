@@ -14,3 +14,9 @@
 .. autofunction::
     django_slugify_processor.templatetags.slugify_processor.slugify
 ```
+
+## Package metadata
+
+```{eval-rst}
+.. autodata:: django_slugify_processor.__version__
+```

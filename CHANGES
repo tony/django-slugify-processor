@@ -28,7 +28,10 @@ $ uv add django-slugify-processor --prerelease allow
 [uvx](https://docs.astral.sh/uv/guides/tools/):
 
 ```console
-$ uvx --from 'django-slugify-processor' --prerelease allow django-slugify-processor
+$ uvx \
+    --from 'django-slugify-processor' \
+    --prerelease allow \
+    django-slugify-processor
 ```
 
 ## django-slugify-processor 1.11.x (unreleased)
@@ -43,18 +46,20 @@ refresh for the same small slugification API. The release keeps
 {func}`~django_slugify_processor.templatetags.slugify_processor.slugify` aligned
 with Django's behavior, while making the docs easier to browse, API reference
 pages easier to scan, and local automation easier to run. It also exposes
-`django_slugify_processor.__version__` at package import time so documentation
-tooling can build correct source links without reaching into package metadata.
+{data}`django_slugify_processor.__version__` at package import time so
+documentation tooling can build correct source links without reaching into
+package metadata.
 
 ### What's new
 
 #### Package version metadata is available at import time
 
-`django_slugify_processor.__version__` now re-exports the version from
-`django_slugify_processor.__about__`. This gives Sphinx linkcode resolution and
-similar tooling a stable public place to read the installed package version,
-which prevents generated source links from falling back to malformed
-versionless URLs.
+{data}`django_slugify_processor.__version__` now re-exports the version from
+`django_slugify_processor.__about__`. This gives
+[Sphinx linkcode](https://www.sphinx-doc.org/en/master/usage/extensions/linkcode.html)
+resolution and similar tooling a stable public place to read the installed
+package version, which prevents generated source links from falling back to
+malformed versionless URLs.
 
 ### Documentation
 
@@ -87,9 +92,10 @@ to the details they need.
 #### Faster and steadier documentation browsing (#413, #416)
 
 The docs gained the browsing polish first developed locally for this site:
-self-hosted IBM Plex fonts, preload and fallback metrics to prevent font-driven
-layout shifts, stable badge and logo sizing, and SPA-like navigation that keeps
-the sidebar, theme state, and loaded assets in place while moving between pages.
+self-hosted [IBM Plex](https://www.ibm.com/plex/) fonts, preload and fallback
+metrics to prevent font-driven layout shifts, stable badge and logo sizing, and
+SPA-like navigation that keeps the sidebar, theme state, and loaded assets in
+place while moving between pages.
 
 Those pieces are no longer carried as repo-local Sphinx extensions, templates,
 CSS, and JavaScript. They now come from [gp-sphinx](https://gp-sphinx.git-pull.com),
@@ -105,9 +111,13 @@ settings around repository links, logos, intersphinx, and the
 `sphinx_autodoc_api_style` extension.
 
 The docs stack was refreshed through `gp-sphinx 0.0.1a17`, including the
-`gp-furo-theme` Tailwind v4 port of Furo and `sphinx-vite-builder` for the Vite
-asset pipeline. Wheels now ship with built theme assets, so installed docs
-dependencies render the site without each consumer rebuilding the theme locally.
+[`gp-furo-theme`](https://pypi.org/project/gp-furo-theme/)
+[Tailwind](https://tailwindcss.com/) v4 port of
+[Furo](https://pradyunsg.me/furo/) and
+[`sphinx-vite-builder`](https://pypi.org/project/sphinx-vite-builder/) for the
+[Vite](https://vite.dev/) asset pipeline. Wheels now ship with built theme
+assets, so installed docs dependencies render the site without each consumer
+rebuilding the theme locally.
 
 #### Copyable command examples (#414)
 
@@ -116,21 +126,24 @@ split long commands with line continuations. The changelog's developmental
 install commands, README examples, and contributor guidance follow the same
 copy-friendly format.
 
-#### Documentation publishing uses OIDC-backed AWS credentials
+#### Documentation publishing uses OIDC-backed AWS credentials (#410)
 
-The docs deployment workflow now uses GitHub OIDC to assume the AWS role for the
-documentation environment, syncs the built site with the AWS CLI, and invalidates
-targeted CloudFront paths after upload. That removes long-lived AWS access keys
-from the publishing path while keeping the existing S3 and CDN deployment model.
+The docs deployment workflow now uses
+[GitHub OIDC](https://docs.github.com/en/actions/concepts/security/openid-connect)
+to assume the [AWS IAM](https://aws.amazon.com/iam/) role for the documentation
+environment, syncs the built site with the [AWS CLI](https://aws.amazon.com/cli/),
+and invalidates targeted [CloudFront](https://aws.amazon.com/cloudfront/) paths
+after upload. That removes long-lived AWS access keys from the publishing path
+while keeping the existing S3 and CDN deployment model.
 
 ### Development
 
-#### `just` replaces the project Makefiles (#411)
+#### Task runner replaces the project Makefiles (#411)
 
-Local development tasks now run through `just` at the repository root and in
-`docs/`. The new recipes cover tests, ruff, mypy, documentation builds,
-documentation preview servers, and watch-mode workflows; the old root
-`Makefile` and `docs/Makefile` were removed.
+Local development tasks now run through [just](https://just.systems/) at the
+repository root and in `docs/`. The new recipes cover tests, ruff, mypy,
+documentation builds, documentation preview servers, and watch-mode workflows;
+the old root `Makefile` and `docs/Makefile` were removed.
 
 README, contributor docs, CI, and agent guidance now point at the same `just`
 commands, so a maintainer can use one command vocabulary locally and in
@@ -147,8 +160,9 @@ every contributor's `uv sync` until a rolling freshness window expires.
 
 `AGENTS.md` now records the release-note shape used by this changelog: lead
 paragraphs, fixed section order, deliverable headings, PR references in
-headings, and MyST roles for documented APIs. Future changelog edits have an
-explicit local standard instead of relying on tribal knowledge.
+headings, and [MyST](https://myst-parser.readthedocs.io/) roles for documented
+APIs. Future changelog edits have an explicit local standard instead of relying
+on tribal knowledge.
 
 ## django-slugify-processor 1.10.0 (2025-11-01)
 

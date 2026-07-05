@@ -2,7 +2,9 @@
 
 # Releasing
 
-Releases are published to [PyPI](https://pypi.org/project/django-slugify-processor/) via OIDC-trusted publishing from [GitHub Actions](https://github.com/features/actions).
+Releases are published to [PyPI](https://pypi.org/project/django-slugify-processor/)
+via [OIDC trusted publishing](https://docs.pypi.org/trusted-publishers/) from
+[GitHub Actions](https://github.com/features/actions).
 
 ## Steps
 
