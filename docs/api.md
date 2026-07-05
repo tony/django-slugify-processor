@@ -8,7 +8,7 @@
 .. autofunction:: django_slugify_processor.text.slugify
 ```
 
-## Template tag
+## Template filter
 
 ```{eval-rst}
 .. autofunction::

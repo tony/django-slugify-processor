@@ -1,7 +1,7 @@
 # Changelog
 
 To install the unreleased django-slugify-processor version, see
-[developmental releases](https://django-slugify-processor.git-pull.com/quickstart.html#developmental-releases).
+{ref}`developmental-releases`.
 
 [pip](https://pip.pypa.io/en/stable/):
 
@@ -70,6 +70,19 @@ Contributor material moved into a dedicated project section. Development setup,
 code style, and release steps now live as navigable pages instead of one long
 development note, so maintainers can point contributors at the exact workflow
 they need.
+
+#### Clearer slug processor setup guide
+
+The quickstart now explains the processor pipeline directly: start from the
+Django-compatible default, add one processor through `SLUGIFY_PROCESSORS`, then
+use {func}`~django_slugify_processor.text.slugify` from Python or the matching
+template filter from templates. Readers no longer need to leave the docs site
+for the common setup path.
+
+The landing and project pages also link first mentions of API objects,
+Django utilities, and contributor tools to their reference pages. That makes the
+documentation easier to skim while still giving deeper integrators a direct path
+to the details they need.
 
 #### Faster and steadier documentation browsing (#413, #416)
 
