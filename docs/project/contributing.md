@@ -1,10 +1,9 @@
 # Development
 
-[uv] is a required package to develop.
+You need [git] and [uv] to work on django-slugify-processor. Install uv from the
+[installation documentation] if it is not already available.
 
-Install and [git] and [uv]
-
-Clone:
+Clone the repository:
 
 ```console
 $ git clone https://github.com/tony/django-slugify-processor.git
@@ -20,21 +19,33 @@ Install packages:
 $ uv sync --all-extras --dev
 ```
 
-[installation documentation]: https://docs.astral.sh/uv/getting-started/installation/
-[git]: https://git-scm.com/
-
 ## Tests
 
-`uv run py.test`
+Run the test suite directly:
 
-Helpers: `just test`
+```console
+$ uv run py.test
+```
+
+Or use the `just` helper:
+
+```console
+$ just test
+```
 
 ## Automatically run tests on file save
 
-1. `just start` (via [pytest-watcher])
-2. `just watch-test` (requires installing [entr(1)])
+Use [pytest-watcher]:
 
-[pytest-watcher]: https://github.com/olzhasar/pytest-watcher
+```console
+$ just start
+```
+
+Or use [entr(1)]:
+
+```console
+$ just watch-test
+```
 
 ## Documentation
 
@@ -42,21 +53,57 @@ Default preview server: http://localhost:8034
 
 [sphinx-autobuild] will automatically build the docs, watch for file changes and launch a server.
 
-From home directory: `just start-docs`
-From inside `docs/`: `just start`
+From the repository root:
+
+```console
+$ just start-docs
+```
+
+From inside `docs/`:
+
+```console
+$ just start
+```
 
 [sphinx-autobuild]: https://github.com/executablebooks/sphinx-autobuild
 
 ### Manual documentation (the hard way)
 
-`cd docs/` and `just html` to build. `just serve` to start http server.
+Build from inside `docs/`:
+
+```console
+$ cd docs && just html
+```
+
+Start the documentation server from inside `docs/`:
+
+```console
+$ cd docs && just serve
+```
 
 Helpers:
-`just build-docs`, `just serve-docs`
 
-Rebuild docs on file change: `just watch-docs` (requires [entr(1)])
+```console
+$ just build-docs
+```
 
-Rebuild docs and run server via one terminal: `just dev-docs`
+```console
+$ just serve-docs
+```
+
+Rebuild docs on file change:
+
+```console
+$ just watch-docs
+```
+
+This requires [entr(1)].
+
+Rebuild docs and run the server from one terminal:
+
+```console
+$ just dev-docs
+```
 
 ## Formatting / Linting
 
@@ -184,13 +231,16 @@ requires [`entr(1)`].
 [uv] handles virtualenv creation, package requirements, versioning,
 building, and publishing. Therefore there is no setup.py or requirements files.
 
-Update `__version__` in `__about__.py` and `pyproject.toml`::
+Update `__version__` in `__about__.py` and `pyproject.toml`, then commit the
+release:
 
-    git commit -m 'build(django-slugify-processor): Tag v0.1.1'
-    git tag v0.1.1
-    git push
-    git push --tags
+```console
+$ git commit -m 'Tag v0.1.1'
+```
 
+[git]: https://git-scm.com/
+[installation documentation]: https://docs.astral.sh/uv/getting-started/installation/
+[pytest-watcher]: https://github.com/olzhasar/pytest-watcher
 [uv]: https://github.com/astral-sh/uv
 [entr(1)]: http://eradman.com/entrproject/
 [`entr(1)`]: http://eradman.com/entrproject/

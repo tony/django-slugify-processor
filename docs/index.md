@@ -6,7 +6,7 @@ hide-toc: true
 
 # django-slugify-processor
 
-Custom slug processors for Django's `slugify()`.
+Custom slug processors for Django's {func}`slugify() <django.utils.text.slugify>`.
 
 ::::{grid} 1 2 3 3
 :gutter: 2 2 3 3
@@ -14,7 +14,7 @@ Custom slug processors for Django's `slugify()`.
 :::{grid-item-card} Quickstart
 :link: quickstart
 :link-type: doc
-Install, configure processors, and start slugifying.
+Install, learn the pipeline, and start slugifying.
 :::
 
 :::{grid-item-card} API Reference
@@ -43,15 +43,19 @@ $ uv add django-slugify-processor
 
 ## At a glance
 
-Define a processor function:
+With no `SLUGIFY_PROCESSORS` setting, django-slugify-processor keeps Django's
+default slug behavior. Add processors only when a term needs special handling.
+
+Define a processor function that rewrites the text before Django finishes the
+slug:
 
 ```python
-def my_processor(value):
+def my_processor(value: str) -> str:
     value = value.replace("++", "pp")
     return value
 ```
 
-Register it in your Django settings:
+Register it in your [Django settings](https://docs.djangoproject.com/en/4.2/topics/settings/):
 
 ```python
 SLUGIFY_PROCESSORS = [
@@ -59,7 +63,7 @@ SLUGIFY_PROCESSORS = [
 ]
 ```
 
-Use the drop-in replacement for Django's `slugify`:
+Use the drop-in {func}`~django_slugify_processor.text.slugify` replacement:
 
 ```python
 from django_slugify_processor.text import slugify

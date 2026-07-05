@@ -1,7 +1,7 @@
 # Changelog
 
 To install the unreleased django-slugify-processor version, see
-[developmental releases](https://django-slugify-processor.git-pull.com/quickstart.html#developmental-releases).
+{ref}`developmental-releases`.
 
 [pip](https://pip.pypa.io/en/stable/):
 
