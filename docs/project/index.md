@@ -16,7 +16,9 @@ Development setup, running tests, submitting PRs.
 :::{grid-item-card} Code Style
 :link: code-style
 :link-type: doc
-[Ruff](https://ruff.rs), [mypy](http://mypy-lang.org/), NumPy docstrings, import conventions.
+[Ruff](https://ruff.rs), [mypy](http://mypy-lang.org/),
+[NumPy docstrings](https://numpydoc.readthedocs.io/en/latest/format.html),
+import conventions.
 :::
 
 :::{grid-item-card} Releasing

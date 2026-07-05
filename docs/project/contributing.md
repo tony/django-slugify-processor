@@ -27,7 +27,7 @@ Run the test suite directly:
 $ uv run py.test
 ```
 
-Or use the `just` helper:
+Or use the [just] helper:
 
 ```console
 $ just test
@@ -240,6 +240,7 @@ $ git commit -m 'Tag v0.1.1'
 
 [git]: https://git-scm.com/
 [installation documentation]: https://docs.astral.sh/uv/getting-started/installation/
+[just]: https://just.systems/
 [pytest-watcher]: https://github.com/olzhasar/pytest-watcher
 [uv]: https://github.com/astral-sh/uv
 [entr(1)]: http://eradman.com/entrproject/
