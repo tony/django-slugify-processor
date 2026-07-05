@@ -2,7 +2,7 @@
 
 # Code Style
 
-## ruff
+## Linting and Formatting
 
 The project uses [ruff](https://ruff.rs) for linting and formatting.
 
@@ -24,7 +24,7 @@ Format:
 $ uv run ruff format .
 ```
 
-## mypy
+## Type Checking
 
 [mypy](http://mypy-lang.org/) is used for static type checking.
 

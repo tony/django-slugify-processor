@@ -7,6 +7,9 @@ hide-toc: true
 # django-slugify-processor
 
 Custom slug processors for Django's {func}`slugify() <django.utils.text.slugify>`.
+With no `SLUGIFY_PROCESSORS` setting, django-slugify-processor keeps Django's
+default slug behavior, so you can add processors only when a term needs special
+handling.
 
 ::::{grid} 1 2 3 3
 :gutter: 2 2 3 3
@@ -42,9 +45,6 @@ $ uv add django-slugify-processor
 ```
 
 ## At a glance
-
-With no `SLUGIFY_PROCESSORS` setting, django-slugify-processor keeps Django's
-default slug behavior. Add processors only when a term needs special handling.
 
 Define a processor function that rewrites the text before Django finishes the
 slug:

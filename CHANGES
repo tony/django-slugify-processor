@@ -71,7 +71,7 @@ code style, and release steps now live as navigable pages instead of one long
 development note, so maintainers can point contributors at the exact workflow
 they need.
 
-#### Clearer slug processor setup guide
+#### Clearer slug processor setup guide (#421)
 
 The quickstart now explains the processor pipeline directly: start from the
 Django-compatible default, add one processor through `SLUGIFY_PROCESSORS`, then
