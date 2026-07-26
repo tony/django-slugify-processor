@@ -153,6 +153,21 @@ Workflow actions moved to their current major releases: `actions/checkout` v7,
 and `dorny/paths-filter` v4. Workflow behavior is unchanged, though setup-uv no
 longer prunes the uv cache, so the first run after this repopulates it.
 
+#### Lint floor moved to ruff 0.16 (#425)
+
+Minimum `ruff>=0.16.0` (was unpinned). Contributors and CI now resolve the same
+[Ruff](https://ruff.rs) instead of whichever version each machine happened to
+pick up, so a local `ruff check` and the CI lint step report the same
+diagnostics.
+
+0.16.0 also formats Python code blocks inside Markdown, so `ruff format` covers
+the docs tree and the root Markdown files alongside `src/` and `tests/`.
+
+Linting runs on ruff's curated default rule set, with this project's own linters
+layered on top through `extend-select`. Pylint, flake8-pyi, and flake8-bandit
+checks now apply; the Sphinx config carries a scoped per-file ignore for the
+`exec` it uses to read the package's metadata module.
+
 ## django-slugify-processor 1.10.0 (2025-11-01)
 
 django-slugify-processor 1.10.0 moves the supported runtime forward after
