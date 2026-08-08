@@ -135,7 +135,7 @@ sphinx-gp-theme = false
 sphinx-ux-autodoc-layout = false
 sphinx-ux-badges = false
 
-# Django is the sole runtime dependency; new releases must resolve on day one.
+# Cooldown would hold the lock on a known-vulnerable django after each security release.
 django = false
 
 [tool.mypy]
