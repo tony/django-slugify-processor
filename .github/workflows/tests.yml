@@ -43,10 +43,23 @@ jobs:
         if: ${{ matrix.django-extensions != '' }}
         run: uv pip install 'django-extensions${{ matrix.django-extensions }}'
 
-      - name: Print python versions
+      - name: Print versions
+        env:
+          DJANGO_VERSION: ${{ matrix.django-version }}
         run: |
           python -V
           uv run python -V
+          uv run python - <<'PY'
+          import os
+
+          import django
+
+          want = os.environ["DJANGO_VERSION"]
+          got = django.get_version()
+          print("Django", got)
+          if got.split(".")[:2] != want.split("."):
+              raise SystemExit(f"expected Django {want}.x, got {got}")
+          PY
 
       - name: Lint with ruff check
         run: uv run ruff check .
