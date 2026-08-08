@@ -26,7 +26,7 @@ jobs:
         run: uv sync --all-extras --dev
 
       - name: Install django @ ${{ matrix.django-version }}
-        run: uv pip install DJANGO~=${{ matrix.django-version }}
+        run: uv pip install "DJANGO~=${{ matrix.django-version }}.0"
 
       - name: Install django-extensions @ ${{ matrix.django-extensions }}, if exists
         if: ${{ matrix.django-extensions != '' }}
