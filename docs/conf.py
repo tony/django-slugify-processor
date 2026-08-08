@@ -37,8 +37,8 @@ conf = merge_sphinx_config(
     intersphinx_mapping={
         "py": ("https://docs.python.org", None),
         "django": (
-            "https://docs.djangoproject.com/en/4.2/",
-            "https://docs.djangoproject.com/en/4.2/_objects/",
+            "https://docs.djangoproject.com/en/stable/",
+            "https://docs.djangoproject.com/en/stable/objects.inv",
         ),
     },
     linkcode_resolve=make_linkcode_resolve(
