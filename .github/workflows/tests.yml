@@ -10,8 +10,11 @@ jobs:
     # `uv run` re-syncs the environment from uv.lock before every command,
     # which reinstalls the locked django over the one the matrix leg pinned.
     # The one sync stays explicit, in "Install dependencies".
+    # `uv python install` only makes an interpreter available; .python-version
+    # still selects it, so UV_PYTHON is what binds the leg to its python.
     env:
       UV_NO_SYNC: '1'
+      UV_PYTHON: ${{ matrix.python-version }}
     strategy:
       matrix:
         python-version: ['3.10', '3.14']
