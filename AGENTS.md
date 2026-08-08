@@ -19,14 +19,14 @@ Key features:
 - Plug-in pipeline of slugify processors defined via `SLUGIFY_PROCESSORS` in Django settings
 - Drop-in replacement for Django's `slugify` utility and template filter
 - Keeps default Django behavior when no processors are configured
-- Compatible with Django 4.2–6.1; tested on Python 3.10+
+- Compatible with Django 5.2–6.1; tested on Python 3.10+
 - Sphinx docs and doctest-friendly examples powered by gp-libs extensions
 
 ## Development Environment
 
 This project uses:
 - Python 3.10+
-- Django 4.2+ (tested through 6.1; 6.x requires Python 3.12+)
+- Django 5.2+ (tested through 6.1; 6.x requires Python 3.12+)
 - [uv](https://github.com/astral-sh/uv) for dependency management
 - [ruff](https://github.com/astral-sh/ruff) for linting and formatting
 - [mypy](https://github.com/python/mypy) for type checking
