@@ -15,21 +15,20 @@ $ python -m pip install --upgrade --pre django-slugify-processor
 $ uv add django-slugify-processor --prerelease allow
 ```
 
-## django-slugify-processor 1.11.x (unreleased)
+## django-slugify-processor 1.12.x (unreleased)
 
 <!-- KEEP THIS PLACEHOLDER - DO NOT REMOVE OR MODIFY THIS LINE -->
 - _Add your latest changes from PRs here_
 <!-- END PLACEHOLDER - ADD NEW CHANGELOG ENTRIES BELOW THIS LINE -->
 
-django-slugify-processor 1.11.x is a documentation and contributor-experience
-refresh for the same small slugification API. The release keeps
-{func}`~django_slugify_processor.text.slugify` and
-{func}`~django_slugify_processor.templatetags.slugify_processor.slugify` aligned
-with Django's behavior, while making the docs easier to browse, API reference
-pages easier to scan, and local automation easier to run. It also exposes
-{data}`django_slugify_processor.__version__` at package import time so
-documentation tooling can build correct source links without reaching into
-package metadata.
+## django-slugify-processor 1.11.0 (2026-08-08)
+
+django-slugify-processor 1.11.0 moves the supported Django range forward. Django
+4.2 and 5.1 reached end of life, so the package now requires Django 5.2 LTS and
+adds support for Django 6.0 and 6.1. The release also rebuilds the documentation
+site around a purpose-built landing page and a navigable project section, and
+tightens the test matrix so every job verifies the Python and Django pair it
+claims to run. Existing slug processor behavior is unchanged.
 
 ### Breaking changes
 
