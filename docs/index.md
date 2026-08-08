@@ -57,7 +57,7 @@ slug:
 ```
 
 Register the processor's import string in your
-[Django settings](https://docs.djangoproject.com/en/4.2/topics/settings/):
+[Django settings](https://docs.djangoproject.com/en/stable/topics/settings/):
 
 ```python
 SLUGIFY_PROCESSORS = [

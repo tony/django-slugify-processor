@@ -7,10 +7,24 @@ jobs:
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
 
     runs-on: ubuntu-latest
+    # `uv run` re-syncs the environment from uv.lock before every command,
+    # which reinstalls the locked django over the one the matrix leg pinned.
+    # The one sync stays explicit, in "Install dependencies".
+    # `uv python install` only makes an interpreter available; .python-version
+    # still selects it, so UV_PYTHON is what binds the leg to its python.
+    env:
+      UV_NO_SYNC: '1'
+      UV_PYTHON: ${{ matrix.python-version }}
     strategy:
       matrix:
         python-version: ['3.10', '3.14']
-        django-version: ['4.2', '5.1', '5.2']
+        django-version: ['5.2', '6.0', '6.1']
+        exclude:
+          # Django 6.x requires Python 3.12+
+          - python-version: '3.10'
+            django-version: '6.0'
+          - python-version: '3.10'
+            django-version: '6.1'
     steps:
       - uses: actions/checkout@v7
 
@@ -26,16 +40,32 @@ jobs:
         run: uv sync --all-extras --dev
 
       - name: Install django @ ${{ matrix.django-version }}
-        run: uv pip install DJANGO~=${{ matrix.django-version }}
+        run: uv pip install "DJANGO~=${{ matrix.django-version }}.0"
 
       - name: Install django-extensions @ ${{ matrix.django-extensions }}, if exists
         if: ${{ matrix.django-extensions != '' }}
         run: uv pip install 'django-extensions${{ matrix.django-extensions }}'
 
-      - name: Print python versions
+      - name: Print versions
+        env:
+          PYTHON_VERSION: ${{ matrix.python-version }}
+          DJANGO_VERSION: ${{ matrix.django-version }}
         run: |
-          python -V
-          uv run python -V
+          uv run python - <<'PY'
+          import os
+          import sys
+
+          import django
+
+          checks = (
+              ("Python", os.environ["PYTHON_VERSION"], "%d.%d" % sys.version_info[:2]),
+              ("Django", os.environ["DJANGO_VERSION"], django.get_version()),
+          )
+          for name, want, got in checks:
+              print(name, got)
+              if got.split(".")[:2] != want.split("."):
+                  raise SystemExit(f"expected {name} {want}.x, got {got}")
+          PY
 
       - name: Lint with ruff check
         run: uv run ruff check .

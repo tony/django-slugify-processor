@@ -31,7 +31,37 @@ pages easier to scan, and local automation easier to run. It also exposes
 documentation tooling can build correct source links without reaching into
 package metadata.
 
+### Breaking changes
+
+#### Django 5.2 is the minimum supported release (#426)
+
+Minimum `django>=5.2` (was `>=4.2`). Django 4.2 LTS reached end of life on
+2026-04-07 and Django 5.1 on 2025-12-03, so neither receives security patches.
+Django 5.2 LTS is supported upstream until 2028-04-30.
+
+Projects pinned below 5.2 need to move Django forward before taking this
+release:
+
+```console
+$ uv add 'django>=5.2'
+```
+
+Nothing else changes for them. {func}`~django_slugify_processor.text.slugify`
+and its template filter behave the same, `SLUGIFY_PROCESSORS` is untouched, and
+the package's own Python floor stays at 3.10.
+
 ### What's new
+
+#### Django 6.1 support (#426)
+
+django-slugify-processor supports Django 6.1 and 6.0. Both are declared in the
+package's trove classifiers and covered by the test matrix.
+{func}`~django_slugify_processor.text.slugify` and
+{func}`~django_slugify_processor.templatetags.slugify_processor.slugify` needed
+no changes, so projects can upgrade without revisiting `SLUGIFY_PROCESSORS`.
+
+Django 6.x requires Python 3.12 or newer. Installations on Python 3.10 and 3.11
+continue to resolve Django 5.2 LTS; the package's own Python floor is unchanged.
 
 #### Package version metadata is available at import time
 
@@ -117,6 +147,12 @@ and invalidates targeted [CloudFront](https://aws.amazon.com/cloudfront/) paths
 after upload. That removes long-lived AWS access keys from the publishing path
 while keeping the existing S3 and CDN deployment model.
 
+#### Django documentation links follow the current release (#426)
+
+Prose links and API cross-references into Django's documentation now resolve
+against its current stable release instead of a pinned 4.2, so readers land on
+the documentation for the Django they are running.
+
 ### Development
 
 #### Task runner replaces the project Makefiles (#411)
@@ -167,6 +203,12 @@ Linting runs on ruff's curated default rule set, with this project's own linters
 layered on top through `extend-select`. Pylint, flake8-pyi, and flake8-bandit
 checks now apply; the Sphinx config carries a scoped per-file ignore for the
 `exec` it uses to read the package's metadata module.
+
+#### The test matrix runs the versions it names (#426)
+
+Each leg of the test matrix now runs the Python and Django pair it is labelled
+with, and fails when it does not. Both axes were previously overridden before
+the suite ran, so the matrix reported broader coverage than it actually had.
 
 ## django-slugify-processor 1.10.0 (2025-11-01)
 

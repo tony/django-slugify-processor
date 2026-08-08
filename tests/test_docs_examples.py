@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import pathlib
 import subprocess
+import sys
 import typing as t
 
 import pytest
@@ -54,6 +55,10 @@ def test_library_install_docs_do_not_recommend_tool_installers(
         assert forbidden_command not in text
 
 
+@pytest.mark.skipif(
+    sys.version_info < (3, 11),
+    reason="docs extensions need sphinx>=8.2, which requires python 3.11+",
+)
 def test_sphinx_doctest_builder_runs() -> None:
     """Assert docs/ doctest examples run without requiring external just."""
     completed = subprocess.run(

@@ -189,7 +189,7 @@ $ uv add \
     'django-slugify-processor @ git+https://github.com/tony/django-slugify-processor.git'
 ```
 
-[django settings]: https://docs.djangoproject.com/en/4.2/topics/settings/
+[django settings]: https://docs.djangoproject.com/en/stable/topics/settings/
 [pip]: https://pip.pypa.io/en/stable/
 [pypi]: https://pypi.org/project/django-slugify-processor/
 [uv]: https://docs.astral.sh/uv/
