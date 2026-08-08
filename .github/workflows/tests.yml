@@ -7,6 +7,11 @@ jobs:
     if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository
 
     runs-on: ubuntu-latest
+    # `uv run` re-syncs the environment from uv.lock before every command,
+    # which reinstalls the locked django over the one the matrix leg pinned.
+    # The one sync stays explicit, in "Install dependencies".
+    env:
+      UV_NO_SYNC: '1'
     strategy:
       matrix:
         python-version: ['3.10', '3.14']
