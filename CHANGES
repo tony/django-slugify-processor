@@ -31,6 +31,25 @@ pages easier to scan, and local automation easier to run. It also exposes
 documentation tooling can build correct source links without reaching into
 package metadata.
 
+### Breaking changes
+
+#### Django 5.2 is the minimum supported release (#426)
+
+Minimum `django>=5.2` (was `>=4.2`). Django 4.2 LTS reached end of life on
+2026-04-07 and Django 5.1 on 2025-12-03, so neither receives security patches.
+Django 5.2 LTS is supported upstream until 2028-04-30.
+
+Projects pinned below 5.2 need to move Django forward before taking this
+release:
+
+```console
+$ uv add 'django>=5.2'
+```
+
+Nothing else changes for them. {func}`~django_slugify_processor.text.slugify`
+and its template filter behave the same, `SLUGIFY_PROCESSORS` is untouched, and
+the package's own Python floor stays at 3.10.
+
 ### What's new
 
 #### Django 6.1 support (#426)
