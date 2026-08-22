@@ -2,34 +2,13 @@
 
 # Code Style
 
-## Linting and Formatting
+This page's content splits between the two files that now govern it:
 
-The project uses [ruff](https://ruff.rs) for linting and formatting.
+- The docstring convention these lint rules enforce (NumPy style, via
+  ruff's `pydocstyle` rules) is in
+  [`.github/WRITING.md`][writing], under "Docstrings".
+- The ruff and mypy commands themselves are in
+  [`.github/CONTRIBUTING.md`][contributing], under "The gates".
 
-Lint:
-
-```console
-$ uv run ruff check .
-```
-
-Auto-fix:
-
-```console
-$ uv run ruff check . --fix
-```
-
-Format:
-
-```console
-$ uv run ruff format .
-```
-
-## Type Checking
-
-[mypy](http://mypy-lang.org/) is used for static type checking.
-
-```console
-$ uv run mypy .
-```
-
-See `pyproject.toml` `[tool.mypy]` for the full configuration.
+[writing]: https://github.com/tony/django-slugify-processor/blob/master/.github/WRITING.md#docstrings
+[contributing]: https://github.com/tony/django-slugify-processor/blob/master/.github/CONTRIBUTING.md#the-gates
