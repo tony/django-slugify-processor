@@ -21,8 +21,8 @@ With no `SLUGIFY_PROCESSORS` setting, the package behaves like Django's
 
 ## Install
 
-Requires Python 3.10+ and Django 5.2+. Django 6.0 and 6.1 need Python 3.12
-or newer; Python 3.10 and 3.11 stay on Django 5.2.
+Requires Python 3.11+ and Django 5.2+. Django 6.0 and 6.1 need Python 3.12
+or newer; Python 3.11 stays on Django 5.2.
 
 ```console
 $ python -m pip install django-slugify-processor
